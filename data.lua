@@ -1,0 +1,1 @@
+redmew = require '__redmew-data__/lib/data-util'
