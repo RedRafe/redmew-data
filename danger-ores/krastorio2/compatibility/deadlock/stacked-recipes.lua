@@ -1,6 +1,11 @@
 if not mods['deadlock-beltboxes-loaders'] then return end
 
 local stack_size = settings.startup["deadlock-stack-size"].value
+local T1 = "deadlock-stacking-1"
+local T2 = "deadlock-stacking-2"
+local T3 = "deadlock-stacking-3"
+local T4 = "deadlock-stacking-4"
+local T5 = "deadlock-stacking-5"
 
 local function icons_constructor(base, corner_item)
   local item = data.raw.item["deadlock-stack-"..base]
@@ -27,7 +32,8 @@ local stacked_recipes = {
     ingredients = {{"deadlock-stack-stone", 10}},
     result = "deadlock-stack-stone-brick",
     result_count = 5,
-    order = "00"
+    order = "00",
+    _technology = T1
   },
   -- stacked_coke
   {
@@ -42,7 +48,8 @@ local stacked_recipes = {
     },
     result = "deadlock-stack-coke",
     result_count = 6,
-    order = "01"
+    order = "01",
+    _technology = T1
   },
   -- stacked_glass
   {
@@ -54,7 +61,8 @@ local stacked_recipes = {
     ingredients = {{"deadlock-stack-sand", 16}},
     result = "deadlock-stack-glass",
     result_count = 8,
-    order = "02"
+    order = "02",
+    _technology = T1
   },
   -- stacked_silicon
   {
@@ -66,7 +74,8 @@ local stacked_recipes = {
     ingredients = {{"deadlock-stack-quartz", 18}},
     result = "deadlock-stack-silicon",
     result_count = 9,
-    order = "03"
+    order = "03",
+    _technology = T2
   },
   -- stacked_iron_plate
   {
@@ -79,7 +88,8 @@ local stacked_recipes = {
     result = "deadlock-stack-iron-plate",
     result_count = 5,
     icons = icons_constructor("iron-plate", "iron-ore"),
-    order = "04"
+    order = "04",
+    _technology = T1
   },
   -- stacked_enriched_iron
   {
@@ -92,7 +102,8 @@ local stacked_recipes = {
     result = "deadlock-stack-iron-plate",
     result_count = 5,
     icons = icons_constructor("iron-plate", "enriched-iron"),
-    order = "05"
+    order = "05",
+    _technology = T2
   },
   -- stacked_copper_plate
   {
@@ -105,7 +116,8 @@ local stacked_recipes = {
     result = "deadlock-stack-copper-plate",
     result_count = 5,
     icons = icons_constructor("copper-plate", "copper-ore"),
-    order = "06"
+    order = "06",
+    _technology = T1
   },
   -- stacked_enriched_copper
   {
@@ -118,7 +130,8 @@ local stacked_recipes = {
     result = "deadlock-stack-copper-plate",
     result_count = 5,
     icons = icons_constructor("copper-plate", "enriched-copper"),
-    order = "07"
+    order = "07",
+    _technology = T2
   },
   -- stacked_rare_metals
   {
@@ -131,7 +144,8 @@ local stacked_recipes = {
     result = "deadlock-stack-rare-metals",
     result_count = 5,
     icons = icons_constructor("rare-metals", "raw-rare-metals"),
-    order = "08"
+    order = "08",
+    _technology = T2
   },
   -- stacked_enriched_raw_metals
   {
@@ -144,7 +158,8 @@ local stacked_recipes = {
     result = "deadlock-stack-rare-metals",
     result_count = 5,
     icons = icons_constructor("rare-metals", "enriched-rare-metals"),
-    order = "09"
+    order = "09",
+    _technology = T2
   },
   -- stacked_steel_plate
   {
@@ -159,7 +174,8 @@ local stacked_recipes = {
     },
     result = "deadlock-stack-steel-plate",
     result_count = 5,
-    order = "10"
+    order = "10",
+    _technology = T2
   },
   -- stacked_imersium_plate
   {
@@ -174,13 +190,14 @@ local stacked_recipes = {
     },
     result = "deadlock-stack-imersium-plate",
     result_count = 3,
-    order = "11"
+    order = "11",
+    _technology = T5
   },
 }
 
 data:extend(stacked_recipes)
 
 for ___, recipe in pairs(stacked_recipes) do 
-  KDO.whitelist_productivity(recipe.name)
-  KDO.add_unlock("deadlock-stacking-1", recipe.name)
+  redmew.whitelist_productivity(recipe.name)
+  redmew.add_unlock(recipe._technology, recipe.name)
 end

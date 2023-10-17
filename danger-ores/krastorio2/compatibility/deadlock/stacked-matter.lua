@@ -102,7 +102,7 @@ local items = {
   'sulfur',
   'uranium-238',
   'uranium-ore',
-  'wood',
+  --'wood',
 }
 
 for ___, item in pairs(items) do

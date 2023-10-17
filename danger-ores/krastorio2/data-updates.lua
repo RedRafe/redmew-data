@@ -1,0 +1,16 @@
+if not DataLoader.enabled("do:k2") then return end
+
+require 'data-2.assembling-machine'
+require 'data-2.braking-force'
+require 'data-2.chemical'
+require 'data-2.coal-liquefaction'
+require 'data-2.electric-furnace'
+require 'data-2.imersite'
+require 'data-2.inserter-capacity'
+require 'data-2.matter'
+require 'data-2.mineral-water'
+require 'data-2.nuclear'
+require 'data-2.resources'
+require 'data-2.steam'
+require 'data-2.unit-spawner'
+require 'data-2.worker-robot-storage'

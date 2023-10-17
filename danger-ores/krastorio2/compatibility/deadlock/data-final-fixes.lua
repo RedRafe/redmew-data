@@ -49,13 +49,13 @@ deadlock.destroy_stack("dt-fuel")
 
 -- Adjust compact raw rare metals sprite
 local icons = data.raw.item['deadlock-stack-compact-raw-rare-metals'].icons
-icons[2].icon = "__k2-danger-ores__/graphics/icons/cluster-rare-3.png"
-icons[3].icon = "__k2-danger-ores__/graphics/icons/cluster-rare-2.png"
-icons[4].icon = "__k2-danger-ores__/graphics/icons/cluster-rare-1.png"
+icons[2].icon = "__redmew-data__/graphics/icons/cluster-rare-3.png"
+icons[3].icon = "__redmew-data__/graphics/icons/cluster-rare-2.png"
+icons[4].icon = "__redmew-data__/graphics/icons/cluster-rare-1.png"
 icons[5] = {
-  icon = "__k2-danger-ores__/graphics/icons/cluster-rare.png",
+  icon = "__redmew-data__/graphics/icons/cluster-rare.png",
   icon_mipmaps = 4, icon_size = 64, scale = 0.425, shift = { 0, -6 }
 }
 
-require 'compatibility.deadlock.stacked-recipes'
-require 'compatibility.deadlock.stacked-matter'
+require 'stacked-recipes'
+require 'stacked-matter'

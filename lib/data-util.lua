@@ -355,7 +355,7 @@ local function r_copy(target, source)
   end
 end
 
-function lib.update_protytype(obj)
+function lib.update_prototype(obj)
   if not obj or not obj.name or not obj.type then error('Invalid object') return end
   local p = data.raw[obj.type][obj.name]
   if not p then log('Could not update ' .. obj.name) return end
@@ -364,6 +364,7 @@ end
 
 function lib.make_tier(obj)
   local base = table.deepcopy(data.raw[obj.type][obj._base])
+  if not base then error("Could not find " .. obj.type .. "/" .. obj._base) return end
   base.next_upgrade = nil
   r_copy(base, obj)
   if obj._tint and obj._tint ~= false then
