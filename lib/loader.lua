@@ -16,9 +16,7 @@ function Loader.startup()
     end
     Loader.permissions[data.ID] = d and not i
   end
-  serpent.tablecomment = true
-  serpent.refcomment = true
-  log(serpent.dump({'Enabled packages:', packages = Loader.permissions, list = Loader.packages }))
+  log(serpent.block({'Enabled packages:', packages = Loader.permissions }))
 end
 
 function Loader.init()
@@ -36,12 +34,19 @@ function Loader.init()
     end
     Loader.permissions[data.ID] = d and not i
   end
-
-  log(serpent.block({'Enabled packages:', packages = Loader.permissions }))
 end
 
 function Loader.enabled(ID)
   return Loader.permissions[ID] or false
+end
+
+function Loader.root_enabled(root_ID)
+  for ID, package in pairs(Loader.permissions) do
+    if package and package == true then
+      if redmew.string.startsWith(ID, root_ID) then return true end
+    end
+  end
+  return false
 end
 
 return Loader

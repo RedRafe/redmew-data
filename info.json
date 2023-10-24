@@ -8,8 +8,16 @@
   "factorio_version": "1.1",
   "dependencies": [
     "base >= 1.1.0",
+    "? bzcarbon",
+    "? bzgold",
+    "? bztitanium",
+    "? bztungsten",
+    "? deadlock-beltboxes-loaders",
+    "? Industrialrevolution3",
     "? Krastorio2",
-    "? deadlock-beltboxes-loaders"
+    "? omnimatter_compression",
+    "? omnimatter",
+    "? pypostprocessing"
   ],
   "description": "Handles data stage for mod compatibility with RedMew's scenarios"
 }

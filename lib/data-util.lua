@@ -19,6 +19,7 @@ function lib.string.msv(text, coefficient)
   local s = string.match(text, "%a+")
   return tostring(tonumber(n) * coefficient) .. s
 end
+local msv = lib.string.msv
 
 ---@param name string
 function lib.string.find_base(name)
@@ -355,6 +356,8 @@ local function r_copy(target, source)
   end
 end
 
+--- Updates (overwriting) a given prototype's fields with the given data
+---@param obj ConfigData
 function lib.update_prototype(obj)
   if not obj or not obj.name or not obj.type then error('Invalid object') return end
   local p = data.raw[obj.type][obj.name]
@@ -362,6 +365,8 @@ function lib.update_prototype(obj)
   r_copy(p, obj)
 end
 
+--- Creates a copy of the given prototype, using the additional fields to set new properties
+---@param obj ConfigData
 function lib.make_tier(obj)
   local base = table.deepcopy(data.raw[obj.type][obj._base])
   if not base then error("Could not find " .. obj.type .. "/" .. obj._base) return end
@@ -371,6 +376,47 @@ function lib.make_tier(obj)
     apply_tint(base, obj._tint)
   end
   return base
+end
+
+--=================================================================================================
+
+--- Loop through all prototypes of the same source. 
+--- Multiplies string values related to energy consumption by the given multiplier
+---@param source string
+---@param multiplier number
+function lib.expensive_robot(source, multiplier)
+  for _, e in pairs(data.raw[source]) do
+
+    e.max_energy = msv(e.max_energy, multiplier)
+    e.charging_energy = msv(e.charging_energy, multiplier)
+    e.energy_per_tick = msv(e.energy_per_tick, multiplier)
+    e.energy_per_move = msv(e.energy_per_move, multiplier)
+    e.recharge_minimum = msv(e.recharge_minimum, multiplier)
+    
+    if e.energy_source then
+      e.energy_source.buffer_capacity = msv(e.energy_source.buffer_capacity, multiplier)
+      e.energy_source.input_flow_limit = msv(e.energy_source.input_flow_limit, multiplier)
+    end
+  
+  end
+end
+
+--=================================================================================================
+
+function lib.whitelist_waterfill_tiles(tiles_table)
+  local waterfill = data.raw['selection-tool']['rm-waterfill']
+  if not waterfill then return end
+  if not (tiles_table and type(tiles_table) == 'table') then return end
+
+  for _, name in pairs(tiles_table) do
+    local t = data.raw.tile[name]
+    if t then
+      table.insert(waterfill.tile_filters, name)
+      table.insert(waterfill.alt_tile_filters, name)
+    else
+      log('Could not whitelist ' .. name)
+    end
+  end
 end
 
 --=================================================================================================

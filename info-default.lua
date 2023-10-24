@@ -5,6 +5,10 @@ local function get()
     dependencies = {},
     compatibles = {},
     incompatibles = {
+      ["bzcarbon"] = true,
+      ["bzgold"] = true,
+      ["bztitanium"] = true,
+      ["bztungsten"] = true,
       ["exotic-industries"] = true,
       ["IndustrialRevolution"] = true,
       ["IndustrialRevolution3"] = true,
