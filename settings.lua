@@ -3,15 +3,15 @@ SettingsLoader = require '__redmew-data__.lib.loader'
 SettingsLoader.startup()
 
 data:extend({
-  {
+	{
 		name = 'redmew:scenario',
 		type = 'string-setting',
 		setting_type = 'startup',
 		default_value = 'danger-ores',
-    allowed_values = {
-      'danger-ores',
-    },
-    hidden = false,
+		allowed_values = {
+			'danger-ores',
+		},
+		hidden = false,
 		order = '0',
 	},
 })

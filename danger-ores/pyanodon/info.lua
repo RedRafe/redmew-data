@@ -6,8 +6,8 @@ for _, name in pairs(py_set.mods) do
 end
 
 return {
-  name = "DangerOres/Pyanodon",
-  ID = "do:py",
+  name = 'DangerOres/Pyanodon',
+  ID = 'do:py',
   dependencies = {
     ['pycoalprocessing'] = true,
     ['pycoalprocessinggraphics'] = true,

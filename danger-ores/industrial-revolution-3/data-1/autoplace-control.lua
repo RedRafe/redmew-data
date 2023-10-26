@@ -1,34 +1,34 @@
 data:extend({
   {
-    type = "autoplace-control",
-    category = "resource",
-    name = "dirty-steam-fissure",
+    type = 'autoplace-control',
+    category = 'resource',
+    name = 'dirty-steam-fissure',
     richness = true,
-    order = "z1",
+    order = 'z1',
     localised_name = { 'autoplace-control-names.do:autoplace' }
   },
   {
-    type = "autoplace-control",
-    category = "resource",
-    name = "natural-gas-fissure",
+    type = 'autoplace-control',
+    category = 'resource',
+    name = 'natural-gas-fissure',
     richness = true,
-    order = "z2",
+    order = 'z2',
     localised_name = { 'autoplace-control-names.do:autoplace' }
   },
   {
-    type = "autoplace-control",
-    category = "resource",
-    name = "steam-fissure",
+    type = 'autoplace-control',
+    category = 'resource',
+    name = 'steam-fissure',
     richness = true,
-    order = "z3",
+    order = 'z3',
     localised_name = { 'autoplace-control-names.do:autoplace' }
   },
   {
-    type = "autoplace-control",
-    category = "resource",
-    name = "sulphur-gas-fissure",
+    type = 'autoplace-control',
+    category = 'resource',
+    name = 'sulphur-gas-fissure',
     richness = true,
-    order = "z4",
+    order = 'z4',
     localised_name = { 'autoplace-control-names.do:autoplace' }
   },
 })

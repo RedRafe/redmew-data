@@ -34,13 +34,13 @@ local function set_meta(item)
 
   local r = data.raw.recipe['deadlock-stack-' .. item .. '-to-matter']
   if r ~= nil then
-    r.localised_name = {"recipe-name.to-matter", stack.localised_name or {"item-name." .. item}}
+    r.localised_name = {'recipe-name.to-matter', stack.localised_name or {'item-name.' .. item}}
     r.subgroup = 'stacks-' .. r.subgroup
   end
 
   local r = data.raw.recipe['matter-to-deadlock-stack-' .. item]
   if r ~= nil then
-    r.localised_name = {"recipe-name.matter-to", stack.localised_name or {"item-name." .. item}}
+    r.localised_name = {'recipe-name.matter-to', stack.localised_name or {'item-name.' .. item}}
     r.subgroup = 'stacks-' .. r.subgroup
   end
 end

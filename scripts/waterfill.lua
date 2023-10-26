@@ -16,21 +16,21 @@ local function flying_error(player, text)
     position = player.position,
     text = text,
   })
-  player.play_sound({ path = "utility/cannot_build" })
+  player.play_sound({ path = 'utility/cannot_build' })
 end
 
 local function edit(e)
     local player = game.get_player(e.player_index)
     local item = e.item
     if not player then return end
-    if not (e.item == "rm-waterfill") then return end
-    if player.online_time < TRUSTED_TIME then flying_error(player, {"waterfill.trusted"}) return end
+    if not (e.item == 'rm-waterfill') then return end
+    if player.online_time < TRUSTED_TIME then flying_error(player, {'waterfill.trusted'}) return end
 
     local area = e.area
     local pos = player.position
     local surface = e.surface
     local entities = surface.find_entities(area)
-    if #entities > 0 then flying_error(player, {"waterfill.entities"}) return end
+    if #entities > 0 then flying_error(player, {'waterfill.entities'}) return end
 
     local tiles = e.tiles
     local new_tiles = {}
@@ -38,17 +38,17 @@ local function edit(e)
     local t = 0
     for ___, tile in pairs(tiles) do
       if dist(tile.position, pos) <= REACH then
-        if (tile.name and tile.name == "landfill") or (tile.hidden_tile and tile.hidden_tile == "landfill") then
+        if (tile.name and tile.name == 'landfill') or (tile.hidden_tile and tile.hidden_tile == 'landfill') then
           t = t + 1
-          new_tiles[t] = { name = "water-mud", position = tile.position }
+          new_tiles[t] = { name = 'water-mud', position = tile.position }
         end
       else
         too_far = too_far + 1
       end
     end
 
-    if t == 0 and too_far == 0 then flying_error(player, {"waterfill.not_here"})
-    elseif t == 0 and too_far > 0 then flying_error(player, {"waterfill.cannot_reach"})
+    if t == 0 and too_far == 0 then flying_error(player, {'waterfill.not_here'})
+    elseif t == 0 and too_far > 0 then flying_error(player, {'waterfill.cannot_reach'})
     else
       surface.set_tiles(new_tiles)
     end

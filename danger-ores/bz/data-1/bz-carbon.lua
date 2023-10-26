@@ -1,33 +1,33 @@
-if not mods["bzcarbon"] then return end
+if not mods['bzcarbon'] then return end
 
 data:extend({
   {
-		type = "item",
-		name = "graphite-powder",
-		icon = "__redmew-data__/graphics/icons/uranium-powder-1-light.png",
-		icon_size = 64,
-		icon_mipmaps = 4,
-		subgroup = "raw-material",
-		order = "g[graphite-powder]",
-		stack_size = 50
+    type = 'item',
+    name = 'graphite-powder',
+    icon = '__redmew-data__/graphics/icons/uranium-powder-1-light.png',
+    icon_size = 64,
+    icon_mipmaps = 4,
+    subgroup = 'raw-material',
+    order = 'g[graphite-powder]',
+    stack_size = 50
   },
   {
-    type = "recipe",
-    name = "graphite-powder",
+    type = 'recipe',
+    name = 'graphite-powder',
     always_show_made_in = true,
     energy_required = 4,
     enabled = false,
-    category = "chemistry",
+    category = 'chemistry',
     ingredients =
     {
-      { type = "item", name = "flake-graphite", amount = 15 },
-      { type = "fluid", name = "steam", amount = 15 }
+      { type = 'item', name = 'flake-graphite', amount = 15 },
+      { type = 'fluid', name = 'steam', amount = 15 }
     },
-    icon = "__redmew-data__/graphics/icons/uranium-powder-1-light.png",
+    icon = '__redmew-data__/graphics/icons/uranium-powder-1-light.png',
     icon_size = 64, icon_mipmaps = 4,
-    subgroup = "raw-material",
-    order = "k[graphite-powder-1]",
-    result = "graphite-powder",
+    subgroup = 'raw-material',
+    order = 'k[graphite-powder-1]',
+    result = 'graphite-powder',
     result_count = 15,
     crafting_machine_tint =
     {
@@ -39,14 +39,14 @@ data:extend({
   },
 })
 
-redmew.whitelist_productivity("graphite-powder")
-redmew.add_unlock("graphite-processing", "graphite-powder")
-redmew.add_prerequisite("graphite-processing", "basic-chemistry")
+redmew.whitelist_productivity('graphite-powder')
+redmew.add_unlock('graphite-processing', 'graphite-powder')
+redmew.add_prerequisite('graphite-processing', 'basic-chemistry')
 
 for _, recipe in pairs(data.raw.recipe) do
-  if recipe.name ~= "graphite-powder" then
-    if redmew.has_ingredient(recipe.name, "flake-graphite") then
-      redmew.replace_ingredient(recipe.name, "flake-graphite", "graphite-powder")
+  if recipe.name ~= 'graphite-powder' then
+    if redmew.has_ingredient(recipe.name, 'flake-graphite') then
+      redmew.replace_ingredient(recipe.name, 'flake-graphite', 'graphite-powder')
     end
   end
 end

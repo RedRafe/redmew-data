@@ -1,23 +1,23 @@
 local default = require '__redmew-data__.info-default'()
-default.incompatibles["omnilib"] = nil
-default.incompatibles["omnimatter_move"] = true
+default.incompatibles['omnilib'] = nil
+default.incompatibles['omnimatter_move'] = true
 
 return {
-  name = "DangerOres/Omnimatter",
-  ID = "do:omni",
+  name = 'DangerOres/Omnimatter',
+  ID = 'do:omni',
   dependencies = {
-    ["omnimatter"] = true,
-    ["omnilib"] = true,
+    ['omnimatter'] = true,
+    ['omnilib'] = true,
   },
   compatibles = {
-    ["omnimatter_compression"] = true,
-    ["omnimatter_permutation"] = true,
-    ["omnimatter_science"] = true,
-    ["omnimatter_crystal"] = true,
-    ["omnimatter_energy"] = true,
-    ["omnimatter_fluid"] = true,
-    ["omnimatter_water"] = true,
-    ["omnimatter_wood"] = true,
+    ['omnimatter_compression'] = true,
+    ['omnimatter_permutation'] = true,
+    ['omnimatter_science'] = true,
+    ['omnimatter_crystal'] = true,
+    ['omnimatter_energy'] = true,
+    ['omnimatter_fluid'] = true,
+    ['omnimatter_water'] = true,
+    ['omnimatter_wood'] = true,
     
   },
   incompatibles = default.incompatibles

@@ -1,4 +1,4 @@
-if not SettingsLoader.root_enabled("do:") then return end
+if not SettingsLoader.root_enabled('do:') then return end
 
 data:extend({
 	{
@@ -17,7 +17,7 @@ data:extend({
 		maximum_value = 100000,
 		order = 'b'
 	},
-  {
+	{
 		name = 'do:robot_energy_multipler',
 		type = 'int-setting',
 		setting_type = 'startup',
@@ -33,5 +33,4 @@ data:extend({
 		default_value = false,
 		order = 'd'
 	},
-
 })

@@ -19,7 +19,6 @@ local resources = {
 for _, name in pairs(resources) do
   local res = data.raw.resource[name]
   if res then
-    res.resource_patch_search_radius = 0
     if res.minable and res.minable.required_fluid then
       res.minable.required_fluid = nil
       res.minable.fluid_amount = nil

@@ -1,12 +1,12 @@
 for ___, p in pairs(data.raw['unit-spawner']) do
   local effect = {
-    type = "direct",
+    type = 'direct',
     action_delivery = {
-      type = "instant",
+      type = 'instant',
       source_effects = {
         { 
-          type = "script",
-          effect_id = "unit-spawner-built",
+          type = 'script',
+          effect_id = 'unit-spawner-built',
         },
       }
     }

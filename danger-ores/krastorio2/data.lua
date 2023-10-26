@@ -1,4 +1,4 @@
-if not DataLoader.enabled("do:k2") then return end
+if not DataLoader.enabled('do:k2') then return end
 
 redmew.config = require 'config'
 

@@ -1,6 +1,6 @@
-if not SettingsLoader.enabled("do:vanilla") then return end
+if not SettingsLoader.enabled('do:vanilla') then return end
 
-data:extend{
+data:extend({
 	{
 		name = 'do:vanilla:cheaper_electric_drills',
 		type = 'bool-setting',
@@ -8,4 +8,4 @@ data:extend{
 		default_value = false,
 		order = 'd'
 	}
-}
+})

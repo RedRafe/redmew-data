@@ -12,9 +12,9 @@ local function generate_creep(entities)
   local i = 0
   for _, entity in pairs(entities) do
     for _, tile in pairs(surface.find_tiles_filtered({ position = entity.position, radius = radius })) do
-      if not tile.collides_with("player-layer") then
+      if not tile.collides_with('player-layer') then
         i = i + 1
-        to_add[i] = { name = "kr-creep", position = tile.position }
+        to_add[i] = { name = 'kr-creep', position = tile.position }
       end
     end
   end
@@ -30,7 +30,7 @@ local function on_nth_tick()
   for x, _gq in pairs(global.queue) do
     for y, i_surface in pairs(_gq) do
       local area = { left_top = { x=32*x, y=32*y }, right_bottom = { x=32*x+32, y=32*y+32} }
-      local entities = game.get_surface(i_surface).find_entities_filtered({ type = { "unit-spawner" }, area = area, force = "enemy" })
+      local entities = game.get_surface(i_surface).find_entities_filtered({ type = { 'unit-spawner' }, area = area, force = 'enemy' })
       for _, entity in pairs(entities) do
         if entity.valid then
           generate_creep({ entity })
@@ -67,7 +67,7 @@ end
 function on_chunk_generated(e)
   local area = e.area
   local surface = e.surface
-  local entities = surface.find_entities_filtered({ type = { "unit-spawner" }, area = area, force = "enemy" })
+  local entities = surface.find_entities_filtered({ type = { 'unit-spawner' }, area = area, force = 'enemy' })
   for _, entity in pairs(entities) do
     if entity.valid then
       generate_creep({ entity })
@@ -81,7 +81,7 @@ end
 local function on_entity_created(e)
   local entity = e.entity
   if not entity or not entity.valid then return end
-  if entity.type ~= "unit-spawner" then return end
+  if entity.type ~= 'unit-spawner' then return end
   generate_creep({ entity })
 end
 
@@ -94,7 +94,7 @@ end
 --- @param name defines.event.on_script_trigger_effect
 --- @param tick uint
 local function on_trigger_entity(e)
-  if e.effect_id ~= "unit-spawner-built" then return end
+  if e.effect_id ~= 'unit-spawner-built' then return end
   local entity = e.target_entity
   if not entity or not entity.valid then return end
   generate_creep({ entity })

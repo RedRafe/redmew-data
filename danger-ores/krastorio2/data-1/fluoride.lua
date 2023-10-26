@@ -1,34 +1,34 @@
 data:extend({
   -- Item
   {
-    type = "item",
-    name = "fluoride",
-    icon = "__redmew-data__/graphics/icons/fluoride.png",
+    type = 'item',
+    name = 'fluoride',
+    icon = '__redmew-data__/graphics/icons/fluoride.png',
     icon_size = 64, icon_mipmaps = 4,
-    subgroup = "raw-material",
-    order = "g[thorium-fluoride]",
+    subgroup = 'raw-material',
+    order = 'g[thorium-fluoride]',
     stack_size = 50
   },
   -- Recipe
   {
-    type = "recipe",
-    name = "fluoride",
+    type = 'recipe',
+    name = 'fluoride',
     always_show_made_in = true,
-    category = "chemistry",
+    category = 'chemistry',
     energy_required = 8,
     enabled = false,
     ingredients =
     {
-      { type = "fluid", name = "water", amount = 800 },
-      { type = "item", name = "stone", amount = 30 },
-      { type = "item", name = "iron-plate", amount = 5 },
+      { type = 'fluid', name = 'water', amount = 800 },
+      { type = 'item', name = 'stone', amount = 30 },
+      { type = 'item', name = 'iron-plate', amount = 5 },
     },
     results =
     {
-      { type = "item", name = "fluoride", amount = 1 },
-      { type = "fluid", name = "water", amount = 200 },
+      { type = 'item', name = 'fluoride', amount = 1 },
+      { type = 'fluid', name = 'water', amount = 200 },
     },
-    main_product = "fluoride",
+    main_product = 'fluoride',
     allow_productivity = true,
     crafting_machine_tint =
     {
@@ -40,35 +40,35 @@ data:extend({
   },
   -- Technology
   {
-    type = "technology",
-    name = "fluoride-processing",
+    type = 'technology',
+    name = 'fluoride-processing',
     icon_size = 256, icon_mipmaps = 4,
-    icon = "__redmew-data__/graphics/technology/fluoride-processing.png",
+    icon = '__redmew-data__/graphics/technology/fluoride-processing.png',
     effects =
     {
       {
-        type = "unlock-recipe",
-        recipe = "fluoride"
+        type = 'unlock-recipe',
+        recipe = 'fluoride'
       },
       {
-        type = "unlock-recipe",
-        recipe = "mineral-water"
+        type = 'unlock-recipe',
+        recipe = 'mineral-water'
       }
     },
-    prerequisites = { "chemical-science-pack" },
+    prerequisites = { 'chemical-science-pack' },
     unit =
     {
       ingredients =
       {
-        {"automation-science-pack", 1},
-        {"logistic-science-pack", 1},
-        {"chemical-science-pack", 1}
+        {'automation-science-pack', 1},
+        {'logistic-science-pack', 1},
+        {'chemical-science-pack', 1}
       },
       time = 30,
       count = 150
     },
-    order = "e-p-b-c"
+    order = 'e-p-b-c'
   },
 })
 
-redmew.whitelist_productivity("fluoride")
+redmew.whitelist_productivity('fluoride')

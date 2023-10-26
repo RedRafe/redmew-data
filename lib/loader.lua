@@ -1,5 +1,5 @@
 local Loader = {}
-local package_list = require "__redmew-data__.package-list"
+local package_list = require '__redmew-data__.package-list'
 
 function Loader.startup()
   Loader.packages = package_list
@@ -16,7 +16,7 @@ function Loader.startup()
     end
     Loader.permissions[data.ID] = d and not i
   end
-  log(serpent.block({'Enabled packages:', packages = Loader.permissions }))
+  log(serpent.block({'Enabled packages:', Loader.permissions }))
 end
 
 function Loader.init()

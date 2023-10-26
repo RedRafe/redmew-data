@@ -1,33 +1,33 @@
-if not mods["bztitanium"] then return end
+if not mods['bztitanium'] then return end
 
 data:extend({
   {
-		type = "item",
-		name = "titanium-processed",
-		icon = "__redmew-data__/graphics/icons/rare-1.png",
-		icon_size = 64,
-		icon_mipmaps = 4,
-		subgroup = "raw-material",
-		order = "b[titanium-processed]",
-		stack_size = 50
+    type = 'item',
+    name = 'titanium-processed',
+    icon = '__redmew-data__/graphics/icons/rare-1.png',
+    icon_size = 64,
+    icon_mipmaps = 4,
+    subgroup = 'raw-material',
+    order = 'b[titanium-processed]',
+    stack_size = 50
   },
   {
-    type = "recipe",
-    name = "titanium-processed",
+    type = 'recipe',
+    name = 'titanium-processed',
     always_show_made_in = true,
     energy_required = 12,
     enabled = false,
-    category = "crafting-with-fluid",
+    category = 'crafting-with-fluid',
     ingredients =
     {
-      { type = "item", name = "titanium-ore", amount = 15 },
-      { type = "fluid", name = "lubricant", amount = 45 }
+      { type = 'item', name = 'titanium-ore', amount = 15 },
+      { type = 'fluid', name = 'lubricant', amount = 45 }
     },
-    icon = "__redmew-data__/graphics/icons/rare-1.png",
+    icon = '__redmew-data__/graphics/icons/rare-1.png',
     icon_size = 64, icon_mipmaps = 4,
-    subgroup = "raw-material",
-    order = "b[titanium-processed]",
-    result = "titanium-processed",
+    subgroup = 'raw-material',
+    order = 'b[titanium-processed]',
+    result = 'titanium-processed',
     result_count = 15,
     crafting_machine_tint =
     {
@@ -39,13 +39,13 @@ data:extend({
   },
 })
 
-redmew.whitelist_productivity("titanium-processed")
-redmew.add_unlock("titanium-processing", "titanium-processed")
+redmew.whitelist_productivity('titanium-processed')
+redmew.add_unlock('titanium-processing', 'titanium-processed')
 
 for _, recipe in pairs(data.raw.recipe) do
-  if recipe.name ~= "titanium-processed" then
-    if redmew.has_ingredient(recipe.name, "titanium-ore") then
-      redmew.replace_ingredient(recipe.name, "titanium-ore", "titanium-processed")
+  if recipe.name ~= 'titanium-processed' then
+    if redmew.has_ingredient(recipe.name, 'titanium-ore') then
+      redmew.replace_ingredient(recipe.name, 'titanium-ore', 'titanium-processed')
     end
   end
 end

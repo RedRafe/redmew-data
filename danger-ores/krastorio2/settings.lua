@@ -1,6 +1,6 @@
-if not SettingsLoader.enabled("do:k2") then return end
+if not SettingsLoader.enabled('do:k2') then return end
 
-data:extend{
+data:extend({
 	{
 		name = 'do:k2:win_condition',
 		type = 'int-setting',
@@ -10,4 +10,4 @@ data:extend{
 		maximum_value = 100000,
 		order = 'l'
 	},
-}
+})

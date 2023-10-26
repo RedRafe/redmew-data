@@ -1,26 +1,26 @@
 data:extend({
   -- Recipe Uranium processing
   {
-    type = "recipe",
-    name = "uranium-processing",
+    type = 'recipe',
+    name = 'uranium-processing',
     always_show_made_in = true,
     energy_required = 8,
     enabled = false,
-    category = "chemistry",
+    category = 'chemistry',
     ingredients =
     {
-      { type = "item", name = "uranium-ore", amount = 10 },
-      { type = "fluid", name = "sulfuric-acid", amount = 5 }
+      { type = 'item', name = 'uranium-ore', amount = 10 },
+      { type = 'fluid', name = 'sulfuric-acid', amount = 5 }
     },
-    icon = "__redmew-data__/graphics/icons/uranium-powder.png",
+    icon = '__redmew-data__/graphics/icons/uranium-powder.png',
     icon_size = 64, icon_mipmaps = 4,
-    subgroup = "raw-material",
-    order = "k[uranium-processing-1]",
+    subgroup = 'raw-material',
+    order = 'k[uranium-processing-1]',
     results =
     {
-      { name = "yellowcake", amount = 2 },
-      { name = "stone", amount = 5 },
-      { name = "iron-ore", amount = 3 }
+      { name = 'yellowcake', amount = 2 },
+      { name = 'stone', amount = 5 },
+      { name = 'iron-ore', amount = 3 }
     },
     crafting_machine_tint =
     {
@@ -32,26 +32,26 @@ data:extend({
   },
   -- Recipe Yellowcake processing
   {
-    type = "recipe",
-    name = "uranium-processing-2",
+    type = 'recipe',
+    name = 'uranium-processing-2',
     always_show_made_in = true,
     energy_required = 30,
     enabled = false,
-    category = "centrifuging",
-    ingredients = {{"yellowcake", 3}},
-    icon = "__base__/graphics/icons/uranium-processing.png",
+    category = 'centrifuging',
+    ingredients = {{'yellowcake', 3}},
+    icon = '__base__/graphics/icons/uranium-processing.png',
     icon_size = 64, icon_mipmaps = 4,
-    subgroup = "intermediate-product",
-    order = "r[uranium-processing]-b3",
+    subgroup = 'intermediate-product',
+    order = 'r[uranium-processing]-b3',
     results =
     {
       {
-        name = "uranium-235",
+        name = 'uranium-235',
         probability = 0.007,
         amount = 1
       },
       {
-        name = "uranium-238",
+        name = 'uranium-238',
         probability = 0.993,
         amount = 1
       }
@@ -59,35 +59,35 @@ data:extend({
   },
   -- Technology Uranium Processing 2
   {
-    type = "technology",
-    name = "uranium-processing-2",
-    localised_description = {"technology-description.uranium-processing-2"},
+    type = 'technology',
+    name = 'uranium-processing-2',
+    localised_description = {'technology-description.uranium-processing-2'},
     icon_size = 256, icon_mipmaps = 1,
-    icon = "__redmew-data__/graphics/technology/uranium-processing-2.png",
+    icon = '__redmew-data__/graphics/technology/uranium-processing-2.png',
     effects =
     {
       {
-        type = "unlock-recipe",
-        recipe = "uranium-processing-2"
+        type = 'unlock-recipe',
+        recipe = 'uranium-processing-2'
       }
     },
-    prerequisites = {"uranium-processing", "concrete"},
+    prerequisites = {'uranium-processing', 'concrete'},
     unit =
     {
       ingredients =
       {
-        {"automation-science-pack", 1},
-        {"logistic-science-pack", 1},
-        {"chemical-science-pack", 1}
+        {'automation-science-pack', 1},
+        {'logistic-science-pack', 1},
+        {'chemical-science-pack', 1}
       },
       time = 60,
       count = 200
     },
-    order = "e-p-b-c"
+    order = 'e-p-b-c'
   },
 })
 
-redmew.whitelist_productivity("uranium-processing")
-redmew.whitelist_productivity("uranium-processing-2")
-redmew.move_recipe_unlock("centrifuge",        "uranium-processing", "uranium-processing-2")
-redmew.move_recipe_unlock("uranium-fuel-cell", "uranium-processing", "uranium-processing-2")
+redmew.whitelist_productivity('uranium-processing')
+redmew.whitelist_productivity('uranium-processing-2')
+redmew.move_recipe_unlock('centrifuge',        'uranium-processing', 'uranium-processing-2')
+redmew.move_recipe_unlock('uranium-fuel-cell', 'uranium-processing', 'uranium-processing-2')

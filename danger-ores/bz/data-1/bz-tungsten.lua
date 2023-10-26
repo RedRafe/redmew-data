@@ -1,33 +1,33 @@
-if not mods["bztungsten"] then return end
+if not mods['bztungsten'] then return end
 
 data:extend({
   {
-		type = "item",
-		name = "tungsten-processed",
-		icon = "__redmew-data__/graphics/icons/rare-2.png",
-		icon_size = 64,
-		icon_mipmaps = 4,
-		subgroup = "raw-material",
-		order = "b[tungsten-processed]",
-		stack_size = 50
+    type = 'item',
+    name = 'tungsten-processed',
+    icon = '__redmew-data__/graphics/icons/rare-2.png',
+    icon_size = 64,
+    icon_mipmaps = 4,
+    subgroup = 'raw-material',
+    order = 'b[tungsten-processed]',
+    stack_size = 50
   },
   {
-    type = "recipe",
-    name = "tungsten-processed",
+    type = 'recipe',
+    name = 'tungsten-processed',
     always_show_made_in = true,
     energy_required = 8,
     enabled = false,
-    category = "crafting-with-fluid",
+    category = 'crafting-with-fluid',
     ingredients =
     {
-      { type = "item", name = "tungsten-ore", amount = 15 },
-      { type = "fluid", name = "water", amount = 150 }
+      { type = 'item', name = 'tungsten-ore', amount = 15 },
+      { type = 'fluid', name = 'water', amount = 150 }
     },
-    icon = "__redmew-data__/graphics/icons/rare-2.png",
+    icon = '__redmew-data__/graphics/icons/rare-2.png',
     icon_size = 64, icon_mipmaps = 4,
-    subgroup = "raw-material",
-    order = "b[tungsten-processed]",
-    result = "tungsten-processed",
+    subgroup = 'raw-material',
+    order = 'b[tungsten-processed]',
+    result = 'tungsten-processed',
     result_count = 15,
     crafting_machine_tint =
     {
@@ -39,13 +39,13 @@ data:extend({
   },
 })
 
-redmew.whitelist_productivity("tungsten-processed")
-redmew.add_unlock("tungsten-processing", "tungsten-processed")
+redmew.whitelist_productivity('tungsten-processed')
+redmew.add_unlock('tungsten-processing', 'tungsten-processed')
 
 for _, recipe in pairs(data.raw.recipe) do
-  if recipe.name ~= "tungsten-processed" then
-    if redmew.has_ingredient(recipe.name, "tungsten-ore") then
-      redmew.replace_ingredient(recipe.name, "tungsten-ore", "tungsten-processed")
+  if recipe.name ~= 'tungsten-processed' then
+    if redmew.has_ingredient(recipe.name, 'tungsten-ore') then
+      redmew.replace_ingredient(recipe.name, 'tungsten-ore', 'tungsten-processed')
     end
   end
 end

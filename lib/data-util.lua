@@ -15,15 +15,15 @@ end
 ---@param coefficient number
 function lib.string.msv(text, coefficient)
   if not text then return nil end
-  local n = string.match(text, "%d+")
-  local s = string.match(text, "%a+")
+  local n = string.match(text, '%d+')
+  local s = string.match(text, '%a+')
   return tostring(tonumber(n) * coefficient) .. s
 end
 local msv = lib.string.msv
 
 ---@param name string
 function lib.string.find_base(name)
-  return string.gsub(name, "^sp%-([1-9][0-9]?)%-", "")
+  return string.gsub(name, '^sp%-([1-9][0-9]?)%-', '')
 end
 
 --=================================================================================================
@@ -47,7 +47,7 @@ local function add_ingredient(recipe, ingredient, quantity, is_fluid)
       end
     end
     if is_fluid then
-      table.insert(recipe.ingredients, {type="fluid", name=ingredient, amount=quantity})
+      table.insert(recipe.ingredients, {type='fluid', name=ingredient, amount=quantity})
     else
       table.insert(recipe.ingredients, {ingredient, quantity})
     end
@@ -55,14 +55,14 @@ local function add_ingredient(recipe, ingredient, quantity, is_fluid)
 end
 
 local function replace_ingredient(recipe, old, new, amount, multiply)
-	if recipe ~= nil and recipe.ingredients ~= nil then
+  if recipe ~= nil and recipe.ingredients ~= nil then
     for i, existing in pairs(recipe.ingredients) do
       if existing[1] == new or existing.name == new then
         return
       end
     end
-		for i, ingredient in pairs(recipe.ingredients) do 
-			if ingredient.name == old then 
+    for i, ingredient in pairs(recipe.ingredients) do 
+      if ingredient.name == old then 
         ingredient.name = new 
         if amount then
           if multiply then
@@ -72,7 +72,7 @@ local function replace_ingredient(recipe, old, new, amount, multiply)
           end
         end
       end
-			if ingredient[1] == old then 
+      if ingredient[1] == old then 
         ingredient[1] = new
         if amount then
           if multiply then
@@ -88,8 +88,8 @@ end
 
 local function remove_ingredient(recipe, old)
   index = -1
-	if recipe ~= nil and recipe.ingredients ~= nil then
-		for i, ingredient in pairs(recipe.ingredients) do 
+  if recipe ~= nil and recipe.ingredients ~= nil then
+    for i, ingredient in pairs(recipe.ingredients) do 
       if ingredient.name == old or ingredient[1] == old then
         index = i
         break
@@ -209,7 +209,7 @@ function lib.add_effect(technology_name, effect)
   local technology = data.raw.technology[technology_name]
   if technology then
     if not technology.effects then technology.effects = {} end
-    if effect and effect.type == "unlock-recipe" then
+    if effect and effect.type == 'unlock-recipe' then
       if not data.raw.recipe[effect.recipe] then
         return
       end
@@ -220,7 +220,7 @@ end
 
 -- ADD an effect to a given technology to unlock recipe
 function lib.add_unlock(technology_name, recipe)
-  lib.add_effect(technology_name, {type="unlock-recipe", recipe=recipe})
+  lib.add_effect(technology_name, {type='unlock-recipe', recipe=recipe})
 end
 
 -- REMOVE recipe unlock effect from a given technology, multiple times if necessary
@@ -229,25 +229,25 @@ function lib.remove_recipe_effect(technology_name, recipe_name)
   local index = -1
   local cnt = 0
   if technology and technology.effects then
-      for i, effect in pairs(technology.effects) do
-          if effect.type == "unlock-recipe" and effect.recipe == recipe_name then
-              index = i
-              cnt = cnt + 1
-          end
+    for i, effect in pairs(technology.effects) do
+      if effect.type == 'unlock-recipe' and effect.recipe == recipe_name then
+        index = i
+        cnt = cnt + 1
       end
-      if index > -1 then
-          table.remove(technology.effects, index)
-          if cnt > 1 then -- not over yet, do it again
-              lib.remove_recipe_effect(technology_name, recipe_name)
-          end
+    end
+    if index > -1 then
+      table.remove(technology.effects, index)
+      if cnt > 1 then -- not over yet, do it again
+        lib.remove_recipe_effect(technology_name, recipe_name)
       end
+    end
   end
 end
 
 -- REMOVE all instances of unlocks for a given recipe
 function lib.remove_all_recipe_effects(recipe_name)
   for name, _ in pairs(data.raw.technology) do
-      lib.remove_recipe_effect(name, recipe_name)
+    lib.remove_recipe_effect(name, recipe_name)
   end
 end
 
@@ -260,7 +260,7 @@ end
 -- ADD recipe to productivity whitelisted limitations
 function lib.whitelist_productivity(recipe_name)
   for _, module in pairs(data.raw.module) do
-    if module.category == "productivity" and module.limitation then
+    if module.category == 'productivity' and module.limitation then
       table.insert(module.limitation, recipe_name)
     end
   end
@@ -269,8 +269,8 @@ end
 -- Returns true if a recipe has an ingredient
 function lib.has_ingredient(recipe_name, ingredient)
   return data.raw.recipe[recipe_name] and (
-        has_ingredient(data.raw.recipe[recipe_name], ingredient) or
-        has_ingredient(data.raw.recipe[recipe_name].normal, ingredient))
+    has_ingredient(data.raw.recipe[recipe_name], ingredient) or
+    has_ingredient(data.raw.recipe[recipe_name].normal, ingredient))
 end
 
 -- ADD a given quantity of ingredient to target recipe
@@ -323,7 +323,7 @@ local function tint_layers(obj, tint)
   if not obj then return end
   if obj.filename then lr_hr_tint(obj, tint) end
   if obj.layers and obj.layers[1] then lr_hr_tint(obj.layers[1], tint) end
-  for _, d in pairs({"north", "east", "south", "west"}) do tint_layers(obj[d], tint) end
+  for _, d in pairs({'north', 'east', 'south', 'west'}) do tint_layers(obj[d], tint) end
 end
 
 local function apply_tint(obj, tint)
@@ -369,9 +369,12 @@ end
 ---@param obj ConfigData
 function lib.make_tier(obj)
   local base = table.deepcopy(data.raw[obj.type][obj._base])
-  if not base then error("Could not find " .. obj.type .. "/" .. obj._base) return end
+  if not base then error('Could not find ' .. obj.type .. '/' .. obj._base) return end
   base.next_upgrade = nil
   r_copy(base, obj)
+  if base.minable and base.minable.result then
+    base.minable.result = base.name
+  end
   if obj._tint and obj._tint ~= false then
     apply_tint(base, obj._tint)
   end
@@ -386,18 +389,15 @@ end
 ---@param multiplier number
 function lib.expensive_robot(source, multiplier)
   for _, e in pairs(data.raw[source]) do
-
     e.max_energy = msv(e.max_energy, multiplier)
     e.charging_energy = msv(e.charging_energy, multiplier)
     e.energy_per_tick = msv(e.energy_per_tick, multiplier)
     e.energy_per_move = msv(e.energy_per_move, multiplier)
     e.recharge_minimum = msv(e.recharge_minimum, multiplier)
-    
     if e.energy_source then
       e.energy_source.buffer_capacity = msv(e.energy_source.buffer_capacity, multiplier)
       e.energy_source.input_flow_limit = msv(e.energy_source.input_flow_limit, multiplier)
     end
-  
   end
 end
 
@@ -407,7 +407,6 @@ function lib.whitelist_waterfill_tiles(tiles_table)
   local waterfill = data.raw['selection-tool']['rm-waterfill']
   if not waterfill then return end
   if not (tiles_table and type(tiles_table) == 'table') then return end
-
   for _, name in pairs(tiles_table) do
     local t = data.raw.tile[name]
     if t then

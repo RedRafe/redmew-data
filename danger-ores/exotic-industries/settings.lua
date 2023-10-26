@@ -1,1 +1,1 @@
-if not SettingsLoader.enabled("do:ei") then return end
+if not SettingsLoader.enabled('do:ei') then return end
