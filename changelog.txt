@@ -1,4 +1,11 @@
 ---------------------------------------------------------------------------------------------------
+Version: 0.1.1
+Date: 2023-10-30
+  Fixes:
+    - Scaled module icons to x0.5 original size to better fit machine's size
+    - Fixed regex for string.MSV function not working correctly with decimal values
+
+---------------------------------------------------------------------------------------------------
 Version: 0.1.0
 Date: 2023-10-24
   Info:
