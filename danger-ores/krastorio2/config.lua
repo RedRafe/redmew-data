@@ -26,7 +26,7 @@ return {
     order = 'c1[assembling-machine-4]',
     crafting_speed = 2,
     energy_usage = '500kW',
-    module_specification = { module_slots = 5, module_info_max_icons_per_row = 5 },
+    module_specification = { module_slots = 5, module_info_max_icons_per_row = 5, module_info_icon_scale = 0.4 },
     fast_replaceable_group = 'assembling-machine',
     energy_source = { emissions_per_minute = 5 },
     _technology = 'automation-4',
@@ -34,14 +34,8 @@ return {
   ['kr-advanced-assembling-machine'] = {
     name = 'kr-advanced-assembling-machine',
     type = 'assembling-machine',
-    module_specification = { module_slots = 6 },
+    module_specification = { module_slots = 6, module_info_icon_scale = 0.5 },
     _technology = 'kr-automation',
-  },
-  ['chemical-plant'] = {
-    name = 'chemical-plant',
-    type = 'assembling-machine',
-    fast_replaceable_group = 'chemical-plant',
-    next_upgrade = 'chemical-plant-2',
   },
   ['chemical-plant'] = {
     name = 'chemical-plant',
@@ -56,14 +50,14 @@ return {
     _tint = COLOR_MK2,
     crafting_speed = 2,
     energy_usage = '420kW',
-    module_specification = { module_slots = 5, module_info_max_icons_per_row = 5 },
+    module_specification = { module_slots = 5, module_info_max_icons_per_row = 5, module_info_icon_scale = 0.4 },
     fast_replaceable_group = 'chemical-plant',
     energy_source = { emissions_per_minute = 10 },
   },
   ['kr-advanced-chemical-plant'] = {
     name = 'kr-advanced-chemical-plant',
     type = 'assembling-machine',
-    module_specification = { module_slots = 6 }
+    module_specification = { module_slots = 6, module_info_icon_scale = 0.5 }
   },
   ['oil-refinery'] = {
     name = 'oil-refinery',
@@ -78,7 +72,7 @@ return {
     _tint = COLOR_MK2,
     crafting_speed = 2,
     energy_usage = '840kW',
-    module_specification = { module_slots = 4 },
+    module_specification = { module_slots = 4, module_info_icon_scale = 0.5 },
     fast_replaceable_group = 'oil-refinery',
     next_upgrade = 'oil-refinery-3',
     energy_source = { emissions_per_minute = 15 },
@@ -90,7 +84,7 @@ return {
     _tint = COLOR_Mk3,
     crafting_speed = 8,
     energy_usage = '1600kW',
-    module_specification = {module_slots = 6},
+    module_specification = { module_slots = 6, module_info_icon_scale = 0.5 },
     fast_replaceable_group = 'oil-refinery',
     energy_source = { emissions_per_minute = 60 },
     _technology = 'kr-advanced-chemical-plant'
@@ -108,7 +102,7 @@ return {
     _tint = COLOR_Mk3,
     crafting_speed = 4,
     energy_usage = '1940kW',
-    module_specification = { module_slots = 4 },
+    module_specification = { module_slots = 4, module_info_icon_scale = 0.5 },
     fast_replaceable_group = 'kr-electrolysis-plant',
     energy_source = { emissions_per_minute = 2.5 },
     _technology = 'kr-advanced-chemical-plant'
@@ -126,7 +120,7 @@ return {
     _tint = COLOR_MK2,
     crafting_speed = 4,
     energy_usage = '905kW',
-    module_specification = { module_slots = 3, module_info_icon_shift = {0, 0.8} },
+    module_specification = { module_slots = 3, module_info_icon_shift = {0, 0.8}, module_info_icon_scale = 0.5 },
     fast_replaceable_group = 'electric-furnace',
     energy_source = { emissions_per_minute = 2.5 },
     _technology = 'advanced-material-processing-3'
