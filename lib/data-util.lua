@@ -15,8 +15,8 @@ end
 ---@param coefficient number
 function lib.string.msv(text, coefficient)
   if not text then return nil end
-  local n = string.match(text, '%d+')
-  local s = string.match(text, '%a+')
+  local n, _ = string.gsub(text, "%a", "")
+  local s = string.match(text, "%a+")
   return tostring(tonumber(n) * coefficient) .. s
 end
 local msv = lib.string.msv
