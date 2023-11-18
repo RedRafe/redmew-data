@@ -1,4 +1,12 @@
 ---------------------------------------------------------------------------------------------------
+Version: 0.1.2
+Date: 2023-11-18
+  Changes:
+    - IR3: added diamond and ruby recipes
+    - IR3: doubled pollution emission for all machines
+  Fixes:
+    - IR3: fixed wood & rubber wood recipes
+---------------------------------------------------------------------------------------------------
 Version: 0.1.1
 Date: 2023-10-30
   Fixes:

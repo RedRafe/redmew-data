@@ -1,3 +1,4 @@
+redmew = require '__redmew-data__.lib.control-util'
 ControlLoader = require '__redmew-data__.lib.loader'
 ControlLoader.init()
 
