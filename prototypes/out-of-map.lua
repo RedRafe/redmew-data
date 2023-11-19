@@ -1,0 +1,1 @@
+data.raw.tile['out-of-map'].pollution_absorption_per_second = 0

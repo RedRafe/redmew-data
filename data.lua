@@ -2,6 +2,7 @@ redmew = require '__redmew-data__.lib.data-util'
 DataLoader = require '__redmew-data__.lib.loader'
 DataLoader.startup()
 
+require 'prototypes.out-of-map'
 require 'prototypes.waterfill'
 
 require 'danger-ores.bz.data'
