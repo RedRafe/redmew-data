@@ -2,6 +2,8 @@ redmew = require '__redmew-data__.lib.data-util'
 DataLoader = require '__redmew-data__.lib.loader'
 DataLoader.startup()
 
+redmew.PALETTE = require 'prototypes.color-palette'
+
 require 'prototypes.out-of-map'
 require 'prototypes.waterfill'
 

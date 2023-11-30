@@ -10,6 +10,40 @@ function lib.string.startsWith(inputstr, start)
   return inputstr:sub(1, #start) == start 
 end
 
+---@param inputstr string
+---@param ending string
+function lib.string.endsWith(inputstr, ending)
+  return ending == "" or inputstr:sub(-#ending) == ending
+end
+
+
+---@param inputstr string
+---@param sub string
+function lib.string.contains(inputstr, sub)
+  return inputstr:find(sub, 1, true) ~= nil
+end
+
+---@param s string
+---@param old string
+---@param new string
+function lib.string.replace(s, old, new)
+  local search_start_idx = 1
+
+  while true do
+      local start_idx, end_idx = s:find(old, search_start_idx, true)
+      if (not start_idx) then
+          break
+      end
+
+      local postfix = s:sub(end_idx + 1)
+      s = s:sub(1, (start_idx - 1)) .. new .. postfix
+
+      search_start_idx = -1 * postfix:len()
+  end
+
+  return s
+end
+
 -- Multiply String Value
 ---@param text string
 ---@param coefficient number
@@ -326,7 +360,7 @@ local function tint_layers(obj, tint)
   for _, d in pairs({'north', 'east', 'south', 'west'}) do tint_layers(obj[d], tint) end
 end
 
-local function apply_tint(obj, tint)
+function apply_tint(obj, tint)
   if not obj or not tint or type(obj) ~= 'table' then return end
   obj.icons = {{ icon = obj.icon, tint = tint }}
   tint_layers(obj.animation, tint)
@@ -414,6 +448,109 @@ function lib.whitelist_waterfill_tiles(tiles_table)
       table.insert(waterfill.alt_tile_filters, name)
     else
       log('Could not whitelist ' .. name)
+    end
+  end
+end
+
+--=================================================================================================
+
+local function hex2rgb(hex)
+  hex = hex:gsub('#','')
+  return {
+    r = tonumber('0x'..hex:sub(1,2)) / 255,
+    g = tonumber('0x'..hex:sub(3,4)) / 255,
+    b = tonumber('0x'..hex:sub(5,6)) / 255,
+    a = tonumber('0x'.. (#hex == 8 and hex:sub(7,8) or 'ff')) / 255
+  }
+end
+
+local function parse_color(color)
+  if type(color) == 'string' then return hex2rgb(color) end
+  local norm = 1
+  if (color.r and color.r > 1) or (color[1] and color[1] > 1) then norm = 255 end
+  return {
+    r = (color.r or color[1]) / norm,
+    g = (color.g or color[2]) / norm,
+    b = (color.b or color[3]) / norm,
+    a = color.a or color[4] or 1
+  }
+end
+
+-- ADD friendly color to a type of prototypes (e.g. radar, roboport...)
+function lib.type_friendly_color(source, color, friendly)
+  local mode = (friendly == false and 'enemy_map_color') or 'friendly_map_color'
+  if not color then return end
+  local c = parse_color(color)
+  local s = data.raw[source]
+  if not s then return end
+  for _, e in pairs(s) do
+    e[mode] = c
+    e.map_color = c
+  end
+end
+
+-- ADD friendly color to a specific entity
+function lib.entity_friendly_color(source, name, color, friendly)
+  local mode = (friendly == false and 'enemy_map_color') or 'friendly_map_color'
+  if not color then return end
+  local c = parse_color(color)
+  local s = data.raw[source]
+  if not s then return end
+  local e = s[name]
+  if not e then return end
+  e[mode] = c
+  e.map_color = c
+end
+
+-- ADD friendly color to all protptypes with that name
+function lib.friendly_color(name, color, friendly)
+  local mode = (friendly == false and 'enemy_map_color') or 'friendly_map_color'
+  if not color then return end
+  local c = parse_color(color)
+  for _, source in pairs({
+    'accumulator',
+    'ammo-turret',
+    'assembling-machine',
+    'beacon',
+    'boiler',
+    'burner-generator',
+    'container',
+    'curved-rail',
+    'electric-energy-interface',
+    'electric-pole',
+    'electric-turret',
+    'fluid-turret',
+    'furnace',
+    'gate',
+    'generator',
+    'heat-pipe',
+    'inserter',
+    'lab',
+    'loader-1x1',
+    'loader',
+    'logistic-container',
+    'mining-drill',
+    'pipe-to-ground',
+    'pipe',
+    'pump',
+    'radar',
+    'rail',
+    'reactor',
+    'roboport',
+    'rocket-silo',
+    'simple-entity',
+    'solar-panel',
+    'splitter',
+    'storage-tank',
+    'transport-belt',
+    'tree',
+    'underground-belt',
+    'wall',
+  }) do
+    local e = data.raw[source] and data.raw[source][name]
+    if e then
+      e[mode] = c
+      e.map_color = c
     end
   end
 end

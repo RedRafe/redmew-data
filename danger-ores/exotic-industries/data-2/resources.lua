@@ -16,6 +16,8 @@ local stack_size = settings.startup['do:ore_stack_size'].value
     'ei_neodym-chunk',
     'ei_sulfur-chunk',
     'ei_uranium-chunk',
+    'ei_poor-copper-chunk',
+    'ei_poor-iron-chunk',
   }
   
   for _, name in pairs(ores) do
