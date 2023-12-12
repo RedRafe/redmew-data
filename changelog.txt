@@ -3,6 +3,8 @@ Version: 0.1.5
 Date: 2023-12-12
   Changes:
     - Added new EI fallback recipes
+    - Added inserter stack bonuses to BZ
+    - Doubled BZ's pollution emissions
 ---------------------------------------------------------------------------------------------------
 Version: 0.1.4
 Date: 2023-11-29

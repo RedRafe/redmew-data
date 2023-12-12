@@ -19,17 +19,3 @@ inserter_capacity_bonus_8.prerequisites = { 'inserter-capacity-bonus-7', 'space-
 
 data:extend{inserter_capacity_bonus_8}
 
---=================================================================================================
-
-for level = 1, 8 do
-  local tech = data.raw['technology']['inserter-capacity-bonus-' .. level]
-  if not tech then
-    goto continue
-  end
-  for key, modifier in pairs(tech.effects or {}) do
-    if modifier.type == 'inserter-stack-size-bonus' then
-      tech.effects[key] = nil
-    end
-  end
-  ::continue::
-end
