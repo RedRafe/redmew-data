@@ -5,7 +5,7 @@ data:extend({
     always_show_made_in = true,
     ingredients = {
       { type = 'item', name = 'stone', amount = 20 },
-      { type = 'fluid', name = 'sulfuric-acid', amount = 10 }
+      { type = 'fluid', name = 'sulfuric-acid', amount = 1 }
     },
     result = 'uranium-ore',
     enabled = false,
