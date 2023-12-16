@@ -92,6 +92,8 @@ local function replace_ingredient(recipe, old, new, amount, multiply)
   if recipe ~= nil and recipe.ingredients ~= nil then
     for i, existing in pairs(recipe.ingredients) do
       if existing[1] == new or existing.name == new then
+        if existing.amount then existing.amount = amount end
+        if existing[2] then existing[2] = amount end
         return
       end
     end
