@@ -10,6 +10,7 @@ data:extend({
 		default_value = 'danger-ores',
 		allowed_values = {
 			'danger-ores',
+			'april-fools',
 		},
 		hidden = false,
 		order = '0',

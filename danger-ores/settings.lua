@@ -6,7 +6,7 @@ data:extend({
 		type = 'bool-setting',
 		setting_type = 'startup',
 		default_value = true,
-		order = 'a'
+		order = 'do:a'
 	},
 	{
 		name = 'do:ore_stack_size',
@@ -15,7 +15,7 @@ data:extend({
 		default_value = 10,
 		minimum_value = 0,
 		maximum_value = 100000,
-		order = 'b'
+		order = 'do:b'
 	},
 	{
 		name = 'do:robot_energy_multipler',
@@ -24,13 +24,13 @@ data:extend({
 		default_value = 10,
 		minimum_value = 1,
 		maximum_value = 100,
-		order = 'c'
+		order = 'do:c'
 	},
 	{
 		name = 'do:robot_energy_multipler_include_construction_robots',
 		type = 'bool-setting',
 		setting_type = 'startup',
 		default_value = false,
-		order = 'd'
+		order = 'do:d'
 	},
 })

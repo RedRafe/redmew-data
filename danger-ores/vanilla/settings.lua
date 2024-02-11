@@ -6,6 +6,6 @@ data:extend({
 		type = 'bool-setting',
 		setting_type = 'startup',
 		default_value = false,
-		order = 'd'
+		order = 'do:e'
 	}
 })

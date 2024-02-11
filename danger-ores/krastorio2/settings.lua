@@ -8,6 +8,6 @@ data:extend({
 		default_value = 0,
 		minimum_value = 0,
 		maximum_value = 100000,
-		order = 'l'
+		order = 'do:l'
 	},
 })
