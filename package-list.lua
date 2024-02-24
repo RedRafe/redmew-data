@@ -5,5 +5,6 @@ return {
   require 'danger-ores.krastorio2.info',
   require 'danger-ores.omnimatter.info',
   require 'danger-ores.pyanodon.info',
+  require 'danger-ores.scrap.info',
   require 'danger-ores.vanilla.info',
 }

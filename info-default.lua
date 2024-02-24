@@ -15,6 +15,7 @@ local function get()
       ['Krastorio2'] = true,
       ['omnilib'] = true,
       ['pypostprocessing'] = true,
+      ['scrap-resource'] = true,
     }
   }
 end

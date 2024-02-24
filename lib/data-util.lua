@@ -60,6 +60,18 @@ function lib.string.find_base(name)
   return string.gsub(name, '^sp%-([1-9][0-9]?)%-', '')
 end
 
+-- ============================================================================
+-- TABLE UTIL LIBRARY
+
+function lib.table_contains(tbl, x)
+  for _, v in pairs(tbl) do
+    if v == x then 
+    return true 
+    end
+  end
+  return false
+end
+
 --=================================================================================================
 
 local function has_ingredient(recipe, ingredient)
