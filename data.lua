@@ -4,8 +4,7 @@ DataLoader.startup()
 
 redmew.PALETTE = require 'prototypes.color-palette'
 
-require 'prototypes.out-of-map'
-require 'prototypes.waterfill'
+require 'danger-ores.data'
 
 require 'danger-ores.bz.data'
 require 'danger-ores.exotic-industries.data'

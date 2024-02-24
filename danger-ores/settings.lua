@@ -1,5 +1,3 @@
-if not SettingsLoader.root_enabled('do:') then return end
-
 data:extend({
 	{
 		name = 'do:enable_waterfill',

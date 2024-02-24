@@ -2,6 +2,7 @@ local Loader = {}
 local package_list = require '__redmew-data__.package-list'
 
 local scenario_ID_list = {
+  ['vanilla']     = 'va:',
   ['danger-ores'] = 'do:',
   ['crash-site']  = 'cs:',
   ['warmonger']   = 'wm:',
@@ -15,6 +16,7 @@ local function get_scenario_ID()
   return false
 end
 
+-- Data stages
 function Loader.startup()
   Loader.packages = package_list
   Loader.permissions = {}
@@ -41,6 +43,7 @@ function Loader.startup()
   log(serpent.block({'Enabled packages:', Loader.permissions }))
 end
 
+-- Control stage
 function Loader.init()
   Loader.packages = {}
   Loader.permissions = {}
@@ -68,12 +71,7 @@ function Loader.enabled(ID)
 end
 
 function Loader.root_enabled(root_ID)
-  for ID, package in pairs(Loader.permissions) do
-    if package and package == true then
-      if redmew.string.startsWith(ID, root_ID) then return true end
-    end
-  end
-  return false
+  return (get_scenario_ID() == root_ID) or false
 end
 
 return Loader

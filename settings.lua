@@ -7,8 +7,9 @@ data:extend({
 		name = 'redmew:scenario',
 		type = 'string-setting',
 		setting_type = 'startup',
-		default_value = 'danger-ores',
+		default_value = 'vanilla',
 		allowed_values = {
+			'vanilla',
 			'danger-ores',
 			'april-fools',
 		},
