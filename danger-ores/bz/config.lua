@@ -152,7 +152,7 @@ return {
     energy_consumption = '20MW',
     target_temperature = 1000,
     energy_source = {
-      max_temperature = 1000,
+      max_temperature = 2000,
       max_transfer = '4GW',
       min_working_temperature = 1000,
       specific_heat = '2MJ',
