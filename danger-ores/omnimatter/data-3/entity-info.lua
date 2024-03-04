@@ -38,7 +38,7 @@ local COLOR_SCHEME = {
 }
 
 local function select_tint_from_name(name)
-  local tier = "default"
+  local tier = 'default'
   if EW(name, '-compressed-compact') then tier = 'compact' end
   if EW(name, '-compressed-nanite') then tier = 'nanite' end
   if EW(name, '-compressed-quantum') then tier = 'quantum' end
