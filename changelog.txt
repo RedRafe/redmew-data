@@ -1,4 +1,9 @@
 ---------------------------------------------------------------------------------------------------
+Version: 0.2.4
+Date: 2024-03-xx
+  Bugfixes:
+    - Fix incorrect basic recycling for 1 output
+---------------------------------------------------------------------------------------------------
 Version: 0.2.3
 Date: 2024-03-04
   Changes:
@@ -21,7 +26,7 @@ Date: 2024-02-24
 ---------------------------------------------------------------------------------------------------
 Version: 0.1.6
 Date: 2023-12-16
-  Fixes:
+  Bugfixes:
     - EI: fix recipes
 ---------------------------------------------------------------------------------------------------
 Version: 0.1.5
@@ -47,12 +52,12 @@ Date: 2023-11-18
   Changes:
     - IR3: added diamond and ruby recipes
     - IR3: doubled pollution emission for all machines
-  Fixes:
+  Bugfixes:
     - IR3: fixed wood & rubber wood recipes
 ---------------------------------------------------------------------------------------------------
 Version: 0.1.1
 Date: 2023-10-30
-  Fixes:
+  Bugfixes:
     - Scaled module icons to x0.5 original size to better fit machine's size
     - Fixed regex for string.MSV function not working correctly with decimal values
 

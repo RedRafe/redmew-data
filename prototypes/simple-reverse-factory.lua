@@ -482,7 +482,7 @@ local function process_recipe(recipe, priority)
   if #no_fluid_ingredients > 0 then
     if (#results == #no_fluid_results) then
       data:extend{ base_recipe }
-    elseif #no_fluid_results > 1 then
+    elseif #no_fluid_results > 0 then
       base_recipe.results = no_fluid_results
       data:extend{ base_recipe }
     end
