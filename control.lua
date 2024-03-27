@@ -17,4 +17,6 @@ handler.add_libraries{
   require 'scripts.waterfill'
 }
 
+require 'april-fools.2024.control'
+
 require 'danger-ores.krastorio2.control'

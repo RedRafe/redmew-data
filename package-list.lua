@@ -1,4 +1,5 @@
 return {
+  require 'april-fools.2024.info',
   require 'danger-ores.bz.info',
   require 'danger-ores.exotic-industries.info',
   require 'danger-ores.industrial-revolution-3.info',

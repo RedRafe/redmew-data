@@ -6,6 +6,8 @@ redmew.PALETTE = require 'prototypes.color-palette'
 
 require 'danger-ores.data'
 
+require 'april-fools.2024.data'
+
 require 'danger-ores.bz.data'
 require 'danger-ores.exotic-industries.data'
 require 'danger-ores.industrial-revolution-3.data'

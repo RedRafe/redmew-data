@@ -45,9 +45,9 @@ end
 
 -- Control stage
 function Loader.init()
-  Loader.packages = {}
+  Loader.packages = package_list
   Loader.permissions = {}
-  local scenario_ID = scenario_ID_list[settings.startup['redmew:scenario'].value]
+  local scenario_ID = get_scenario_ID()
 
   for id, data in pairs(Loader.packages) do
     -- Check dependency
@@ -61,9 +61,13 @@ function Loader.init()
       i = i or (script.active_mods[name] ~= nil)
     end
     -- Check scenario
-    local s = redmew.string.startsWith(data.ID, scenario_ID)
+    local s = true
+    if scenario_ID then
+      s = redmew.string.startsWith(data.ID, scenario_ID)
+    end
     Loader.permissions[data.ID] = d and (not i) and s
   end
+  log(serpent.block({'Enabled packages:', Loader.permissions }))
 end
 
 function Loader.enabled(ID)
