@@ -1,52 +1,68 @@
-local spread_cost = true
-local method = 'uniform' -- 'uniform', 'linear'
-local tiers = 5
-local prefix = 'rd-'
+local tiers = settings.startup['af:24:technology_tiers'].value or 5
 local _copy = table.deepcopy
-
 local new_techs = {}
+tiers = tiers - 1 -- 1st tech is the vanilla one
 
-for _, technology_prototype in pairs(data.raw.techonology) do
-
-  local tech = technology_prototype.normal or technology_prototype
-  local cost = tech.unit.count
-
-  if not cost then
-    goto continue
-  end
-
-  local prerequisites = _copy(tech.prerequisites)
-  local base_icon = tech.icons or { tech.icon }
-  local individual_cost = spread_cost and (math.ceil(cost / tiers)) or cost
-  local iterations = 0
-
-  if method == 'uniform' then
-    iterations = tiers
-  elseif method == 'linear' then
-    iterations = #tech.unit.ingredients
-  end
-
-  for i=1, iterations do
-    local new_tech = _copy(tech)
-    new_tech.name = prefix .. tostring(i) .. '-' .. tech.name
-    new_tech.unit.cost = individual_cost
-
-    if i < iterations then
-      new_tech.prerequisites = { prefix .. tostring(i+1) .. '-' .. tech.name }
-    end
-
-    if i == 1 then
-      -- original tech
-    elseif i ~= iterations then
-      -- middle tech
-      new_tech.name = prefix .. tostring(i) .. '-' .. tech.name
-      new_tech.localised_name = tech.localised_name
-    else
-      -- last tech
-      new_tech.name = prefix .. tostring(i) .. '-' .. tech.name
-      new_tech.localised_name = tech.localised_name
-    end
-  end
-
-  ::continue::
+local prefix = function(name, i)
+  return 'redmew-' .. i .. '-' .. name
 end
+
+local localised_name = function(name)
+  return name:gsub("%-[0-9]", "")
+end
+
+for _, base in pairs(data.raw.technology) do
+  local cost = base.unit.count
+  local max_levels = #(base.unit.ingredients or {})
+  local local_tiers = math.min(max_levels-1, tiers)
+
+  if cost and cost > 0 and max_levels > 1 then
+    local prerequisites = _copy(base.prerequisites)
+    local effects = _copy(base.effects)
+    
+
+    base.prerequisites = nil
+    base.effects = nil
+    base.icons = _copy(base.icons or {{
+      icon = base.icon,
+      icon_size = base.icon_size,
+      icon_mipmaps = base.icon_mipmaps
+    }})
+
+    for i=1, local_tiers do
+      local t = _copy(base)
+
+      t.name = prefix(t.name, i)
+      t.prerequisites = { prefix(base.name, i + 1)}
+      t.localised_name = {'technology-name.' .. localised_name(base.name)}
+      t.localised_description = {'technology-description.' .. localised_name(base.name)}
+      t.unit.count = cost * (local_tiers + 1 - i) / (local_tiers + 1)
+      t.order = prefix(base.order, i)
+
+      if i == local_tiers then
+        t.prerequisites = prerequisites
+      end
+
+      table.insert(t.icons, {
+        icon = '__base__/graphics/icons/signal/signal_'.. (local_tiers+1-i) ..'.png',
+        icon_size = 64,
+        priority = 'medium',
+        shift = { 80 , 80 }
+      })
+
+      table.insert(new_techs, t)
+    end
+
+    base.effects = effects
+    base.prerequisites = { prefix(base.name, 1)}
+    base.order = prefix(base.order, local_tiers+1)
+    table.insert(base.icons, {
+      icon = '__base__/graphics/icons/signal/signal_'.. local_tiers+1  ..'.png',
+      icon_size = 64,
+      priority = 'medium',
+      shift = { 80 , 80 }
+    })
+  end
+end
+
+data:extend(new_techs)

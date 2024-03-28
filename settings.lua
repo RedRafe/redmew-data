@@ -18,6 +18,8 @@ data:extend({
 	},
 })
 
+require 'april-fools.2024.settings'
+
 require 'danger-ores.settings'
 
 require 'danger-ores.bz.settings'
