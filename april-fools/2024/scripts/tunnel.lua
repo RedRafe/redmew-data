@@ -1,6 +1,24 @@
+local pole_type = 'medium-electric-pole'
+
 local function on_init()
   global.tunnels = {}
   global.count = 0 -- UID, must always increase
+end
+
+local function destroy_pole(entity)
+  if not (entity and entity.surface and entity.position) then
+    return
+  end
+
+  local pole = entity.surface.find_entities_filtered{
+    position = entity.position,
+    name = pole_type,
+    radius = 2
+  }
+
+  if pole and pole[1] and pole[1].valid then
+    pole[1].destroy()
+  end
 end
 
 ---@param surface SurfaceIdentification union LuaSurface|string
@@ -36,6 +54,9 @@ local function on_tunnel_built(event)
   local position = entity.position
 
   -- check other surface
+  dst.request_to_generate_chunks(position, 1)
+  dst.force_generate_chunk_requests()
+
   if dst.can_place_entity{name = 'tunnel', position = position} then
     local dst_entity = dst.create_entity{
       name = 'tunnel',
@@ -53,6 +74,33 @@ local function on_tunnel_built(event)
     }
     entity.link_id = global.count
     dst_entity.link_id = global.count
+
+    local src_pole = src.create_entity{
+      name = pole_type,
+      force = entity.force,
+      position = entity.position,
+    }
+
+    local dst_pole = dst.create_entity{
+      name = pole_type,
+      force = entity.force,
+      position = entity.position,
+    }
+
+    src_pole.connect_neighbour(dst_pole)
+    src_pole.connect_neighbour({
+      wire = defines.wire_type.red,
+      target_entity = dst_pole
+    })
+    src_pole.connect_neighbour({
+      wire = defines.wire_type.green,
+      target_entity = dst_pole
+    })
+
+    src_pole.destructible = false
+    src_pole.minable = false
+    dst_pole.destructible = false
+    dst_pole.minable = false
 
     game.print({'alert.tunnel_built', position.x, position.y, src.name, dst.name})
   else
@@ -95,6 +143,8 @@ local function on_tunnel_mined(event)
   local dst = get_opposite_surface(src)
   local position = entity.position
 
+  destroy_pole(entity)
+
   game.print({'alert.tunnel_destroy', position.x, position.y, src.name, dst.name})
 
   -- destroy linked tunnel
@@ -102,6 +152,7 @@ local function on_tunnel_mined(event)
   local tunnels = global.tunnels[id]
   local dst_entity = tunnels[dst.name]
   if dst_entity and dst_entity.valid then
+    destroy_pole(dst_entity)
     dst_entity.destroy()
   end
 
@@ -118,6 +169,8 @@ local function on_tunnel_destroyed(event)
   local dst = get_opposite_surface(src)
   local position = entity.position
 
+  destroy_pole(entity)
+
   game.print({'alert.tunnel_destroy', position.x, position.y, src.name, dst.name})
 
   -- destroy linked tunnel
@@ -125,6 +178,7 @@ local function on_tunnel_destroyed(event)
   local tunnels = global.tunnels[id]
   local dst_entity = tunnels[dst.name]
   if dst_entity and dst_entity.valid then
+    destroy_pole(dst_entity)
     dst_entity.destroy()
   end
 
