@@ -102,11 +102,13 @@ data:extend({
     name = 'tunnel',
     type = 'recipe',
     ingredients = {
-      {'iron-plate', 20},
-      {'iron-gear-wheel', 20},
-      {'electronic-circuit', 20},
+      {'copper-plate', 140},
+      {'steel-plate', 75},
+      {'refined-concrete', 500},
     },
     result = 'tunnel',
-    enabled = true,
+    enabled = false,
   }
 })
+
+redmew.add_unlock('rocket-silo', 'tunnel')
