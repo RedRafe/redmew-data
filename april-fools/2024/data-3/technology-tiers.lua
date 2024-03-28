@@ -37,7 +37,7 @@ for _, base in pairs(data.raw.technology) do
       t.localised_name = {'technology-name.' .. localised_name(base.name)}
       t.localised_description = {'technology-description.' .. localised_name(base.name)}
       t.unit.count = cost * (local_tiers + 1 - i) / (local_tiers + 1)
-      t.order = prefix(base.order, i)
+      t.order = prefix(base.order or '', i)
 
       if i == local_tiers then
         t.prerequisites = prerequisites
@@ -55,7 +55,7 @@ for _, base in pairs(data.raw.technology) do
 
     base.effects = effects
     base.prerequisites = { prefix(base.name, 1)}
-    base.order = prefix(base.order, local_tiers+1)
+    base.order = prefix(base.order or '', local_tiers+1)
     table.insert(base.icons, {
       icon = '__base__/graphics/icons/signal/signal_'.. local_tiers+1  ..'.png',
       icon_size = 64,

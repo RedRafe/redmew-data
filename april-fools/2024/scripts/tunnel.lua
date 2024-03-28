@@ -37,7 +37,7 @@ local function get_opposite_surface(surface)
 end
 
 local function on_tunnel_built(event)
-  local entity = event.created_entity
+  local entity = event.created_entity or event.entity
   if not (entity and entity.valid and entity.name == 'tunnel') then
     return
   end
@@ -150,6 +150,10 @@ local function on_tunnel_mined(event)
   -- destroy linked tunnel
   local id = entity.link_id
   local tunnels = global.tunnels[id]
+  if not tunnels then
+    return
+  end
+
   local dst_entity = tunnels[dst.name]
   if dst_entity and dst_entity.valid then
     destroy_pole(dst_entity)
