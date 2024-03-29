@@ -25,8 +25,19 @@ local function on_lua_shortcut(event)
   end
 
   local src = player.surface
-  local dst = get_opposite_surface(src)
   local src_pos = player.position
+
+  if (shortcut == 'teleport-up' and src.name == 'islands') or (shortcut == 'teleport-down' and src.name == 'mines') then
+    player.create_local_flying_text{
+      text = 'You are already on the correct surface',
+      position = src_pos,
+      color = player.color,
+    }
+    player.play_sound{path = 'utility/cannot_build'}
+    return
+  end
+
+  local dst = get_opposite_surface(src)
   local dst_pos = dst.find_non_colliding_position('character', src_pos, 7, 1)
 
   if dst_pos then
@@ -37,7 +48,7 @@ local function on_lua_shortcut(event)
       position = src_pos,
       color = player.color,
     }
-    player.play_sound{path = 'utility/cannot_build' }
+    player.play_sound{path = 'utility/cannot_build'}
   end
 end
 
