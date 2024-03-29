@@ -37,7 +37,7 @@ local function on_lua_shortcut(event)
       position = src_pos,
       color = player.color,
     }
-    player.play_sound{path = 'utility/cannot-build' }
+    player.play_sound{path = 'utility/cannot_build' }
   end
 end
 
