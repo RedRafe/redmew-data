@@ -10,3 +10,6 @@ data.raw['transport-belt']['express-transport-belt'].speed = 0.125
 data.raw['underground-belt']['express-underground-belt'].speed = 0.125
 data.raw['splitter']['express-splitter'].speed = 0.125
 data.raw['loader']['express-loader'].speed = 0.125
+if mods ['aai-loaders'] then
+  data.raw['loader-1x1']['aai-express-loader'].speed = 0.125
+end
