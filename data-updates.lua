@@ -9,3 +9,5 @@ require 'danger-ores.omnimatter.data-updates'
 require 'danger-ores.pyanodon.data-updates'
 require 'danger-ores.scrap.data-updates'
 require 'danger-ores.vanilla.data-updates'
+
+require 'frontier.zombies-extended.data-updates'

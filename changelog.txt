@@ -1,4 +1,11 @@
 ---------------------------------------------------------------------------------------------------
+Version: 0.4.0
+Date: 2024-08-12
+  Changes:
+    - Fixed redmew.remove_research_ingredient
+    - Added Frontier scenario data
+    - [FR:ZombieExtended] Added support for Zombie Extended
+---------------------------------------------------------------------------------------------------
 Version: 0.3.2
 Date: 2024-07-21
   Changes:

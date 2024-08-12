@@ -16,6 +16,7 @@ local function get()
       ['omnilib'] = true,
       ['pypostprocessing'] = true,
       ['scrap-resource'] = true,
+      ['zombiesextended-core'] = true,
     }
   }
 end

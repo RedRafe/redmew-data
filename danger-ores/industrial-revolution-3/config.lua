@@ -11,7 +11,7 @@ return {
     type = 'assembling-machine',
     _base = 'iron-forestry',
     next_upgrade = 'do:chrome-forestry',
-      localised_name = { 'entity-name.chrome-forestry' }
+    localised_name = { 'entity-name.chrome-forestry' }
   },
   ['do:chrome-forestry'] = {
     name = 'do:chrome-forestry',

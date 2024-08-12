@@ -16,3 +16,5 @@ require 'danger-ores.omnimatter.data'
 require 'danger-ores.pyanodon.data'
 require 'danger-ores.scrap.data'
 require 'danger-ores.vanilla.data'
+
+require 'frontier.zombies-extended.data'

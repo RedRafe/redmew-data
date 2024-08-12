@@ -200,6 +200,7 @@ end
 -- ADD a prerequisite to a given technology
 function lib.add_prerequisite(tech_name, prerequisite)
   local technology = data.raw.technology[tech_name]
+  if not technology then return end
   for _, name in pairs(technology.prerequisites) do
     if name == prerequisite then
       return
@@ -217,17 +218,20 @@ end
 -- REMOVE a prerequisite from a given tech
 function lib.remove_prerequisite(tech_name, prerequisite)
   local technology = data.raw.technology[tech_name]
-  if not technology then error(tech_name) end
+  if not technology then return end
   for i, name in pairs(technology.prerequisites or {}) do
     if name == prerequisite then
       table.remove(technology.prerequisites, i)
+      return true
     end
   end
+  return false
 end
 
 -- ADD science pack to a given tech
 function lib.add_research_ingredient(tech_name, ingredient)
   local technology = data.raw.technology[tech_name]
+  if not technology then return end
   for _, name in pairs(technology.unit.ingredients) do
     if name[1] == ingredient then
       return
@@ -242,11 +246,15 @@ function lib.replace_research_ingredient(tech_name, old, new)
   lib.add_research_ingredient(tech_name, new)
 end
 
--- REMOVE science pack to a given tech
+-- REMOVE science pack from a given tech
 function lib.remove_research_ingredient(tech_name, ingredient)
   local technology = data.raw.technology[tech_name]
-  for i, name in pairs(technology.unit.ingredients) do
-    if name[1] == ingredient then
+  if not technology then return end
+  for i, v in pairs(technology.unit.ingredients) do
+    if v[1] and v[1] == ingredient then
+      table.remove(technology.unit.ingredients, i)
+    end
+    if v.name and v.name == ingredient then
       table.remove(technology.unit.ingredients, i)
     end
   end
@@ -255,14 +263,13 @@ end
 -- ADD an effect to a given technology
 function lib.add_effect(technology_name, effect)
   local technology = data.raw.technology[technology_name]
-  if technology then
-    if not technology.effects then technology.effects = {} end
-    if effect and effect.type == 'unlock-recipe' then
-      if not data.raw.recipe[effect.recipe] then
-        return
-      end
-      table.insert(technology.effects, effect)
+  if not technology then return end
+  if not technology.effects then technology.effects = {} end
+  if effect and effect.type == 'unlock-recipe' then
+    if not data.raw.recipe[effect.recipe] then
+      return
     end
+    table.insert(technology.effects, effect)
   end
 end
 
@@ -274,6 +281,7 @@ end
 -- REMOVE recipe unlock effect from a given technology, multiple times if necessary
 function lib.remove_recipe_effect(technology_name, recipe_name)
   local technology = data.raw.technology[technology_name]
+  if not technology then return end
   local index = -1
   local cnt = 0
   if technology and technology.effects then

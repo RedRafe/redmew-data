@@ -12,6 +12,7 @@ data:extend({
 			'vanilla',
 			'danger-ores',
 			'april-fools',
+			'frontier',
 		},
 		hidden = false,
 		order = '0',
@@ -29,3 +30,5 @@ require 'danger-ores.krastorio2.settings'
 require 'danger-ores.omnimatter.settings'
 require 'danger-ores.pyanodon.settings'
 require 'danger-ores.vanilla.settings'
+
+require 'frontier.zombies-extended.settings'
