@@ -3,6 +3,7 @@ DataLoader = require '__redmew-data__.lib.loader'
 DataLoader.startup()
 
 redmew.PALETTE = require 'prototypes.color-palette'
+require 'prototypes.utility-sprites'
 
 require 'danger-ores.data'
 

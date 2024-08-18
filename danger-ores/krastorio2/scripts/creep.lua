@@ -106,7 +106,6 @@ end
 local Creep = {}
 
 Creep.on_init = setup
-Creep.on_load = setup
 
 Creep.on_nth_tick = { 
   [60] = on_nth_tick
