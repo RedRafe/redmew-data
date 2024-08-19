@@ -60,7 +60,7 @@ local function on_chunk_charted(e)
 end
 
 --- @param area BoundingBox
---- @param positio MapPosition
+--- @param position MapPosition
 --- @param surface LuaSurface
 --- @param name defines.events.on_chunk_generated
 --- @param tick uint
@@ -106,6 +106,7 @@ end
 local Creep = {}
 
 Creep.on_init = setup
+Creep.on_configuration_changed = setup
 
 Creep.on_nth_tick = { 
   [60] = on_nth_tick
