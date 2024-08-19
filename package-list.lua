@@ -8,5 +8,6 @@ return {
   require 'danger-ores.pyanodon.info',
   require 'danger-ores.scrap.info',
   require 'danger-ores.vanilla.info',
+  require 'frontier.krastorio2.info',
   require 'frontier.zombies-extended.info',
 }

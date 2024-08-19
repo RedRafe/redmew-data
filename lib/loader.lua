@@ -7,6 +7,7 @@ local scenario_ID_list = {
   ['crash-site']  = 'cs:',
   ['warmonger']   = 'wm:',
   ['april-fools'] = 'af:',
+  ['frontier']    = 'fr:',
 }
 
 local function get_scenario_ID()

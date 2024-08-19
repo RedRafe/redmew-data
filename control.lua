@@ -18,5 +18,5 @@ handler.add_libraries{
 }
 
 require 'april-fools.2024.control'
-
+require 'frontier.krastorio2.control'
 require 'danger-ores.krastorio2.control'

@@ -10,4 +10,5 @@ require 'danger-ores.pyanodon.data-updates'
 require 'danger-ores.scrap.data-updates'
 require 'danger-ores.vanilla.data-updates'
 
+require 'frontier.krastorio2.data-updates'
 require 'frontier.zombies-extended.data-updates'

@@ -18,4 +18,5 @@ require 'danger-ores.pyanodon.data'
 require 'danger-ores.scrap.data'
 require 'danger-ores.vanilla.data'
 
+require 'frontier.krastorio2.data'
 require 'frontier.zombies-extended.data'

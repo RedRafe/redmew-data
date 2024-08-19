@@ -11,4 +11,5 @@ require 'danger-ores.pyanodon.data-final-fixes'
 require 'danger-ores.scrap.data-final-fixes'
 require 'danger-ores.vanilla.data-final-fixes'
 
+require 'frontier.krastorio2.data-final-fixes'
 require 'frontier.zombies-extended.data-final-fixes'
