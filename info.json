@@ -1,13 +1,13 @@
 {
   "name": "redmew-data",
-  "version": "0.5.1",
+  "version": "1.0.0",
   "title": "RedMew Data",
   "author": "RedRafe",
   "source": "https://github.com/RedRafe/redmew-data",
   "homepage": "https://mods.factorio.com/user/RedRafe",
-  "factorio_version": "1.1",
+  "factorio_version": "2.0",
   "dependencies": [
-    "base >= 1.1.0",
+    "base >= 2.0.0",
     "? bzcarbon",
     "? bzgold",
     "? bztitanium",
