@@ -4,7 +4,7 @@ SettingsLoader.startup()
 
 data:extend({
 	{
-		name = 'redmew:scenario',
+		name = 'redmew_scenario',
 		type = 'string-setting',
 		setting_type = 'startup',
 		default_value = 'vanilla',

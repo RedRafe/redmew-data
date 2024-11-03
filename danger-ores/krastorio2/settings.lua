@@ -2,7 +2,7 @@ if not SettingsLoader.enabled('do:k2') then return end
 
 data:extend({
 	{
-		name = 'do:k2:win_condition',
+		name = 'do_k2_win_condition',
 		type = 'int-setting',
 		setting_type = 'startup',
 		default_value = 0,

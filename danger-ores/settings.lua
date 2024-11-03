@@ -1,13 +1,13 @@
 data:extend({
 	{
-		name = 'do:enable_waterfill',
+		name = 'do_enable_waterfill',
 		type = 'bool-setting',
 		setting_type = 'startup',
 		default_value = true,
 		order = 'do:a'
 	},
 	{
-		name = 'do:ore_stack_size',
+		name = 'do_ore_stack_size',
 		type = 'int-setting',
 		setting_type = 'startup',
 		default_value = 10,
@@ -16,7 +16,7 @@ data:extend({
 		order = 'do:b'
 	},
 	{
-		name = 'do:robot_energy_multipler',
+		name = 'do_robot_energy_multiplier',
 		type = 'int-setting',
 		setting_type = 'startup',
 		default_value = 10,
@@ -25,7 +25,7 @@ data:extend({
 		order = 'do:c'
 	},
 	{
-		name = 'do:robot_energy_multipler_include_construction_robots',
+		name = 'do_robot_energy_multiplier_include_construction_robots',
 		type = 'bool-setting',
 		setting_type = 'startup',
 		default_value = false,

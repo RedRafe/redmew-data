@@ -1,4 +1,4 @@
-if not settings.startup['do:py:flatten_technology_cost'].value then return end
+if not settings.startup['do_py_flatten_technology_cost'].value then return end
 
 local function flatten_cost(tech)
   if not (tech and tech.unit and tech.unit.ingredients) then

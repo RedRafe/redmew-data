@@ -11,8 +11,8 @@ local scenario_ID_list = {
 }
 
 local function get_scenario_ID()
-  if settings and settings.startup['redmew:scenario'] then
-    return scenario_ID_list[settings.startup['redmew:scenario'].value]
+  if settings and settings.startup['redmew_scenario'] then
+    return scenario_ID_list[settings.startup['redmew_scenario'].value]
   end
   return false
 end

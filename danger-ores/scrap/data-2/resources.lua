@@ -1,4 +1,4 @@
-local stack_size = settings.startup['do:ore_stack_size'].value
+local stack_size = settings.startup['do_ore_stack_size'].value
 
 if stack_size == 0 then return end
 

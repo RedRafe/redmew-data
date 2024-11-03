@@ -1,8 +1,8 @@
 local pole_type = 'medium-electric-pole'
 
 local function on_init()
-  global.tunnels = {}
-  global.count = 0 -- UID, must always increase
+  storage.tunnels = {}
+  storage.count = 0 -- UID, must always increase
 end
 
 local function destroy_pole(entity)
@@ -67,13 +67,13 @@ local function on_tunnel_built(event)
       move_stuck_players = true
     }
 
-    global.count = global.count + 1
-    global.tunnels[global.count] = {
+    storage.count = storage.count + 1
+    storage.tunnels[storage.count] = {
       [src.name] = entity,
       [dst.name] = dst_entity,
     }
-    entity.link_id = global.count
-    dst_entity.link_id = global.count
+    entity.link_id = storage.count
+    dst_entity.link_id = storage.count
 
     local src_pole = src.create_entity{
       name = pole_type,
@@ -149,7 +149,7 @@ local function on_tunnel_mined(event)
 
   -- destroy linked tunnel
   local id = entity.link_id
-  local tunnels = global.tunnels[id]
+  local tunnels = storage.tunnels[id]
   if not tunnels then
     return
   end
@@ -160,7 +160,7 @@ local function on_tunnel_mined(event)
     dst_entity.destroy()
   end
 
-  global.tunnels[id] = nil
+  storage.tunnels[id] = nil
 end
 
 local function on_tunnel_destroyed(event)
@@ -179,14 +179,14 @@ local function on_tunnel_destroyed(event)
 
   -- destroy linked tunnel
   local id = entity.link_id
-  local tunnels = global.tunnels[id]
+  local tunnels = storage.tunnels[id]
   local dst_entity = tunnels[dst.name]
   if dst_entity and dst_entity.valid then
     destroy_pole(dst_entity)
     dst_entity.destroy()
   end
 
-  global.tunnels[id] = nil
+  storage.tunnels[id] = nil
 end
 
 --=================================================================================================

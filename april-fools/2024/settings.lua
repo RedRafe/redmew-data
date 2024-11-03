@@ -2,7 +2,7 @@ if not SettingsLoader.enabled('af:24') then return end
 
 data:extend({
 	{
-		name = 'af:24:technology_tiers',
+		name = 'af_24_technology_tiers',
 		type = 'int-setting',
 		setting_type = 'startup',
 		default_value = 5,

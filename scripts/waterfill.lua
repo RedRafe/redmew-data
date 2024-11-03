@@ -24,7 +24,10 @@ local function edit(e)
     local item = e.item
     if not player then return end
     if not (e.item == 'rm-waterfill') then return end
-    if player.online_time < TRUSTED_TIME then flying_error(player, {'waterfill.trusted'}) return end
+    if not player.admin and player.online_time < TRUSTED_TIME then
+      flying_error(player, {'waterfill.trusted'})
+      return
+    end
 
     local area = e.area
     local pos = player.position
@@ -64,7 +67,7 @@ Waterfill.events = {
   [defines.events.on_player_alt_selected_area] = edit,
 }
 
-if settings.startup['do:enable_waterfill'] and settings.startup['do:enable_waterfill'].value then
+if settings.startup['do_enable_waterfill'] and settings.startup['do_enable_waterfill'].value then
   return Waterfill
 else
   return {}

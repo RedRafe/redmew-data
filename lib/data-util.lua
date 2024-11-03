@@ -466,8 +466,8 @@ function lib.whitelist_waterfill_tiles(tiles_table)
   for _, name in pairs(tiles_table) do
     local t = data.raw.tile[name]
     if t then
-      table.insert(waterfill.tile_filters, name)
-      table.insert(waterfill.alt_tile_filters, name)
+      table.insert(waterfill.select.tile_filters, name)
+      table.insert(waterfill.alt_select.tile_filters, name)
     else
       log('Could not whitelist ' .. name)
     end

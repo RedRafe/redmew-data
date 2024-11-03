@@ -1,28 +1,39 @@
-if not (settings.startup['do:enable_waterfill'] and settings.startup['do:enable_waterfill'].value) then return end
+if not (settings.startup['do_enable_waterfill'] and settings.startup['do_enable_waterfill'].value) then return end
 
-local factory_tiles = function() 
+local selection_mode = function(color)
   return {
-    'landfill',
-    'stone-path',
-    'concrete',
-    'hazard-concrete-left',
-    'hazard-concrete-right',
-    'refined-concrete',
-    'refined-hazard-concrete-left',
-    'refined-hazard-concrete-right',
+    border_color = color,
+    cursor_box_type = 'copy',
+    mode = { 'any-tile', 'deconstruct' },
+    tile_filter_mode = 'whitelist',
+    tile_filters = {
+      'landfill',
+      'stone-path',
+      'concrete',
+      'hazard-concrete-left',
+      'hazard-concrete-right',
+      'refined-concrete',
+      'refined-hazard-concrete-left',
+      'refined-hazard-concrete-right',
+    },
   }
 end
 
 data:extend({
   {
+    type = 'custom-input',
+    name = 'rm-waterfill',
+    key_sequence = 'SHIFT + ALT + J',
+    action = 'spawn-item',
+    item_to_spawn = 'rm-waterfill',
+  },
+  {
     type = 'shortcut',
     name = 'rm-waterfill',
-    icon = {
-      filename = '__redmew-data__/graphics/icons/waterfill.png',
-      size = 128,
-      mipmap_count = 1,
-      flags = { 'gui-icon' },
-    },
+    icon = '__redmew-data__/graphics/icons/waterfill.png',
+    icon_size = 128,
+    small_icon = '__redmew-data__/graphics/icons/waterfill.png',
+    small_icon_size = 128,
     action = 'spawn-item',
     item_to_spawn = 'rm-waterfill',
     associated_control_input = 'rm-waterfill',
@@ -31,29 +42,15 @@ data:extend({
   {
     type = 'selection-tool',
     name = 'rm-waterfill',
-    icon = '__base__/graphics/icons/shortcut-toolbar/mip/new-deconstruction-planner-x32-white.png',
+    icon = '__base__/graphics/icons/deconstruction-planner.png',
     icon_size = 32,
     icon_mipmaps = 2,
-    flags = { 'hidden', 'not-stackable', 'spawnable', 'only-in-cursor' },
+    flags = { 'not-stackable', 'spawnable', 'only-in-cursor' },
+    style = 'red',
+    hidden = true,
     stack_size = 1,
-    selection_color = { r = 0, g = 1, b = 1 },
-    alt_selection_color = { r = 0, g = 1, b = 1 },
-    selection_mode = { 'any-tile' },
-    alt_selection_mode = { 'any-tile' },
-    selection_cursor_box_type = 'not-allowed',
-    alt_selection_cursor_box_type = 'not-allowed',
     always_include_tiles = true,
-    show_in_library = false,
-    tile_filters = factory_tiles(),
-    alt_tile_filters = factory_tiles(),
-    tile_filter_mode = 'whitelist',
-    alt_tile_filter_mode = 'whitelist',
-  },
-  {
-    type = 'custom-input',
-    name = 'rm-waterfill',
-    key_sequence = 'SHIFT + ALT + J',
-    action = 'spawn-item',
-    item_to_spawn = 'rm-waterfill',
+    select = selection_mode({ r = 0, g = 1, b = 1 }),
+    alt_select = selection_mode({ r = 0, g = 1, b = 1 }),
   },
 })

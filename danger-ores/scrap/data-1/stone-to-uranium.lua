@@ -7,7 +7,7 @@ data:extend({
       { type = 'item', name = 'stone', amount = 20 },
       { type = 'fluid', name = 'sulfuric-acid', amount = 10 }
     },
-    result = 'uranium-ore',
+    results = {{ type = 'item', name = 'uranium-ore', amount = 1 }},
     enabled = false,
     energy_required = 1,
     category = 'crafting-with-fluid',

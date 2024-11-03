@@ -7,8 +7,8 @@ local MIN_R, MAX_R = 5, 7
 local SPAWN_X = 11 * 32 + 96
 
 remote.add_interface('redmew-data', {
-  get_spawn_x = function() return global.spawn_x end,
-  set_spawn_x = function(x) global.spawn_x = x end,
+  get_spawn_x = function() return storage.spawn_x end,
+  set_spawn_x = function(x) storage.spawn_x = x end,
 })
 
 --- @param entities LuaEntity[]
@@ -19,7 +19,7 @@ local function generate_creep(entities)
   local i = 0
   for _, entity in pairs(entities) do
     for _, tile in pairs(surface.find_tiles_filtered({ position = entity.position, radius = radius })) do
-      if not tile.collides_with('player-layer') and tile.position.x > global.spawn_x then
+      if not tile.collides_with('player-layer') and tile.position.x > storage.spawn_x then
         i = i + 1
         to_add[i] = { name = 'kr-creep', position = tile.position }
       end
@@ -29,13 +29,13 @@ local function generate_creep(entities)
 end
 
 local function setup()
-  global.chunk = global.chunk or {}
-  global.queue = global.queue or {}
-  global.spawn_x = global.spawn_x or SPAWN_X
+  storage.chunk = storage.chunk or {}
+  storage.queue = storage.queue or {}
+  storage.spawn_x = storage.spawn_x or SPAWN_X
 end
 
 local function on_nth_tick()
-  for x, _gq in pairs(global.queue) do
+  for x, _gq in pairs(storage.queue) do
     for y, i_surface in pairs(_gq) do
       local area = { left_top = { x=32*x, y=32*y }, right_bottom = { x=32*x+32, y=32*y+32} }
       local entities = game.get_surface(i_surface).find_entities_filtered({ type = { 'unit-spawner' }, area = area, force = 'enemy' })
@@ -44,9 +44,9 @@ local function on_nth_tick()
           generate_creep({ entity })
         end
       end
-      global.queue[x][y] = nil
-      global.chunk[x] = global.chunk[x] or {}
-      global.chunk[x][y] = (global.chunk[x][y] or 0) + 1
+      storage.queue[x][y] = nil
+      storage.chunk[x] = storage.chunk[x] or {}
+      storage.chunk[x][y] = (storage.chunk[x][y] or 0) + 1
     end
   end
 end
@@ -59,11 +59,11 @@ local function on_chunk_charted(e)
   if not position then error() end
   local x, y = position.x or position[1], position.y or position[2]
 
-  if (global.chunk[x] and global.chunk[x][y] and (global.chunk[x][y] > SCAN_LIMIT)) then return 
-  elseif (global.queue[x] and global.queue[x][y]) then return 
+  if (storage.chunk[x] and storage.chunk[x][y] and (storage.chunk[x][y] > SCAN_LIMIT)) then return 
+  elseif (storage.queue[x] and storage.queue[x][y]) then return 
   else 
-    global.queue[x] = global.queue[x] or {}
-    global.queue[x][y] = e.surface_index
+    storage.queue[x] = storage.queue[x] or {}
+    storage.queue[x][y] = e.surface_index
   end
 end
 

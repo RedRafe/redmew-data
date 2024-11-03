@@ -7,7 +7,7 @@ local T1 = 'deadlock-stacking-1'
 local T2 = 'deadlock-stacking-2'
 local T3 = 'deadlock-stacking-3'
 
-local ore_stack_size = settings.startup['do:ore_stack_size'].value or 10
+local ore_stack_size = settings.startup['do_ore_stack_size'].value or 10
 for _, resource_name in pairs({'iron-ore', 'copper-ore'}) do
   data.raw.item[resource_name].stack_size = ore_stack_size
 end

@@ -1,4 +1,4 @@
-local tiers = settings.startup['af:24:technology_tiers'].value or 5
+local tiers = settings.startup['af_24_technology_tiers'].value or 5
 local _copy = table.deepcopy
 local new_techs = {}
 tiers = tiers - 1 -- 1st tech is the vanilla one

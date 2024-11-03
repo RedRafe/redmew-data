@@ -14,10 +14,10 @@ local ait = data.raw['electric-energy-interface']['kr-activated-intergalactic-tr
 if not ait.created_effect then ait.created_effect = {} end
 table.insert(ait.created_effect, effect)
 
-if settings.startup['do:k2:win_condition'].value ~= 0 then
+if settings.startup['do_k2_win_condition'].value ~= 0 then
   local LAB_PRODUCTIVITY = 1.4
   local ASSEMBLER_PRODUCTIVITY = 1.4
-  local ROCKET_LAUNCHES = settings.startup['do:k2:win_condition'].value or 1000
+  local ROCKET_LAUNCHES = settings.startup['do_k2_win_condition'].value or 1000
   local SPACE_DATA_PER_ROCKET = 2000
 
   local tech = data.raw.technology['kr-intergalactic-transceiver']

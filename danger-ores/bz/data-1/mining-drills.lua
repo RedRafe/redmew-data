@@ -2,7 +2,7 @@ local emd1 = redmew.config['electric-mining-drill']
 local emd2 = redmew.config['electric-mining-drill-2']
 local emd3 = redmew.config['electric-mining-drill-3']
 
-if settings.startup['do:bz:cheaper_electric_drills'].value then
+if settings.startup['do_bz_cheaper_electric_drills'].value then
   -- Mk.2
   emd2._ingredients = {
     { 'electric-mining-drill', 1 },
