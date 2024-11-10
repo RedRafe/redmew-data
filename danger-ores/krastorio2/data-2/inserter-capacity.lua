@@ -5,12 +5,12 @@ inserter_capacity_bonus_8.unit = {
   count_formula = '2^(L-7)*600',
   ingredients =
   {
-    {'production-science-pack', 1},
-    {'utility-science-pack', 1},
-    {'space-science-pack', 1},
-    {'matter-tech-card', 1},
-    {'advanced-tech-card', 1},
-    {'singularity-tech-card', 1}
+    { 'production-science-pack', 1 },
+    { 'utility-science-pack', 1 },
+    { 'space-science-pack', 1 },
+    { 'matter-tech-card', 1 },
+    { 'advanced-tech-card', 1 },
+    { 'singularity-tech-card', 1 },
   },
   time = 30
 }

@@ -10,7 +10,7 @@ inserter_capacity_bonus_8.unit = {
     { 'chemical-science-pack', 1 },
     { 'production-science-pack', 1 },
     { 'utility-science-pack', 1 },
-    { 'space-science-pack', 1 }
+    { 'space-science-pack', 1 },
   },
   time = 30
 }
@@ -28,7 +28,7 @@ for level = 1, 8 do
   end
   for key, modifier in pairs(tech.effects or {}) do
     if modifier.type == 'inserter-stack-size-bonus' then
-      tech.effects[key] = nil
+      table.remove(tech.effects, key)
     end
   end
   ::continue::

@@ -7,8 +7,8 @@ local stacked_recipes = {
     name = 'stacked-iron-plate',
     category = 'smelting',
     energy_required = 3.2 * stack_size,
-    ingredients = {{'deadlock-stack-iron-ore', 1}},
-    result = 'deadlock-stack-iron-plate',
+    ingredients = {{ type = 'item', name = 'deadlock-stack-iron-ore', amount = 1 }},
+    results = {{ type = 'item', name = 'deadlock-stack-iron-plate', amount = 1 }},
     _technology = 'deadlock-stacking-1'
   },
   -- stacked_copper_plate
@@ -17,8 +17,8 @@ local stacked_recipes = {
     name = 'stacked-copper-plate',
     category = 'smelting',
     energy_required = 3.2 * stack_size,
-    ingredients = {{'deadlock-stack-copper-ore', 1}},
-    result = 'deadlock-stack-copper-plate',
+    ingredients = {{ type = 'item', name = 'deadlock-stack-copper-ore', amount = 1 }},
+    results = {{ type = 'item', name = 'deadlock-stack-copper-plate', amount = 1 }},
     _technology = 'deadlock-stacking-1'
   },
   -- stacked_steel_plate
@@ -27,8 +27,8 @@ local stacked_recipes = {
     name = 'stacked-steel-plate',
     category = 'smelting',
     energy_required = 16 * stack_size,
-    ingredients = {{'deadlock-stack-iron-plate', 5}},
-    result = 'deadlock-stack-steel-plate',
+    ingredients = {{ type = 'item', name = 'deadlock-stack-iron-plate', amount = 5 }},
+    results = {{ type = 'item', name = 'deadlock-stack-steel-plate', amount = 1 }},
     _technology = 'deadlock-stacking-1'
   }
 }

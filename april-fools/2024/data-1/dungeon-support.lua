@@ -118,11 +118,11 @@ data:extend({
     name = 'dungeon-support',
     type = 'recipe',
     ingredients = {
-      {'refined-concrete', 9},
-      {'low-density-structure', 6},
-      {'iron-stick', 21},
+      { type = 'item', name = 'refined-concrete', amount = 9 },
+      { type = 'item', name = 'low-density-structure', amount = 6 },
+      { type = 'item', name = 'iron-stick', amount = 21 },
     },
-    result = 'dungeon-support',
+    results = {{ type = 'item', name = 'dungeon-support', amount = 1 }},
     enabled = false,
   },
   {
@@ -149,9 +149,9 @@ data:extend({
       count = 600,
       ingredients =
       {
-        {'automation-science-pack', 1},
-        {'logistic-science-pack', 1},
-        {'chemical-science-pack', 1}
+        { 'automation-science-pack', 1},
+        { 'logistic-science-pack', 1},
+        { 'chemical-science-pack', 1}
       },
       time = 45
     },

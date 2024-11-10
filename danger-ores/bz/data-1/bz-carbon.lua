@@ -27,8 +27,7 @@ data:extend({
     icon_size = 64, icon_mipmaps = 4,
     subgroup = 'raw-material',
     order = 'k[graphite-powder-1]',
-    result = 'graphite-powder',
-    result_count = 15,
+    results = {{ type = 'item', name = 'graphite-powder', amount = 15 }},
     crafting_machine_tint =
     {
       primary = {r = 0.41, g = 0.41, b = 0.41, a = 1.000}, -- #696969

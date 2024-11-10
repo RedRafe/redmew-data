@@ -5,10 +5,10 @@ local emd3 = redmew.config['electric-mining-drill-3']
 if settings.startup['do_bz_cheaper_electric_drills'].value then
   -- Mk.2
   emd2._ingredients = {
-    { 'electric-mining-drill', 1 },
-    { 'iron-gear-wheel', 25 },
-    { 'electronic-circuit', 7 },
-    { 'steel-plate', 10 }
+    { type = 'item', name = 'electric-mining-drill', amount = 1 },
+    { type = 'item', name = 'iron-gear-wheel', amount = 25 },
+    { type = 'item', name = 'electronic-circuit', amount = 7 },
+    { type = 'item', name = 'steel-plate', amount = 10 },
   }
   emd2._unit = { 
     count = 50,
@@ -20,10 +20,10 @@ if settings.startup['do_bz_cheaper_electric_drills'].value then
   emd2._prerequisites = { 'steel-processing' }
   --Mk.3
   emd3._ingredients = {
-    { 'electric-mining-drill-2', 1 },
-    { 'engine-unit', 2 },
-    { 'advanced-circuit', 5 },
-    { 'steel-plate', 20 }
+    { type = 'item', name = 'electric-mining-drill-2', amount = 1 },
+    { type = 'item', name = 'engine-unit', amount = 2 },
+    { type = 'item', name = 'advanced-circuit', amount = 5 },
+    { type = 'item', name = 'steel-plate', amount = 20 },
   }
   emd3._unit = {
     count = 100,
@@ -67,13 +67,13 @@ data:extend({
     enabled = false,
     energy_required = 2,
     ingredients = emd2._ingredients or {
-      { 'electric-mining-drill', 2 },
-      { 'steel-plate', 5 },
-      { 'advanced-circuit', 3 },
-      { 'silver-brazing-alloy', 1 },
-      { 'aluminum-6061', 2 },
+      { type = 'item', name = 'electric-mining-drill', amount = 2 },
+      { type = 'item', name = 'steel-plate', amount = 5 },
+      { type = 'item', name = 'advanced-circuit', amount = 3 },
+      { type = 'item', name = 'silver-brazing-alloy', amount = 1 },
+      { type = 'item', name = 'aluminum-6061', amount = 2 },
     },
-    result = emd2.name,
+    results = {{ type = 'item', name = emd2.name, amount = 1 }},
   },
   -- Entity
   redmew.make_tier(emd2),
@@ -133,13 +133,13 @@ data:extend({
     enabled = false,
     energy_required = 2,
     ingredients = emd3._ingredients or {
-      { 'electric-mining-drill-2', 2 },
-      { 'engine-unit', 10 },
-      { 'processing-unit', 5 },
-      { 'aluminum-2219', 2 },
-      { 'titanium-palladium-flange', 2 }
+      { type = 'item', name = 'electric-mining-drill-2', amount = 2 },
+      { type = 'item', name = 'engine-unit', amount = 10 },
+      { type = 'item', name = 'processing-unit', amount = 5 },
+      { type = 'item', name = 'aluminum-2219', amount = 2 },
+      { type = 'item', name = 'titanium-palladium-flange', amount = 2 },
     },
-    result = emd3.name,
+    results = {{ type = 'item', name = emd3.name, amount = 1 }},
   },
   -- Entity
   redmew.make_tier(emd3),

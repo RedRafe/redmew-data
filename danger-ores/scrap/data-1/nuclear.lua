@@ -35,13 +35,13 @@ data:extend({
     enabled = false,
     energy_required = 8,
     ingredients = {
-      { 'nuclear-reactor', 4 },
-      { 'low-density-structure', 100 },
-      { 'processing-unit', 100 },
-      { 'refined-concrete', 1000 },
-      { 'heat-pipe', 100 },
+      { type = 'item', name = 'nuclear-reactor', amount = 4 },
+      { type = 'item', name = 'low-density-structure', amount = 100 },
+      { type = 'item', name = 'processing-unit', amount = 100 },
+      { type = 'item', name = 'refined-concrete', amount = 1000 },
+      { type = 'item', name = 'heat-pipe', amount = 100 },
     },
-    result = nr2.name,
+    results = {{ type = 'item', name = nr2.name, amount = 1 }},
   },
   -- Entity
   redmew.make_tier(nr2),
@@ -77,11 +77,11 @@ data:extend({
     enabled = false,
     energy_required = 3,
     ingredients = {
-      { 'heat-exchanger', 2 },
-      { 'low-density-structure', 10 },
-      { 'heat-pipe', 10 },
+      { type = 'item', name = 'heat-exchanger', amount = 2 },
+      { type = 'item', name = 'low-density-structure', amount = 10 },
+      { type = 'item', name = 'heat-pipe', amount = 10 },
     },
-    result = he2.name,
+    results = {{ type = 'item', name = he2.name, amount = 1 }},
   },
   -- Entity
   redmew.make_tier(he2),
@@ -117,12 +117,12 @@ data:extend({
     enabled = false,
     energy_required = 3,
     ingredients = {
-      { 'steam-turbine', 2 },
-      { 'low-density-structure', 25 },
-      { 'processing-unit', 25 },
-      { 'heat-pipe', 15 },
+      { type = 'item', name = 'steam-turbine', amount = 2 },
+      { type = 'item', name = 'low-density-structure', amount = 25 },
+      { type = 'item', name = 'processing-unit', amount = 25 },
+      { type = 'item', name = 'heat-pipe', amount = 15 },
     },
-    result = st2.name,
+    results = {{ type = 'item', name = st2.name, amount = 1 }},
   },
   -- Entity
   redmew.make_tier(st2),
@@ -155,7 +155,7 @@ data:extend({{
       { 'logistic-science-pack', 1 },
       { 'chemical-science-pack', 1 },
       { 'production-science-pack', 1 },
-      { 'utility-science-pack', 1 }
+      { 'utility-science-pack', 1 },
     },
     time = 30
   },

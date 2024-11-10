@@ -6,7 +6,7 @@ data:extend({
     ingredients = {
       { type = 'item', name = 'gold-ore', amount = 50 },
     },
-    result = 'ruby-gem',
+    results= {{ type = 'item', name = 'ruby-gem', amount = 1 }},
     enabled = true,
     energy_required = 60,
     category = 'alloying',
@@ -29,7 +29,7 @@ data:extend({
     ingredients = {
       { type = 'item', name = 'graphite', amount = 75 },
     },
-    result = 'diamond-gem',
+    results = {{ type = 'item', name = 'diamond-gem', amount = 1 }},
     enabled = true,
     energy_required = 120,
     category = 'alloying',

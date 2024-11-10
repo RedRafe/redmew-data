@@ -30,8 +30,7 @@ local stacked_recipes = {
     enabled = false,
     energy_required = 16 * stack_size,
     ingredients = {{'deadlock-stack-stone', 10}},
-    result = 'deadlock-stack-stone-brick',
-    result_count = 5,
+    results = {{ type = 'item', name = 'deadlock-stack-stone-brick', amount = 5 }},
     order = '00',
     _technology = T1
   },
@@ -43,11 +42,10 @@ local stacked_recipes = {
     enabled = false,
     energy_required = 16 * stack_size,
     ingredients = {
-      {'deadlock-stack-wood', 6},
-      {'deadlock-stack-coal', 6}
+      { type = 'item', name = 'deadlock-stack-wood', amount = 6 },
+      { type = 'item', name = 'deadlock-stack-coal', amount = 6 },
     },
-    result = 'deadlock-stack-coke',
-    result_count = 6,
+    results = {{ type = 'item', name = 'deadlock-stack-coke', amount = 6 }},
     order = '01',
     _technology = T1
   },
@@ -58,9 +56,8 @@ local stacked_recipes = {
     category = 'smelting',
     enabled = false,
     energy_required = 16 * stack_size,
-    ingredients = {{'deadlock-stack-sand', 16}},
-    result = 'deadlock-stack-glass',
-    result_count = 8,
+    ingredients = {{ type = 'item', name = 'deadlock-stack-sand', amount = 16 }},
+    results = {{ type = 'item', name = 'deadlock-stack-glass', amount = 8 }},
     order = '02',
     _technology = T1
   },
@@ -71,9 +68,8 @@ local stacked_recipes = {
     category = 'smelting',
     enabled = false,
     energy_required = 16 * stack_size,
-    ingredients = {{'deadlock-stack-quartz', 18}},
-    result = 'deadlock-stack-silicon',
-    result_count = 9,
+    ingredients = {{ type = 'item', name = 'deadlock-stack-quartz', amount = 18 }},
+    results = {{ type = 'item', name = 'deadlock-stack-silicon', amount = 9 }},
     order = '03',
     _technology = T2
   },
@@ -84,9 +80,8 @@ local stacked_recipes = {
     category = 'smelting',
     enabled = false,
     energy_required = 16 * stack_size,
-    ingredients = {{'deadlock-stack-iron-ore', 10}},
-    result = 'deadlock-stack-iron-plate',
-    result_count = 5,
+    ingredients = {{ type = 'item', name = 'deadlock-stack-iron-ore', amount = 0 }},
+    results = {{ type = 'item', name = 'deadlock-stack-iron-plate', amount = 5 }},
     icons = icons_constructor('iron-plate', 'iron-ore'),
     order = '04',
     _technology = T1
@@ -98,9 +93,8 @@ local stacked_recipes = {
     category = 'smelting',
     enabled = false,
     energy_required = 16 * stack_size,
-    ingredients = {{'deadlock-stack-enriched-iron', 5}},
-    result = 'deadlock-stack-iron-plate',
-    result_count = 5,
+    ingredients = {{ type = 'item', name = 'deadlock-stack-enriched-iron', amount = 5 }},
+    results = {{ type = 'item', name = 'deadlock-stack-iron-plate', amount = 5 }},
     icons = icons_constructor('iron-plate', 'enriched-iron'),
     order = '05',
     _technology = T2
@@ -112,9 +106,8 @@ local stacked_recipes = {
     category = 'smelting',
     enabled = false,
     energy_required = 16 * stack_size,
-    ingredients = {{'deadlock-stack-copper-ore', 10}},
-    result = 'deadlock-stack-copper-plate',
-    result_count = 5,
+    ingredients = {{ type = 'item', name = 'deadlock-stack-copper-ore', amount = 10 }},
+    results = {{ type = 'item', name = 'deadlock-stack-copper-plate', amount = 5 }},
     icons = icons_constructor('copper-plate', 'copper-ore'),
     order = '06',
     _technology = T1
@@ -126,9 +119,8 @@ local stacked_recipes = {
     category = 'smelting',
     enabled = false,
     energy_required = 16 * stack_size,
-    ingredients = {{'deadlock-stack-enriched-copper', 5}},
-    result = 'deadlock-stack-copper-plate',
-    result_count = 5,
+    ingredients = {{ type = 'item', name = 'deadlock-stack-enriched-copper', amount = 5 }},
+    results = {{ type = 'item', name = 'deadlock-stack-copper-plate', amount = 5 }},
     icons = icons_constructor('copper-plate', 'enriched-copper'),
     order = '07',
     _technology = T2
@@ -140,9 +132,8 @@ local stacked_recipes = {
     category = 'smelting',
     enabled = false,
     energy_required = 16 * stack_size,
-    ingredients = {{'deadlock-stack-raw-rare-metals', 10}},
-    result = 'deadlock-stack-rare-metals',
-    result_count = 5,
+    ingredients = {{ type = 'item', name = 'deadlock-stack-raw-rare-metals', amount = 10 }},
+    results = {{ type = 'item', name = 'deadlock-stack-rare-metals', amount = 5 }},
     icons = icons_constructor('rare-metals', 'raw-rare-metals'),
     order = '08',
     _technology = T2
@@ -154,9 +145,8 @@ local stacked_recipes = {
     category = 'smelting',
     enabled = false,
     energy_required = 16 * stack_size,
-    ingredients = {{'deadlock-stack-enriched-rare-metals', 5}},
-    result = 'deadlock-stack-rare-metals',
-    result_count = 5,
+    ingredients = {{ type = 'item', name = 'deadlock-stack-enriched-rare-metals', amount = 5 }},
+    results = {{ type = 'item', name = 'deadlock-stack-rare-metals', amount = 5 }},
     icons = icons_constructor('rare-metals', 'enriched-rare-metals'),
     order = '09',
     _technology = T2
@@ -169,11 +159,10 @@ local stacked_recipes = {
     enabled = false,
     energy_required = 16 * stack_size,
     ingredients = {
-      {'deadlock-stack-iron-plate', 10},
-      {'deadlock-stack-coke', 2}
+      { type = 'item', name = 'deadlock-stack-iron-plate', amount = 10 },
+      { type = 'item', name = 'deadlock-stack-coke', amount = 2 }
     },
-    result = 'deadlock-stack-steel-plate',
-    result_count = 5,
+    results = {{ type = 'item', name = 'deadlock-stack-steel-plate', amount = 5 }},
     order = '10',
     _technology = T2
   },
@@ -185,11 +174,10 @@ local stacked_recipes = {
     enabled = false,
     energy_required = 16 * stack_size,
     ingredients = {
-      {'deadlock-stack-rare-metals', 6},
-      {'deadlock-stack-imersite-powder', 9}
+      { type = 'item', name = 'deadlock-stack-rare-metals', amount = 6 },
+      { type = 'item', name = 'deadlock-stack-imersite-powder', amount = 9 }
     },
-    result = 'deadlock-stack-imersium-plate',
-    result_count = 3,
+    results = {{ type = 'item', name = 'deadlock-stack-imersium-plate', amount = 3 }},
     order = '11',
     _technology = T5
   },

@@ -33,14 +33,14 @@ data:extend({
     enabled = false,
     energy_required = 0.5,
     ingredients = {
-      { 'boiler', 3 },
-      { 'steel-furnace', 3 },
-      { 'bakelite', 20 },
-      { 'temperature-sensor', 1 },
-      { 'lead-plate', 15 },
-      { 'crucible', 1 }
+      { type = 'item', name = 'boiler', amount = 3 },
+      { type = 'item', name = 'steel-furnace', amount = 3 },
+      { type = 'item', name = 'bakelite', amount = 20 },
+      { type = 'item', name = 'temperature-sensor', amount = 1 },
+      { type = 'item', name = 'lead-plate', amount = 15 },
+      { type = 'item', name = 'crucible', amount = 1 },
     },
-    result = bo2.name,
+    results = {{ type = 'item', name = bo2.name, amount = 1 }},
   },
   -- Entity
   redmew.make_tier(bo2),
@@ -76,14 +76,14 @@ data:extend({
     enabled = false,
     energy_required = 0.5,
     ingredients = {
-      { 'steam-engine', 2 },
-      { 'engine-unit', 5 },
-      { 'steel-plate', 10 },
-      { 'pipe', 25 },
-      { 'bakelite', 12 },
-      { 'temperature-sensor', 1 }
+      { type = 'item', name = 'steam-engine', amount = 2 },
+      { type = 'item', name = 'engine-unit', amount = 5 },
+      { type = 'item', name = 'steel-plate', amount = 10 },
+      { type = 'item', name = 'pipe', amount = 25 },
+      { type = 'item', name = 'bakelite', amount = 12 },
+      { type = 'item', name = 'temperature-sensor', amount = 1 },
     },
-    result = se2.name,
+    results = {{ type = 'item', name = se2.name, amount = 1 }},
   },
   -- Entity
   redmew.make_tier(se2),

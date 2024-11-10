@@ -102,11 +102,11 @@ data:extend({
     name = 'tunnel',
     type = 'recipe',
     ingredients = {
-      {'copper-plate', 140},
-      {'steel-plate', 75},
-      {'refined-concrete', 500},
+      { type = 'item', name = 'copper-plate', amount = 140 },
+      { type = 'item', name = 'steel-plate', amount = 75 },
+      { type = 'item', name = 'refined-concrete', amount = 500 },
     },
-    result = 'tunnel',
+    results = {{ type = 'item', name = 'tunnel', amount = 1 }},
     enabled = false,
   }
 })

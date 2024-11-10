@@ -117,13 +117,13 @@ local function rfRecipe(n)
     enabled = 'false',
     ingredients = 
     {
-      { 'iron-plate', 10 },
-      { 'electronic-circuit', 5 },
+      { type = 'item', name = 'iron-plate', amount = 10 },
+      { type = 'item', name = 'electronic-circuit', amount = 5 },
     },
-      result = 'reverse-factory-'..n
+      results = {{ type = 'item', name = 'reverse-factory-'..n, amount = 1 }},
   }
   if n > 1 then
-    table.insert(recipe.ingredients, {'reverse-factory-'..(n-1), 2})
+    table.insert(recipe.ingredients, { type = 'item', name = 'reverse-factory-'..(n-1), amount = 2 })
   end
 
   return recipe
@@ -170,7 +170,7 @@ local function rfEntity(n)
     energy_source = {
     type = 'electric',
       usage_priority = 'secondary-input',
-      emissions_per_minute = 1 + n
+      emissions_per_minute = { pollution = 1 + n },
     },
     working_sound = {
       sound = { filename = '__base__/sound/electric-furnace.ogg', volume = 0.7 },
@@ -394,7 +394,7 @@ local function process_recipe(recipe, priority)
   -- get result
   local result
   if r.result then
-    result = { name = r.result, amount = r.result_count or 1 }
+    results = {{ name = r.result, amount = r.result_count or 1 }}
   else
     if r.main_product then
       for _, res in pairs(r.results) do

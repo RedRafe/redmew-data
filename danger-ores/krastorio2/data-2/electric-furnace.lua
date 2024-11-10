@@ -32,12 +32,12 @@ data:extend({
     enabled = false,
     energy_required = 5,
     ingredients = {
-      { 'electric-furnace', 2 },
-      { 'engine-unit', 10 },
-      { 'refined-concrete', 100 },
-      { 'copper-plate', 100 },
+      { type = 'item', name = 'electric-furnace', amount = 2 },
+      { type = 'item', name = 'engine-unit', amount = 10 },
+      { type = 'item', name = 'refined-concrete', amount = 100 },
+      { type = 'item', name = 'copper-plate', amount = 100 },
     },
-    result = ef2.name,
+    results = {{ type = 'item', name = ef2.name, amount = 1 }},
   },
   -- Entity
   redmew.make_tier(ef2),
@@ -57,10 +57,10 @@ data:extend({
     unit = {
       count = 300,
       ingredients = {
-        {'automation-science-pack', 1},
-        {'logistic-science-pack', 1},
-        {'chemical-science-pack', 1},
-        {'production-science-pack', 1}
+        { 'automation-science-pack', 1 },
+        { 'logistic-science-pack', 1 },
+        { 'chemical-science-pack', 1 },
+        { 'production-science-pack', 1 },
       },
       time = 60
     },

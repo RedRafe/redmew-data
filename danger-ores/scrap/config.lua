@@ -28,7 +28,7 @@ return {
     energy_usage = '500kW',
     module_specification = { module_slots = 6, module_info_max_icons_per_row = 4, module_info_icon_scale = 0.5 },
     fast_replaceable_group = 'assembling-machine',
-    energy_source = { emissions_per_minute = 5 },
+    energy_source = { emissions_per_minute = { pollution  = 5 } },
     _technology = 'automation-4',
   },
   ['chemical-plant'] = {
@@ -46,7 +46,7 @@ return {
     energy_usage = '420kW',
     module_specification = { module_slots = 6, module_info_max_icons_per_row = 3, module_info_icon_scale = 0.5 },
     fast_replaceable_group = 'chemical-plant',
-    energy_source = { emissions_per_minute = 10 },
+    energy_source = { emissions_per_minute = { pollution  = 10 } },
   },
   ['oil-refinery'] = {
     name = 'oil-refinery',
@@ -63,7 +63,7 @@ return {
     energy_usage = '840kW',
     module_specification = { module_slots = 6, module_info_max_icons_per_row = 3, module_info_icon_scale = 0.5 },
     fast_replaceable_group = 'oil-refinery',
-    energy_source = { emissions_per_minute = 15 },
+    energy_source = { emissions_per_minute = { pollution  = 15 } },
   },
   ['electric-furnace'] = {
     name = 'electric-furnace',
@@ -80,7 +80,7 @@ return {
     energy_usage = '465kW',
     module_specification = { module_slots = 4, module_info_icon_shift = {0, 0.8}, module_info_icon_scale = 0.5 },
     fast_replaceable_group = 'electric-furnace',
-    energy_source = { emissions_per_minute = 2.5 },
+    energy_source = { emissions_per_minute = { pollution  = 2.5 } },
     _technology = 'advanced-material-processing-3'
   },
   ['electric-mining-drill'] = {
@@ -101,7 +101,7 @@ return {
     energy_usage = '180kW',
     module_specification = { module_slots = 4, module_info_icon_scale = 0.5 },
     fast_replaceable_group = 'electric-mining-drill',
-    energy_source = { emissions_per_minute = 20 },
+    energy_source = { emissions_per_minute = { pollution  = 20 } },
     next_upgrade = 'electric-mining-drill-3',
     resource_searching_radius = 3.49
   },
@@ -115,7 +115,7 @@ return {
     energy_usage = '360kW',
     module_specification = { module_slots = 5, module_info_icon_scale = 0.5 },
     fast_replaceable_group = 'electric-mining-drill',
-    energy_source = { emissions_per_minute = 40 },
+    energy_source = { emissions_per_minute = { pollution  = 40 } },
     resource_searching_radius = 4.49,
   },
   ['nuclear-reactor'] = {
@@ -188,7 +188,7 @@ return {
     fast_replaceable_group = 'boiler',
     energy_consumption = '3.6MW',
     target_temperature = 315,
-    energy_source = { emissions_per_minute = 60 },
+    energy_source = { emissions_per_minute = { pollution  = 60 } },
   },
   ['steam-engine'] = {
     name = 'steam-engine',

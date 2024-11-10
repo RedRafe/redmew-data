@@ -10,13 +10,13 @@ data:extend({
     enabled = false,
     ingredients =
     {
-      {type = 'fluid', name = 'water', amount = 100},
-      {type = 'item', name = 'fluoride', amount = 1}
+      { type = 'fluid', name = 'water', amount = 100 },
+      { type = 'item', name = 'fluoride', amount = 1 },
     },
     results=
     {
-      {type = 'fluid', name = 'mineral-water', amount = 10},
-      {type = 'fluid', name = 'water', amount = 90},
+      { type = 'fluid', name = 'mineral-water', amount = 10 },
+      { type = 'fluid', name = 'water', amount = 90 },
       
     },
     main_product = 'mineral-water',

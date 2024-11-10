@@ -33,11 +33,11 @@ data:extend({
     enabled = false,
     energy_required = 0.5,
     ingredients = {
-      { 'boiler', 3 },
-      { 'steel-furnace', 3 },
-      { 'copper-plate', 20 }
+      { type = 'item', name = 'boiler', amount = 3 },
+      { type = 'item', name = 'steel-furnace', amount = 3 },
+      { type = 'item', name = 'copper-plate', amount = 20 },
     },
-    result = bo2.name,
+    results = {{ type = 'item', name = bo2.name, amount = 1 }},
   },
   -- Entity
   redmew.make_tier(bo2),
@@ -73,13 +73,13 @@ data:extend({
     enabled = false,
     energy_required = 0.5,
     ingredients = {
-      { 'steam-engine', 2 },
-      { 'engine-unit', 5 },
-      { 'steel-plate', 10 },
-      { 'pipe', 25 },
-      { 'copper-plate', 80 }
+      { type = 'item', name = 'steam-engine', amount = 2 },
+      { type = 'item', name = 'engine-unit', amount = 5 },
+      { type = 'item', name = 'steel-plate', amount = 10 },
+      { type = 'item', name = 'pipe', amount = 25 },
+      { type = 'item', name = 'copper-plate', amount = 80 },
     },
-    result = se2.name,
+    results = {{ type = 'item', name = se2.name, amount = 1 }},
   },
   -- Entity
   redmew.make_tier(se2),
@@ -105,9 +105,9 @@ data:extend({{
   unit = {
     count = 350,
     ingredients = {
-      {'automation-science-pack', 1},
-      {'logistic-science-pack', 1},
-      {'chemical-science-pack', 1}
+      { 'automation-science-pack', 1 },
+      { 'logistic-science-pack', 1 },
+      { 'chemical-science-pack', 1 },
     },
     time = 30
   },

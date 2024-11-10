@@ -28,7 +28,7 @@ return {
     energy_usage = '500kW',
     module_specification = { module_slots = 5, module_info_max_icons_per_row = 5, module_info_icon_scale = 0.4 },
     fast_replaceable_group = 'assembling-machine',
-    energy_source = { emissions_per_minute = 5 },
+    energy_source = { emissions_per_minute = { pollution  = 5 } },
     _technology = 'automation-4',
   },
   ['kr-advanced-assembling-machine'] = {
@@ -52,7 +52,7 @@ return {
     energy_usage = '420kW',
     module_specification = { module_slots = 5, module_info_max_icons_per_row = 5, module_info_icon_scale = 0.4 },
     fast_replaceable_group = 'chemical-plant',
-    energy_source = { emissions_per_minute = 10 },
+    energy_source = { emissions_per_minute = { pollution  = 10 } },
   },
   ['kr-advanced-chemical-plant'] = {
     name = 'kr-advanced-chemical-plant',
@@ -75,7 +75,7 @@ return {
     module_specification = { module_slots = 4, module_info_icon_scale = 0.5 },
     fast_replaceable_group = 'oil-refinery',
     next_upgrade = 'oil-refinery-3',
-    energy_source = { emissions_per_minute = 15 },
+    energy_source = { emissions_per_minute = { pollution  = 15 } },
   },
   ['oil-refinery-3'] = {
     name = 'oil-refinery-3',
@@ -86,7 +86,7 @@ return {
     energy_usage = '1600kW',
     module_specification = { module_slots = 6, module_info_icon_scale = 0.5 },
     fast_replaceable_group = 'oil-refinery',
-    energy_source = { emissions_per_minute = 60 },
+    energy_source = { emissions_per_minute = { pollution  = 60 } },
     _technology = 'kr-advanced-chemical-plant'
   },
   ['kr-electrolysis-plant'] = {
@@ -104,7 +104,7 @@ return {
     energy_usage = '1940kW',
     module_specification = { module_slots = 4, module_info_icon_scale = 0.5 },
     fast_replaceable_group = 'kr-electrolysis-plant',
-    energy_source = { emissions_per_minute = 2.5 },
+    energy_source = { emissions_per_minute = { pollution  = 2.5 } },
     _technology = 'kr-advanced-chemical-plant'
   },
   ['electric-furnace'] = {
@@ -122,7 +122,7 @@ return {
     energy_usage = '905kW',
     module_specification = { module_slots = 3, module_info_icon_shift = {0, 0.8}, module_info_icon_scale = 0.5 },
     fast_replaceable_group = 'electric-furnace',
-    energy_source = { emissions_per_minute = 2.5 },
+    energy_source = { emissions_per_minute = { pollution  = 2.5 } },
     _technology = 'advanced-material-processing-3'
   },
   ['kr-advanced-furnace'] = {
@@ -147,7 +147,7 @@ return {
     energy_usage = '250kW',
     module_specification = { module_slots = 2 },
     fast_replaceable_group = 'electric-mining-drill',
-    energy_source = { emissions_per_minute = 22.5 },
+    energy_source = { emissions_per_minute = { pollution  = 22.5 } },
     next_upgrade = 'kr-electric-mining-drill-mk2',
     resource_searching_radius = 3.49
   },
@@ -158,7 +158,7 @@ return {
     energy_usage = '625kW',
     fast_replaceable_group = 'electric-mining-drill',
     next_upgrade = 'electric-mining-drill-3',
-    energy_source = { emissions_per_minute = 45 },
+    energy_source = { emissions_per_minute = { pollution  = 45 } },
     _technology = 'kr-electric-mining-drill-mk2',
   },
   ['electric-mining-drill-3'] = {
@@ -172,7 +172,7 @@ return {
     module_specification = { module_slots = 3 },
     fast_replaceable_group = 'electric-mining-drill',
     next_upgrade = 'kr-electric-mining-drill-mk3',
-    energy_source = { emissions_per_minute = 67.5 },
+    energy_source = { emissions_per_minute = { pollution  = 67.5 } },
     resource_searching_radius = 4.49,
   },
   ['kr-electric-mining-drill-mk3'] = {
@@ -181,7 +181,7 @@ return {
     mining_speed = 4,
     energy_usage = '1560kW',
     fast_replaceable_group = 'electric-mining-drill',
-    energy_source = { emissions_per_minute = 90 },
+    energy_source = { emissions_per_minute = { pollution  = 90 } },
     _technology = 'kr-electric-mining-drill-mk3',
   },
   ['nuclear-reactor'] = {
@@ -256,7 +256,7 @@ return {
     fast_replaceable_group = 'boiler',
     energy_consumption = '3MW',
     target_temperature = 315,
-    energy_source = { emissions_per_minute = 50 },
+    energy_source = { emissions_per_minute = { pollution  = 50 } },
   },
   ['steam-engine'] = {
     name = 'steam-engine',

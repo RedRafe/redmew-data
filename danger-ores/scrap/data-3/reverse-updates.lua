@@ -7,7 +7,7 @@ if reverser then
     fuel_category = 'chemical',
     effectivity = 1,
     fuel_inventory_size = 1,
-    emissions_per_minute = 2,
+    emissions_per_minute = { pollution  = 2,
     smoke =
     {
       {

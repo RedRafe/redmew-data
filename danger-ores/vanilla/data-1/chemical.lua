@@ -33,12 +33,12 @@ data:extend({
     enabled = false,
     energy_required = 5,
     ingredients = {
-      { 'chemical-plant', 2 },
-      { 'engine-unit', 10 },
-      { 'processing-unit', 5 },
-      { 'pipe', 50 }
+      { type = 'item', name = 'chemical-plant', amount = 2 },
+      { type = 'item', name = 'engine-unit', amount = 10 },
+      { type = 'item', name = 'processing-unit', amount = 5 },
+      { type = 'item', name = 'pipe', amount = 50 },
     },
-    result = cp2.name,
+    results = {{ type = 'item', name = cp2.name, amount = 1 }},
   },
   -- Entity
   redmew.make_tier(cp2),
@@ -74,13 +74,13 @@ data:extend({
     enabled = false,
     energy_required = 8,
     ingredients = {
-      { 'oil-refinery', 2 },
-      { 'engine-unit', 10 },
-      { 'processing-unit', 5 },
-      { 'pipe-to-ground', 10 },
-      { 'refined-concrete', 100 }
+      { type = 'item', name = 'oil-refinery', amount = 2 },
+      { type = 'item', name = 'engine-unit', amount = 10 },
+      { type = 'item', name = 'processing-unit', amount = 5 },
+      { type = 'item', name = 'pipe-to-ground', amount = 10 },
+      { type = 'item', name = 'refined-concrete', amount = 100 },
   },
-    result = or2.name,
+    results = {{ type = 'item', name = or2.name, amount = 1 }},
   },
   -- Entity
   redmew.make_tier(or2),
@@ -110,7 +110,7 @@ data:extend({
         { 'automation-science-pack', 1 },
         { 'logistic-science-pack', 1 },
         { 'chemical-science-pack', 1 },
-        { 'production-science-pack', 1 }
+        { 'production-science-pack', 1 },
       },
       time = 60
     },

@@ -8,12 +8,13 @@ for _, source in pairs({
   'radar',
 }) do
   for __, entity in pairs(data.raw[source]) do
-    if entity and entity.energy_source then
-      if entity.energy_source.emissions_per_minute and entity.energy_source.emissions_per_minute > 0 then
-        entity.energy_source.emissions_per_minute = entity.energy_source.emissions_per_minute * 2
+    if entity and entity.energy_source and entity.energy_source.emissions_per_minute then
+      local epm = entity.energy_source.emissions_per_minute
+      if epm.pollution and epm.pollution > 0 then
+        epm.pollution = epm.pollution * 2
       end
-      if entity.energy_source.emissions_per_minute and entity.energy_source.emissions_per_minute <= 0 then
-        entity.energy_source.emissions_per_minute = 0
+      if epm.pollution and epm.pollution <= 0 then
+        epm.pollution = 0
       end
     end
   end

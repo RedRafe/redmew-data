@@ -38,7 +38,7 @@ data:extend({
     energy_required = 30,
     enabled = false,
     category = 'centrifuging',
-    ingredients = {{'yellowcake', 3}},
+    ingredients = {{ type = 'item', name = 'yellowcake', amount = 3 }},
     icon = '__base__/graphics/icons/uranium-processing.png',
     icon_size = 64, icon_mipmaps = 4,
     subgroup = 'intermediate-product',
@@ -76,9 +76,9 @@ data:extend({
     {
       ingredients =
       {
-        {'automation-science-pack', 1},
-        {'logistic-science-pack', 1},
-        {'chemical-science-pack', 1}
+        { 'automation-science-pack', 1 },
+        { 'logistic-science-pack', 1 },
+        { 'chemical-science-pack', 1 },
       },
       time = 60,
       count = 200

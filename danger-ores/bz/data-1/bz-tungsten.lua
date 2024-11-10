@@ -27,8 +27,7 @@ data:extend({
     icon_size = 64, icon_mipmaps = 4,
     subgroup = 'raw-material',
     order = 'b[tungsten-processed]',
-    result = 'tungsten-processed',
-    result_count = 15,
+    results = {{ type = 'item', name = 'tungsten-processed', amount = 15 }},
     crafting_machine_tint =
     {
       primary = {r = 1, g = 0, b = 0, a = 1.000},

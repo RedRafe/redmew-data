@@ -30,10 +30,10 @@ data:extend({
     type = 'recipe',
     enabled = false,
     ingredients = {
-      { 'assembling-machine-3', 4 },
-      { 'speed-module-2', 4 }
+      { type = 'item', name = 'assembling-machine-3', amount = 4 },
+      { type = 'item', name = 'speed-module-2', amount = 4 },
     },
-    result = am4.name,
+    results = {{ type = 'item', name = am4.name, amount = 1 }},
   },
   -- Entity
   redmew.make_tier(am4),
@@ -57,7 +57,7 @@ data:extend({
       { 'logistic-science-pack', 1 },
       { 'chemical-science-pack', 1 },
       { 'production-science-pack', 1 },
-      { 'utility-science-pack', 1 }
+      { 'utility-science-pack', 1 },
     },
     time = 60
   },

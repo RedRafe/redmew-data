@@ -10,7 +10,7 @@ blooms.ingredients = {
 local stabilizer = table.deepcopy(data.raw.recipe['ei_fusion-reactor'])
 stabilizer.name = 'ei_alien-stabilizer'
 stabilizer.main_product = 'ei_alien-stabilizer'
-stabilizer.result = 'ei_alien-stabilizer'
+stabilizer.results = {{ type = 'item', name = 'ei_alien-stabilizer', amount = 1 }}
 
 data:extend({ blooms, stabilizer })
 

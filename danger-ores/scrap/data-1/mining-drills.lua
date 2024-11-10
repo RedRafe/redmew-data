@@ -33,11 +33,11 @@ data:extend({
     enabled = false,
     energy_required = 2,
     ingredients = emd2._ingredients or {
-      { 'electric-mining-drill', 2 },
-      { 'steel-plate', 5 },
-      { 'advanced-circuit', 3 }
+      { type = 'item', name = 'electric-mining-drill', amount = 2 },
+      { type = 'item', name = 'steel-plate', amount = 5 },
+      { type = 'item', name = 'advanced-circuit', amount = 3 },
     },
-    result = emd2.name,
+    results = {{ type = 'item', name = emd2.name, amount = 1 }},
   },
   -- Entity
   redmew.make_tier(emd2),
@@ -62,7 +62,7 @@ data:extend({
       ingredients = {
         { 'automation-science-pack', 1 },
         { 'logistic-science-pack', 1 },
-        { 'chemical-science-pack', 1 }
+        { 'chemical-science-pack', 1 },
       },
       time = 30
     },
@@ -97,11 +97,11 @@ data:extend({
     enabled = false,
     energy_required = 2,
     ingredients = emd3._ingredients or {
-      { 'electric-mining-drill-2', 2 },
-      { 'engine-unit', 10 },
-      { 'processing-unit', 5 }
+      { type = 'item', name = 'electric-mining-drill-2', amount = 2 },
+      { type = 'item', name = 'engine-unit', amount = 10 },
+      { type = 'item', name = 'processing-unit', amount = 5 },
     },
-    result = emd3.name,
+    results = {{ type = 'item', name = emd3.name, amount = 1 }},
   },
   -- Entity
   redmew.make_tier(emd3),
@@ -129,7 +129,7 @@ data:extend({
         { 'logistic-science-pack', 1 },
         { 'chemical-science-pack', 1 },
         { 'production-science-pack', 1 },
-        { 'utility-science-pack', 1 }
+        { 'utility-science-pack', 1 },
       },
       time = 60
     },
