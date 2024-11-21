@@ -62,6 +62,12 @@ local function apply_all_entities_friendly_colors()
   redmew.entity_friendly_color('underground-belt', 'express-underground-belt', PALETTE['blue'])
   redmew.entity_friendly_color('splitter',         'express-splitter',         PALETTE['blue'])
   redmew.entity_friendly_color('loader',           'express-loader',           PALETTE['blue'])
+
+  -- Green tier
+  redmew.entity_friendly_color('transport-belt',   'turbo-transport-belt',   PALETTE['peas'])
+  redmew.entity_friendly_color('underground-belt', 'turbo-underground-belt', PALETTE['peas'])
+  redmew.entity_friendly_color('splitter',         'turbo-splitter',         PALETTE['peas'])
+  redmew.entity_friendly_color('loader',           'turbo-loader',           PALETTE['peas'])
 end
 
 function apply_basic_friendly_colors()

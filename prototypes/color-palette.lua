@@ -47,6 +47,7 @@ return {
   ['yellow']                    = '#fabb00', -- #fabb00 #ffff00 #dcbc5e
   ['red']                       = '#fa450e', -- #fa450e #ff460f #dc8469 #d81803
   ['blue']                      = '#36c9ff', -- #36c9ff #00a9ff #82cae4 #05a4d0 #26abb5
+  ['peas']                      = '#77d577',
   ['green']                     = '#12ff9c',
   ['pink']                      = '#f712ff', -- #b328ff
   ['white']                     = '#e8e8e8',
