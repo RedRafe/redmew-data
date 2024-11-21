@@ -14,12 +14,11 @@ data:extend({
   {
     name = bo2.name,
     type = 'item',
-    icon = '__base__/graphics/icons/boiler.png',
-    icon_mipmaps = 4,
-    icon_size = 64,
     icons = {{
       icon = '__base__/graphics/icons/boiler.png',
-      tint = bo2._tint
+      tint = bo2._tint,
+      icon_mipmaps = 4,
+      icon_size = 64,
     }},
     order = 'b[steam-power]-a[boiler]',
     place_result = bo2.name,
@@ -57,12 +56,11 @@ data:extend({
   {
     name = se2.name,
     type = 'item',
-    icon = '__base__/graphics/icons/steam-engine.png',
-    icon_mipmaps = 4,
-    icon_size = 64,
     icons = {{
       icon = '__base__/graphics/icons/steam-engine.png',
-      tint = se2._tint
+      tint = se2._tint,
+      icon_mipmaps = 4,
+      icon_size = 64,
     }},
     order = 'b[steam-power]-b[steam-engine]',
     place_result = se2.name,
@@ -93,13 +91,12 @@ data:extend({
 
 data:extend({{
   type = 'technology',
-  name = 'steam-engine-2',
-  icon_size = 256,
-  icon_mipmaps = 4,
-  icon = '__base__/graphics/technology/fluid-handling.png',
+  name = 'steam-power-2',
   icons = {{
-    icon = '__base__/graphics/technology/fluid-handling.png',
-    tint = se2._tint
+    icon = '__base__/graphics/technology/steam-power.png',
+    tint = se2._tint,
+    icon_size = 256,
+    icon_mipmaps = 4,
   }},
   prerequisites = { 'chemical-science-pack', 'advanced-material-processing-2' },
   effects = {

@@ -13,14 +13,12 @@ data:extend({
   {
     name = emd2.name,
     type = 'item',
-    icon = '__base__/graphics/icons/electric-mining-drill.png',
-    icon_size = 64,
-    icons = {
-      {
-        icon = '__base__/graphics/icons/electric-mining-drill.png',
-        tint = emd2._tint
-      }
-    },
+    icons = {{
+      icon = '__base__/graphics/icons/electric-mining-drill.png',
+      tint = emd2._tint,
+      icon_mipmaps = 4,
+      icon_size = 64,
+    }},
     order = 'a[items]-b[electric-mining-drill]',
     place_result = emd2.name,
     stack_size = 50,
@@ -47,12 +45,11 @@ data:extend({
   {
     type = 'technology',
     name = emd2.name,
-    icon = '__base__/graphics/technology/mining-productivity.png',
-    icon_size = 256,
-    icon_mipmaps = 4,
     icons = {{
-      icon = '__base__/graphics/technology/mining-productivity.png',
-      tint = emd2._tint
+      icon = '__base__/graphics/technology/electric-mining-drill.png',
+      tint = emd2._tint,
+      icon_size = 256,
+      icon_mipmaps = 4,
     }},
     effects = {{ type = 'unlock-recipe', recipe = emd2.name }},
     prerequisites = emd2._prerequisites or {
@@ -79,14 +76,12 @@ data:extend({
   {
     name = emd3.name,
     type = 'item',
-    icon = '__base__/graphics/icons/electric-mining-drill.png',
-    icon_size = 64,
-    icons = {
-      {
-        icon = '__base__/graphics/icons/electric-mining-drill.png',
-        tint = emd3._tint
-      }
-    },
+    icons = {{
+      icon = '__base__/graphics/icons/electric-mining-drill.png',
+      tint = emd3._tint,
+      icon_mipmaps = 4,
+      icon_size = 64,
+    }},
     order = 'a[items]-c[electric-mining-drill]',
     place_result = emd3.name,
     stack_size = 50,
@@ -113,12 +108,11 @@ data:extend({
   {
     type = 'technology',
     name = emd3.name,
-    icon = '__base__/graphics/technology/mining-productivity.png',
-    icon_size = 256,
-    icon_mipmaps = 4,
     icons = {{
-      icon = '__base__/graphics/technology/mining-productivity.png',
-      tint = emd3._tint
+      icon = '__base__/graphics/technology/electric-mining-drill.png',
+      tint = emd3._tint,
+      icon_size = 256,
+      icon_mipmaps = 4,
     }},
     effects = {{ type = 'unlock-recipe', recipe = emd3.name }},
     prerequisites = emd3._prerequisites or { 
