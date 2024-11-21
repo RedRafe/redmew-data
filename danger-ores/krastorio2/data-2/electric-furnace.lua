@@ -13,12 +13,11 @@ data:extend({
   {
     name = ef2.name,
     type = 'item',
-    icon = '__base__/graphics/icons/electric-furnace.png',
-    icon_mipmaps = 4,
-    icon_size = 64,
     icons = {{
       icon = '__base__/graphics/icons/electric-furnace.png',
-      tint = ef2._tint
+      tint = ef2._tint,
+      icon_mipmaps = 4,
+      icon_size = 64,
     }},
     order = 'c[electric-furnace]',
     place_result = ef2.name,
@@ -45,12 +44,11 @@ data:extend({
   {
     type = 'technology',
     name = ef2._technology,
-    icon_size = 256,
-    icon_mipmaps = 4,
-    icon = '__base__/graphics/technology/advanced-material-processing-2.png',
     icons = {{
       icon = '__base__/graphics/technology/advanced-material-processing-2.png',
-      tint = ef2._tint
+      tint = ef2._tint,
+      icon_size = 256,
+      icon_mipmaps = 4,
     }},
     effects = {{type = 'unlock-recipe', recipe = ef2.name}},
     prerequisites = {'advanced-material-processing-2', 'production-science-pack'},

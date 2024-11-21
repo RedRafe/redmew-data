@@ -93,9 +93,9 @@ local function add_ingredient(recipe, ingredient, quantity, is_fluid)
       end
     end
     if is_fluid then
-      table.insert(recipe.ingredients, {type='fluid', name=ingredient, amount=quantity})
+      table.insert(recipe.ingredients, { type = 'fluid', name = ingredient, amount = quantity })
     else
-      table.insert(recipe.ingredients, {ingredient, quantity})
+      table.insert(recipe.ingredients, { type = 'item', name = ingredient, amount = quantity })
     end
   end
 end

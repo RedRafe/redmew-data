@@ -18,9 +18,9 @@ data:extend({
     order = 'k[uranium-processing-1]',
     results =
     {
-      { name = 'yellowcake', amount = 2 },
-      { name = 'stone', amount = 5 },
-      { name = 'iron-ore', amount = 3 }
+      { type = 'item', name = 'yellowcake', amount = 2 },
+      { type = 'item', name = 'stone', amount = 5 },
+      { type = 'item', name = 'iron-ore', amount = 3 }
     },
     crafting_machine_tint =
     {
@@ -46,11 +46,13 @@ data:extend({
     results =
     {
       {
+        type = 'item',
         name = 'uranium-235',
         probability = 0.007,
         amount = 1
       },
       {
+        type = 'item',
         name = 'uranium-238',
         probability = 0.993,
         amount = 1

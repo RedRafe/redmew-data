@@ -4,7 +4,7 @@ data:extend({
     type = 'fluid',
     name = 'liquid-imersite',
     default_temperature = 25,
-    heat_capacity = '0.1KJ',
+    heat_capacity = '0.1kJ',
     base_color = {r=1, g=0, b=1},
     flow_color = {r=1, g=0, b=1},
     order = 'ya01[liquid-imersite]',

@@ -18,12 +18,11 @@ data:extend({
   {
     name = cp2.name,
     type = 'item',
-    icon = '__base__/graphics/icons/chemical-plant.png',
-    icon_mipmaps = 4,
-    icon_size = 64,
     icons = {{
       icon = '__base__/graphics/icons/chemical-plant.png',
-      tint = cp2._tint
+      tint = cp2._tint,
+      icon_mipmaps = 4,
+      icon_size = 64,
     }},
     order = 'e[chemical-plant]',
     place_result = cp2.name,
@@ -63,12 +62,11 @@ data:extend({
   {
     name = or2.name,
     type = 'item',
-    icon = '__base__/graphics/icons/oil-refinery.png',
-    icon_mipmaps = 4,
-    icon_size = 64,
     icons = {{
       icon = '__base__/graphics/icons/oil-refinery.png',
-      tint = or2._tint
+      tint = or2._tint,
+      icon_mipmaps = 4,
+      icon_size = 64,
     }},
     order = 'd[refinery]',
     place_result = or2.name,
@@ -102,12 +100,11 @@ data:extend({
   {
     name = or3.name,
     type = 'item',
-    icon = '__base__/graphics/icons/oil-refinery.png',
-    icon_mipmaps = 4,
-    icon_size = 64,
     icons = {{ 
       icon = '__base__/graphics/icons/oil-refinery.png', 
-      tint = or3._tint
+      tint = or3._tint,
+      icon_mipmaps = 4,
+      icon_size = 64,
     }},
     order = 'd[refinery]',
     place_result = or3.name,
@@ -148,12 +145,11 @@ data:extend({
   {
     name = ep2.name,
     type = 'item',
-    icon = '__Krastorio2Assets__/icons/entities/electrolysis-plant.png',
-    icon_mipmaps = 4,
-    icon_size = 64,
     icons = {{
       icon = '__Krastorio2Assets__/icons/entities/electrolysis-plant.png',
-      tint = ep2._tint
+      tint = ep2._tint,
+      icon_mipmaps = 4,
+      icon_size = 64,
     }},
     order = 'e-a1[electrolysis-plant]',
     place_result = ep2.name,
@@ -187,12 +183,11 @@ redmew.add_unlock(ep2._technology, ep2.name)
 data:extend({{
   type = 'technology',
   name = 'oil-processing-2',
-  icon_size = 256,
-  icon_mipmaps = 4,
-  icon = '__base__/graphics/technology/oil-gathering.png',
   icons = {{
     icon = '__base__/graphics/technology/oil-gathering.png',
-    tint = cp2._tint
+    tint = cp2._tint,
+    icon_size = 256,
+    icon_mipmaps = 4,
   }},
   prerequisites = {'oil-processing', 'production-science-pack'},
   effects = {

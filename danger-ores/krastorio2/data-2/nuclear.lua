@@ -16,12 +16,11 @@ data:extend({
   {
     name = nr2.name,
     type = 'item',
-    icon = '__base__/graphics/icons/nuclear-reactor.png',
-    icon_mipmaps = 4,
-    icon_size = 64,
     icons = {{
       icon = '__base__/graphics/icons/nuclear-reactor.png',
-      tint = nr2._tint
+      tint = nr2._tint,
+      icon_mipmaps = 4,
+      icon_size = 64,
     }},
     order = 'f[nuclear-energy]-a[reactor]',
     place_result = nr2.name,
@@ -58,12 +57,11 @@ data:extend({
   {
     name = he2.name,
     type = 'item',
-    icon = '__base__/graphics/icons/heat-boiler.png',
-    icon_mipmaps = 4,
-    icon_size = 64,
     icons = {{
       icon = '__base__/graphics/icons/heat-boiler.png',
-      tint = he2._tint
+      tint = he2._tint,
+      icon_mipmaps = 4,
+      icon_size = 64,
     }},
     order = 'f[nuclear-energy]-c[heat-exchanger]',
     place_result = he2.name,
@@ -98,12 +96,11 @@ data:extend({
   {
     name = st2.name,
     type = 'item',
-    icon = '__base__/graphics/icons/steam-turbine.png',
-    icon_mipmaps = 4,
-    icon_size = 64,
     icons = {{
       icon = '__base__/graphics/icons/steam-turbine.png',
-      tint = st2._tint
+      tint = st2._tint,
+      icon_mipmaps = 4,
+      icon_size = 64,
     }},
     order = 'f[nuclear-energy]-d[steam-turbine]',
     place_result = st2.name,
@@ -135,12 +132,11 @@ data.raw['heat-pipe']['heat-pipe'].heat_buffer.max_temperature = nr2.heat_buffer
 data:extend({{
   type = 'technology',
   name = 'nuclear-power-2',
-  icon_size = 256,
-  icon_mipmaps = 4,
-  icon = '__base__/graphics/technology/nuclear-power.png',
   icons = {{
     icon = '__base__/graphics/technology/nuclear-power.png',
-    tint = nr2._tint
+    tint = nr2._tint,
+    icon_size = 256,
+    icon_mipmaps = 4,
   }},
   prerequisites = {'nuclear-power', 'production-science-pack'},
   effects = {

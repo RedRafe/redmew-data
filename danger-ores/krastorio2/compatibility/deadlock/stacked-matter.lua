@@ -1,6 +1,6 @@
 if not mods['deadlock-beltboxes-loaders'] then return end
 
-local matter = require '__Krastorio2__.lib.public.data-stages.matter-util'
+local matter = require '__Krastorio2__.prototypes.libraries.matter'
 local stack_size = settings.startup['deadlock-stack-size'].value
 
 local function has_stabilizer(recipe)
@@ -110,16 +110,20 @@ for ___, item in pairs(items) do
     local into_matter = data.raw.recipe[item .. '-to-matter']
     local from_matter = data.raw.recipe['matter-to-' .. item]
 
-    matter.createMatterRecipe({
-      item_name = 'deadlock-stack-' .. item,
-      minimum_conversion_quantity = 10,
-      matter_value = get_matter_value(from_matter) * stack_size,
+    local def = {
+      material = { type = 'item', name = 'deadlock-stack-' .. item, amount = 10 },
+      matter_count = get_matter_value(from_matter) * stack_size,
       energy_required = stack_size,
-      only_conversion = from_matter == nil,
-      only_deconversion = into_matter == nil,
       need_stabilizer = has_stabilizer(from_matter),
-      unlocked_by_technology = get_tech_name(item),
-    })
+      unlocked_by = get_tech_name(item),
+    }
+
+    if into_matter ~= nil then
+      matter.make_conversion_recipe(def)
+    end
+    if from_matter ~= nil then
+      matter.make_deconversion_recipe(def)
+    end
     
     set_meta(item)
   end

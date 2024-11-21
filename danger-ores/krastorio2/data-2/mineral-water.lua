@@ -30,38 +30,34 @@ data:extend({
   },
 })
 
+data.raw['assembling-machine']['kr-filtration-plant'].fluid_boxes_off_when_no_fluid_recipe = false
 data.raw['assembling-machine']['kr-filtration-plant'].fluid_boxes = {
   {
     production_type = 'input',
     pipe_covers = pipecoverspictures(),
     pipe_picture = kr_pipe_path,
-    base_area = 10,
-    base_level = -1,
-    pipe_connections = { { type = 'input', position = { 0, -4 } } },
+    volume = 1000,
+    pipe_connections = { { direction = 0, flow_direction = 'input', position = { 0, -3 } } },
   },
   {
     production_type = 'output',
     pipe_covers = pipecoverspictures(),
     pipe_picture = kr_pipe_path,
-    base_area = 10,
-    base_level = 1,
-    pipe_connections = { { type = 'output', position = { 0, 4 } } },
+    volume = 1000,
+    pipe_connections = { { direction = 4, flow_direction = 'output', position = { 0, 3 } } },
   },
   {
     production_type = 'input',
     pipe_covers = pipecoverspictures(),
     pipe_picture = kr_pipe_path,
-    base_area = 10,
-    base_level = 1,
-    pipe_connections = { { type = 'input', position = { -4, 0 } } },
+    volume = 1000,
+    pipe_connections = { { direction = 8, flow_direction = 'input', position = { -3, 0 } } },
   },
   {
     production_type = 'output',
     pipe_covers = pipecoverspictures(),
     pipe_picture = kr_pipe_path,
-    base_area = 10,
-    base_level = 1,
-    pipe_connections = { { type = 'output', position = { 4, 0 } } },
+    volume = 1000,
+    pipe_connections = { { direction = 12, flow_direction = 'output', position = { 3, 0 } } },
   },
-  off_when_no_fluid_recipe = false,
 }
