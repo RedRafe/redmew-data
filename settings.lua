@@ -27,5 +27,3 @@ require 'danger-ores.exotic-industries.settings'
 require 'danger-ores.industrial-revolution-3.settings'
 require 'danger-ores.krastorio2.settings'
 require 'danger-ores.pyanodon.settings'
-
-require 'frontier.zombies-extended.settings'
