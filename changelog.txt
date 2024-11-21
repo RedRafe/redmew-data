@@ -1,4 +1,16 @@
 ---------------------------------------------------------------------------------------------------
+Version: 1.0.2
+Date: 2024-11-21
+  Changes:
+    - Updated April Fools
+    - Updated Frontier
+    - Updated DO:BZ
+    - Updated DO:K2
+    - Updated DO:Omni
+    - Updated DO:Pyanodon
+    - Updated DO:Scrap
+    - Updated DO:Vanilla
+---------------------------------------------------------------------------------------------------
 Version: 1.0.1
 Date: 2024-11-10
   Changes:
