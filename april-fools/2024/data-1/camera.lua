@@ -11,12 +11,11 @@ data:extend({
   {
     type = 'shortcut',
     name = 'camera',
-    icon = {
-      filename = '__redmew-data__/graphics/icons/camera.png',
-      size = 512,
-      mipmap_count = 1,
-      flags = { 'gui-icon' },
-    },
+    icon = '__redmew-data__/graphics/icons/camera.png',
+    icon_size = 512,
+    small_icon = '__redmew-data__/graphics/icons/camera.png',
+    small_icon_size = 512,
+    flags = { 'gui-icon' },
     action = 'lua',
     toggleable = true,
     associated_control_input = 'camera',

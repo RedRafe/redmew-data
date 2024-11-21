@@ -1,10 +1,3 @@
-local cc_silo = circuit_connector_definitions.create(universal_connector_template, {{ 
-  variation     = 26,
-  main_offset   = util.by_pixel(64, 108),   --util.by_pixel(18.5, 41),
-  shadow_offset = util.by_pixel(66, 110), --util.by_pixel(20.5, 56.5),
-  show_shadow   = false
-}})
-
 data:extend({
   {
     name = 'tunnel',
@@ -66,7 +59,6 @@ data:extend({
       },
     },
     placeable_by = { item = 'tunnel', count = 1 },
-    collision_mask = { 'item-layer', 'object-layer', 'player-layer', 'water-tile' },
     -- for collision box one tile is 0.4 x 0.4
     dying_explosion = 'rocket-silo-explosion',
     collision_box = { { -4.40, -4.40 }, { 4.40, 4.40 } },
@@ -83,8 +75,7 @@ data:extend({
     inventory_type = 'with_filters_and_bar',
     scale_info_icons = false,
     gui_mode = 'none',
-    circuit_wire_connection_point = cc_silo.points,
-    circuit_connector_sprites = cc_silo.sprites,
+    circuit_connector = circuit_connector_definitions['rocket-silo'],
     circuit_wire_max_distance = 15,
     flags = { 'not-rotatable', 'player-creation' },
   },

@@ -23,7 +23,7 @@ end
 
 ---@param surface SurfaceIdentification union LuaSurface|string
 local function get_opposite_surface(surface)
-  local src = game.get_surface(type(surface) == 'table' and surface.name or surface)
+  local src = game.get_surface(type(surface) == 'userdata' and surface.name or surface)
   local mines = game.get_surface('mines')
   local islands = game.get_surface('islands')
 
@@ -74,7 +74,7 @@ local function on_tunnel_built(event)
     }
     entity.link_id = storage.count
     dst_entity.link_id = storage.count
-
+    
     local src_pole = src.create_entity{
       name = pole_type,
       force = entity.force,
@@ -87,15 +87,13 @@ local function on_tunnel_built(event)
       position = entity.position,
     }
 
-    src_pole.connect_neighbour(dst_pole)
-    src_pole.connect_neighbour({
-      wire = defines.wire_type.red,
-      target_entity = dst_pole
-    })
-    src_pole.connect_neighbour({
-      wire = defines.wire_type.green,
-      target_entity = dst_pole
-    })
+    for _, wire_id in pairs({
+      defines.wire_connector_id.pole_copper,
+      defines.wire_connector_id.circuit_red,
+      defines.wire_connector_id.circuit_green,
+    }) do
+      src_pole.get_wire_connector(wire_id, true).connect_to(dst_pole.get_wire_connector(wire_id, true))
+    end
 
     src_pole.destructible = false
     src_pole.minable = false
@@ -107,15 +105,19 @@ local function on_tunnel_built(event)
     local stack = event.stack
     local player = game.get_player(event.player_index or 'none')
     local robot = event.robot
-    if player and player.valid and not ghost and stack.valid then
-      if player.can_insert(stack) then
-        player.insert(stack)
+    if player and player.valid and not ghost and event.consumed_items.valid then
+      for _, stack in pairs(event.consumed_items.get_contents()) do
+        if player.can_insert(stack) then
+          player.insert(stack)
+        end
       end
       player.print({'alert.tunnel_error', position.x, position.y, src.name, dst.name})
     elseif robot and robot.valid and not ghost and stack.valid then
       -- FIXME: currenlty not refunding with robots...
-      if robot.can_insert(stack) then
-        robot.insert(stack)
+      for _, stack in pairs(event.consumed_items.get_contents()) do
+        if robot.can_insert(stack) then
+          robot.insert(stack)
+        end
       end
       game.print({'alert.tunnel_error', position.x, position.y, src.name, dst.name})
     end

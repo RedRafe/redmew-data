@@ -1,6 +1,6 @@
 ---@param surface SurfaceIdentification union LuaSurface|string
 local function get_opposite_surface(surface)
-  local src = game.get_surface(type(surface) == 'table' and surface.name or surface)
+  local src = game.get_surface(type(surface) == 'userdata' and surface.name or surface)
   local mines = game.get_surface('mines')
   local islands = game.get_surface('islands')
 

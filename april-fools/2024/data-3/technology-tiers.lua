@@ -12,56 +12,60 @@ local localised_name = function(name)
 end
 
 for _, base in pairs(data.raw.technology) do
-  local cost = base.unit.count
-  local max_levels = #(base.unit.ingredients or {})
-  local local_tiers = math.min(max_levels-1, tiers)
+  if base.unit and base.unit.count then
+    local cost = base.unit.count
+    local max_levels = #(base.unit.ingredients or {})
+    local local_tiers = math.min(max_levels-1, tiers)
 
-  if cost and cost > 0 and max_levels > 1 then
-    local prerequisites = _copy(base.prerequisites)
-    local effects = _copy(base.effects)
-    
+    if cost and cost > 0 and max_levels > 1 then
+      local prerequisites = _copy(base.prerequisites)
+      local effects = _copy(base.effects)
+      
 
-    base.prerequisites = nil
-    base.effects = nil
-    base.icons = _copy(base.icons or {{
-      icon = base.icon,
-      icon_size = base.icon_size,
-      icon_mipmaps = base.icon_mipmaps
-    }})
+      base.prerequisites = nil
+      base.effects = nil
+      base.icons = _copy(base.icons or {{
+        icon = base.icon,
+        icon_size = base.icon_size,
+        icon_mipmaps = base.icon_mipmaps
+      }})
 
-    for i=1, local_tiers do
-      local t = _copy(base)
+      for i=1, local_tiers do
+        local t = _copy(base)
 
-      t.name = prefix(t.name, i)
-      t.prerequisites = { prefix(base.name, i + 1)}
-      t.localised_name = {'technology-name.' .. localised_name(base.name)}
-      t.localised_description = {'technology-description.' .. localised_name(base.name)}
-      t.unit.count = cost * (local_tiers + 1 - i) / (local_tiers + 1)
-      t.order = prefix(base.order or '', i)
+        t.name = prefix(t.name, i)
+        t.prerequisites = { prefix(base.name, i + 1)}
+        t.localised_name = {'technology-name.' .. localised_name(base.name)}
+        t.localised_description = {'technology-description.' .. localised_name(base.name)}
+        t.unit.count = cost * (local_tiers + 1 - i) / (local_tiers + 1)
+        t.order = prefix(base.order or '', i)
 
-      if i == local_tiers then
-        t.prerequisites = prerequisites
+        if i == local_tiers then
+          t.prerequisites = prerequisites
+        end
+
+        table.insert(t.icons, {
+          icon = '__base__/graphics/icons/signal/signal_'.. (local_tiers+1-i) ..'.png',
+          icon_size = 64,
+          priority = 'medium',
+          shift = { -64 , 64 },
+          scale = 0.8,
+        })
+
+        table.insert(new_techs, t)
       end
 
-      table.insert(t.icons, {
-        icon = '__base__/graphics/icons/signal/signal_'.. (local_tiers+1-i) ..'.png',
+      base.effects = effects
+      base.prerequisites = { prefix(base.name, 1)}
+      base.order = prefix(base.order or '', local_tiers+1)
+      table.insert(base.icons, {
+        icon = '__base__/graphics/icons/signal/signal_'.. local_tiers+1  ..'.png',
         icon_size = 64,
         priority = 'medium',
-        shift = { 80 , 80 }
+        shift = { -64 , 64 },
+        scale = 0.8,
       })
-
-      table.insert(new_techs, t)
     end
-
-    base.effects = effects
-    base.prerequisites = { prefix(base.name, 1)}
-    base.order = prefix(base.order or '', local_tiers+1)
-    table.insert(base.icons, {
-      icon = '__base__/graphics/icons/signal/signal_'.. local_tiers+1  ..'.png',
-      icon_size = 64,
-      priority = 'medium',
-      shift = { 80 , 80 }
-    })
   end
 end
 
