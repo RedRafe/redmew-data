@@ -2,40 +2,6 @@ local emd1 = redmew.config['electric-mining-drill']
 local emd2 = redmew.config['electric-mining-drill-2']
 local emd3 = redmew.config['electric-mining-drill-3']
 
-if settings.startup['do_bz_cheaper_electric_drills'].value then
-  -- Mk.2
-  emd2._ingredients = {
-    { type = 'item', name = 'electric-mining-drill', amount = 1 },
-    { type = 'item', name = 'iron-gear-wheel', amount = 25 },
-    { type = 'item', name = 'electronic-circuit', amount = 7 },
-    { type = 'item', name = 'steel-plate', amount = 10 },
-  }
-  emd2._unit = { 
-    count = 50,
-    ingredients = {
-      { 'automation-science-pack', 1 }
-    },
-    time = 30
-  }
-  emd2._prerequisites = { 'steel-processing' }
-  --Mk.3
-  emd3._ingredients = {
-    { type = 'item', name = 'electric-mining-drill-2', amount = 1 },
-    { type = 'item', name = 'engine-unit', amount = 2 },
-    { type = 'item', name = 'advanced-circuit', amount = 5 },
-    { type = 'item', name = 'steel-plate', amount = 20 },
-  }
-  emd3._unit = {
-    count = 100,
-    ingredients = {
-      { 'automation-science-pack', 1 },
-      { 'logistic-science-pack', 1 }
-    },
-    time = 60
-  }
-  emd3._prerequisites = {'electric-mining-drill-2', 'advanced-electronics', 'engine'}
-end
-
 --=================================================================================================
 
 redmew.update_prototype(emd1)

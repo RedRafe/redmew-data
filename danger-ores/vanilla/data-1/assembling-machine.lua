@@ -12,12 +12,11 @@ data:extend({
   {
     name = am4.name,
     type = 'item',
-    icon = '__base__/graphics/icons/assembling-machine-3.png',
-    icon_mipmaps = 4,
-    icon_size = 64,
     icons = {{
       icon = '__base__/graphics/icons/assembling-machine-3.png',
-      tint = am4._tint
+      tint = am4._tint,
+      icon_mipmaps = 4,
+      icon_size = 64,
     }},
     order = am4.order,
     place_result = am4.name,
@@ -41,12 +40,11 @@ data:extend({
   {
   name = 'automation-4',
   type = 'technology',
-  icon_size = 256,
-  icon_mipmaps = 4,
-  icon = '__base__/graphics/technology/automation-3.png',
   icons = {{
     icon = '__base__/graphics/technology/automation-3.png',
-    tint = am4._tint
+    tint = am4._tint,
+    icon_size = 256,
+    icon_mipmaps = 4,
   }},
   effects = {{ type = 'unlock-recipe', recipe = am4.name }},
   prerequisites = { 'speed-module-2', 'automation-3', 'utility-science-pack' },
