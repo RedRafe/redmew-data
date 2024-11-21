@@ -6,7 +6,9 @@ for _, armor in pairs(data.raw.armor) do
   end
 end
 
-data.raw['transport-belt']['express-transport-belt'].speed = 0.125
-data.raw['underground-belt']['express-underground-belt'].speed = 0.125
-data.raw['splitter']['express-splitter'].speed = 0.125
-data.raw['loader']['express-loader'].speed = 0.125
+if not data.raw['transport-belt']['turbo-transport-belt'] then
+  data.raw['transport-belt']['express-transport-belt'].speed = 0.125
+  data.raw['underground-belt']['express-underground-belt'].speed = 0.125
+  data.raw['splitter']['express-splitter'].speed = 0.125
+  data.raw['loader']['express-loader'].speed = 0.125
+end
