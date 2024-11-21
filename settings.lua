@@ -23,12 +23,10 @@ require 'april-fools.2024.settings'
 
 require 'danger-ores.settings'
 
-require 'danger-ores.bz.settings'
 require 'danger-ores.exotic-industries.settings'
 require 'danger-ores.industrial-revolution-3.settings'
 require 'danger-ores.krastorio2.settings'
 require 'danger-ores.omnimatter.settings'
 require 'danger-ores.pyanodon.settings'
-require 'danger-ores.vanilla.settings'
 
 require 'frontier.zombies-extended.settings'
