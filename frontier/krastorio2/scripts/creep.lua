@@ -19,7 +19,7 @@ local function generate_creep(entities)
   local i = 0
   for _, entity in pairs(entities) do
     for _, tile in pairs(surface.find_tiles_filtered({ position = entity.position, radius = radius })) do
-      if not tile.collides_with('player-layer') and tile.position.x > storage.spawn_x then
+      if not tile.collides_with('player') and tile.position.x > storage.spawn_x then
         i = i + 1
         to_add[i] = { name = 'kr-creep', position = tile.position }
       end
