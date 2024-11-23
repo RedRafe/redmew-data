@@ -36,7 +36,8 @@ data:extend({
       secondary = {r = 1.000, g = 0.974, b = 0.691, a = 1.000}, -- #fff8b0ff
       tertiary = {r = 0.723, g = 0.638, b = 0.714, a = 1.000}, -- #b8a2b6ff
       quaternary = {r = 0.954, g = 1.000, b = 0.350, a = 1.000}, -- #f3ff59ff
-    }
+    },
+    allow_productivity = true,
   },
   -- Technology
   {
@@ -70,5 +71,3 @@ data:extend({
     order = 'e-p-b-c'
   },
 })
-
-redmew.whitelist_productivity('fluoride')

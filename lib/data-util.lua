@@ -315,10 +315,9 @@ end
 
 -- ADD recipe to productivity whitelisted limitations
 function lib.whitelist_productivity(recipe_name)
-  for _, module in pairs(data.raw.module) do
-    if module.category == 'productivity' and module.limitation then
-      table.insert(module.limitation, recipe_name)
-    end
+  local recipe = data.raw.recipe[recipe_name]
+  if recipe then
+    recipe.allow_productivity = true
   end
 end
 

@@ -32,7 +32,7 @@ local stacked_recipes = {
     ingredients = {{'deadlock-stack-stone', 10}},
     results = {{ type = 'item', name = 'deadlock-stack-stone-brick', amount = 5 }},
     order = '00',
-    _technology = T1
+    _technology = T1,
   },
   -- stacked_coke
   {

@@ -12,9 +12,9 @@ data:extend({
     energy_required = 1,
     category = 'crafting-with-fluid',
     icon_size = 64,
-    icon = '__redmew-data__/graphics/icons/stone-to-uranium.png'
+    icon = '__redmew-data__/graphics/icons/stone-to-uranium.png',
+    allow_productivity = true,
   }
 })
 
-redmew.whitelist_productivity('stone-to-uranium')
 redmew.add_unlock('uranium-processing', 'stone-to-uranium')

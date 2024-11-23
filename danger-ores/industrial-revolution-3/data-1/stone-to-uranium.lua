@@ -17,8 +17,8 @@ data:extend({
     group = 'ir-processing',
     subgroup = 'powder',
     order = 'zzz-z-z'
-  }
+  },
+  allow_productivity = true,
 })
 
-redmew.whitelist_productivity('stone-to-uranium')
 redmew.add_unlock('uranium-processing', 'stone-to-uranium')

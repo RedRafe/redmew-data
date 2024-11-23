@@ -15,10 +15,10 @@ data:extend({
     group = 'ir-processing',
     subgroup = 'ingots-4',
     order = 'zzz-z-z'
-  }
+  },
+  allow_productivity = true,
 })
 
-redmew.whitelist_productivity('gold-to-ruby')
 redmew.add_unlock('ir-pressing', 'gold-to-ruby')
 
 data:extend({
@@ -37,9 +37,9 @@ data:extend({
     icon = '__IndustrialRevolution3Assets1__/graphics/icons/64/diamond-gem.png',
     group = 'ir-processing',
     subgroup = 'ingots-4',
-    order = 'zzz-z-z'
+    order = 'zzz-z-z',
+    allow_productivity = true,
   }
 })
 
-redmew.whitelist_productivity('graphite-to-diamond')
 redmew.add_unlock('ir-graphite', 'graphite-to-diamond')

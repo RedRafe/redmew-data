@@ -28,7 +28,8 @@ data:extend({
       secondary = {r = 1.000, g = 0.722, b = 0.376, a = 1.000}, -- #ffb85fff
       tertiary = {r = 0.854, g = 0.659, b = 0.576, a = 1.000}, -- #d9a892ff
       quaternary = {r = 1.000, g = 0.494, b = 0.271, a = 1.000}, -- #ff7e45ff
-    }
+    },
+    allow_productivity = true,
   },
   -- Recipe Yellowcake processing
   {
@@ -57,7 +58,8 @@ data:extend({
         probability = 0.993,
         amount = 1
       }
-    }
+    },
+    allow_productivity = true,
   },
   -- Technology Uranium Processing 2
   {
@@ -89,7 +91,5 @@ data:extend({
   },
 })
 
-redmew.whitelist_productivity('uranium-processing')
-redmew.whitelist_productivity('uranium-processing-2')
 redmew.move_recipe_unlock('centrifuge',        'uranium-processing', 'uranium-processing-2')
 redmew.move_recipe_unlock('uranium-fuel-cell', 'uranium-processing', 'uranium-processing-2')

@@ -41,11 +41,11 @@ data:extend({
       secondary = {r = 1.000, g = 0.722, b = 0.376, a = 1.000}, -- #ffb85fff
       tertiary = {r = 0.854, g = 0.659, b = 0.576, a = 1.000}, -- #d9a892ff
       quaternary = {r = 1.000, g = 0.494, b = 0.271, a = 1.000}, -- #ff7e45ff
-    }
+    },
+    allow_productivity = true,
   },
 })
 
-redmew.whitelist_productivity('rich-metal')
 redmew.add_unlock('palladium-processing', 'rich-metal')
 redmew.add_unlock('platinum-processing', 'rich-metal')
 
