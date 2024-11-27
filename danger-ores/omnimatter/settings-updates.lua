@@ -20,7 +20,7 @@ end
 
 if mods['omnimatter_compression'] then
   -- Mandatory
-  redmew.force_setting('bool', 'omnicompression_1x1_buildings', false)
+  redmew.force_setting('bool', 'omnicompression_1x1_buildings', true)
   redmew.force_setting('bool', 'omnicompression_compounding_building_mults', true)
   redmew.force_setting('bool', 'omnicompression_final_building', false)
   redmew.force_setting('bool', 'omnicompression_one_list', true)
