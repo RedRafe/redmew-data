@@ -378,6 +378,7 @@ local function tint_layers(obj, tint)
   if not obj then return end
   if obj.filename then lr_hr_tint(obj, tint) end
   if obj.layers and obj.layers[1] then lr_hr_tint(obj.layers[1], tint) end
+  if obj.structure then tint_layers(obj.structure, tint) end
   for _, d in pairs({'north', 'east', 'south', 'west'}) do tint_layers(obj[d], tint) end
 end
 
@@ -390,6 +391,7 @@ function apply_tint(obj, tint)
   tint_layers(obj.structure, tint)
   tint_layers(obj.patch, tint)
   tint_layers(obj.picture, tint)
+  tint_layers(obj.pictures, tint)
   if obj.graphics_set then tint_layers(obj.graphics_set.animation, tint) end
   if obj.wet_mining_graphics_set then tint_layers(obj.wet_mining_graphics_set.animation, tint) end
   for _, fb in pairs(obj.fluid_boxes or {}) do 
