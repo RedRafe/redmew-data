@@ -1,5 +1,7 @@
 require 'april-fools.2024.data-updates'
 
+require 'danger-ores.data-updates'
+
 require 'danger-ores.bz.data-updates'
 require 'danger-ores.exotic-industries.data-updates'
 require 'danger-ores.industrial-revolution-3.data-updates'
