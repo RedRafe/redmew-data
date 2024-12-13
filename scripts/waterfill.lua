@@ -59,16 +59,11 @@ end
 
 --=================================================================================================
 
----@type ScriptLib
-local Waterfill = {}
-
-Waterfill.events = {
-  [defines.events.on_player_selected_area] = edit,
-  [defines.events.on_player_alt_selected_area] = edit,
-}
-
 if settings.startup['do_enable_waterfill'] and settings.startup['do_enable_waterfill'].value then
-  return Waterfill
-else
-  return {}
+  redmew.add_library{
+    events = {
+      [defines.events.on_player_selected_area] = edit,
+      [defines.events.on_player_alt_selected_area] = edit,
+    }
+  }
 end
