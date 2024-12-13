@@ -1,0 +1,1 @@
+redmew.palette = require 'utils.color-palette'

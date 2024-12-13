@@ -356,7 +356,7 @@ end
 
 local function skip(recipe_name)
   for prefix, _ in pairs(BLACKLIST) do
-    if redmew.string.startsWith(recipe_name, prefix) then
+    if redmew.string.starts_with(recipe_name, prefix) then
       return true
     end
   end
@@ -493,14 +493,14 @@ end
 
 -- Remove recipe cats
 for name, _ in pairs(data.raw.recipe) do
-  if redmew.string.startsWith(name, 'rf-') then
+  if redmew.string.starts_with(name, 'rf-') then
     data.raw.recipe[name] = nil
   end
 end
 
 -- Remove recipes to regenerate
 for name, _ in pairs(data.raw['recipe-category']) do
-  if redmew.string.startsWith(name, 'recycle-') then
+  if redmew.string.starts_with(name, 'recycle-') then
     data.raw['recipe-category'][name] = nil
   end
 end
@@ -557,7 +557,7 @@ end
 
 local max_outputs = 0
 for _, recipe in pairs(data.raw.recipe) do
-  if redmew.string.startsWith(recipe.name, 'srf-') then
+  if redmew.string.starts_with(recipe.name, 'srf-') then
     max_outputs = math.max(max_outputs, #recipe.results)
   end
 end

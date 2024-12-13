@@ -1,4 +1,4 @@
-local PALETTE = redmew.PALETTE
+local PALETTE = redmew.palette
 
 local function apply_all_entities_friendly_colors()
   for _, source in pairs({

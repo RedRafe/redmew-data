@@ -1,6 +1,5 @@
-redmew = require '__redmew-data__.lib.control-util'
-ControlLoader = require '__redmew-data__.lib.loader'
-ControlLoader.init()
+require '__redmew-data__.utils.lib.lib'
+redmew.loader.init()
 
 local handler = require '__core__.lualib.event_handler'
 
@@ -17,6 +16,12 @@ handler.add_libraries{
   require 'scripts.waterfill'
 }
 
-require 'april-fools.2024.control'
-require 'frontier.krastorio2.control'
-require 'danger-ores.krastorio2.control'
+-- APRIL FOOLS
+require 'maps.april-fools.2024.control'
+-- CRASH SITE
+-- DANGER ORES
+require 'maps.danger-ores.krastorio2.control'
+-- DIGGY
+-- FRONTIER
+require 'maps.frontier.krastorio2.control'
+-- WARMONGER

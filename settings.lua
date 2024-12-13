@@ -1,6 +1,5 @@
-redmew = require '__redmew-data__.lib.settings-util'
-SettingsLoader = require '__redmew-data__.lib.loader'
-SettingsLoader.startup()
+require '__redmew-data__.utils.lib.lib'
+redmew.loader.startup()
 
 data:extend({
 	{
@@ -10,20 +9,26 @@ data:extend({
 		default_value = 'vanilla',
 		allowed_values = {
 			'vanilla',
-			'danger-ores',
-			'april-fools',
 			'frontier',
+			'diggy',
+			'danger-ores',
+			'crash-site',
+			'april-fools',
 		},
 		hidden = false,
 		order = '0',
 	},
 })
 
-require 'april-fools.2024.settings'
-
-require 'danger-ores.settings'
-
-require 'danger-ores.exotic-industries.settings'
-require 'danger-ores.industrial-revolution-3.settings'
-require 'danger-ores.krastorio2.settings'
-require 'danger-ores.pyanodon.settings'
+-- APRIL FOOLS
+require 'maps.april-fools.2024.settings'
+-- CRASH SITE
+-- DANGER ORES
+require 'maps.danger-ores.settings'
+require 'maps.danger-ores.exotic-industries.settings'
+require 'maps.danger-ores.industrial-revolution-3.settings'
+require 'maps.danger-ores.krastorio2.settings'
+require 'maps.danger-ores.pyanodon.settings'
+-- DIGGY
+-- FRONTIER
+-- WARMONGER
