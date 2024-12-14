@@ -1,4 +1,4 @@
-local default = require 'utils.info_default'
+local default = require 'utils.info_default'()
 default.incompatibles['omnilib'] = nil
 default.incompatibles['omnimatter_move'] = true
 

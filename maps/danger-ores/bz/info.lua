@@ -1,4 +1,4 @@
-local default = require 'utils.info_default'
+local default = require 'utils.info_default'()
 
 default.incompatibles['bzaluminum'] = nil
 default.incompatibles['bzcarbon'] = nil

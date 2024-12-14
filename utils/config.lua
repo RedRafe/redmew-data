@@ -28,5 +28,5 @@ return {
     require 'maps.frontier.zombies-extended.info',
     -- WARMONGER
   },
-  info_default = require 'utils.info_default'
+  info_default = require 'utils.info_default'()
 }

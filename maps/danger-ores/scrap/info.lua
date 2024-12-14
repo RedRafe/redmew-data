@@ -1,4 +1,4 @@
-local default = require 'utils.info_default'
+local default = require 'utils.info_default'()
 default.incompatibles['scrap-resource'] = nil
 
 return {

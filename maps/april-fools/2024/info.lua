@@ -3,5 +3,5 @@ return {
   ID = 'af:24',
   dependencies = {},
   compatibles = {},
-  incompatibles = require 'utils.info_default'.incompatibles
+  incompatibles = require 'utils.info_default'().incompatibles
 }

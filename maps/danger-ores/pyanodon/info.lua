@@ -1,4 +1,4 @@
-local default = require 'utils.info_default'
+local default = require 'utils.info_default'()
 
 local py_set = require 'mod-sets'['PyFE']
 for _, name in pairs(py_set.mods) do
