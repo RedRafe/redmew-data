@@ -18,6 +18,14 @@ data:extend({
 		hidden = false,
 		order = '0',
 	},
+	{
+		name = 'redmew_simple_technology_multiplier',
+		type = 'bool-setting',
+		setting_type = 'startup',
+		default_value = false,
+		hidden = false,
+		order = 'a',
+	},
 })
 
 -- APRIL FOOLS

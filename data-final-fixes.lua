@@ -1,4 +1,5 @@
 require 'prototypes.friendly-colors'
+require 'prototypes.simple-technology-multiplier'
 
 -- APRIL FOOLS
 require 'maps.april-fools.2024.data-final-fixes'
