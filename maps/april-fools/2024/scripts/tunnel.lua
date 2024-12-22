@@ -96,9 +96,9 @@ local function on_tunnel_built(event)
     end
 
     src_pole.destructible = false
-    src_pole.minable = false
+    src_pole.minable_flag = false
     dst_pole.destructible = false
-    dst_pole.minable = false
+    dst_pole.minable_flag = false
 
     game.print({'alert.tunnel_built', position.x, position.y, src.name, dst.name})
   else
