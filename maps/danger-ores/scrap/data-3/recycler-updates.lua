@@ -37,3 +37,18 @@ if recycler then
     },
   }
 end
+
+local function _item(name, amount)
+  return { type = 'item', name = name, amount = amount or 1, probability = 0.25 }
+end
+
+for name, results in pairs({
+  ['plastic-bar-recycling'] = { _item('coal') },
+  ['steel-plate-recycling'] = { _item('iron-plate', 5) },
+  ['battery-recycling'] = { _item('iron-plate'), _item('copper-plate') },
+  ['stone-brick-recycling'] = { _item('stone', 2) },
+  ['iron-plate-recycling'] = { _item('iron-ore') },
+}) do
+  local recipe = data.raw.recipe[name]
+  recipe.results = results
+end

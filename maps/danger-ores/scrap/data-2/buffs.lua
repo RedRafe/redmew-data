@@ -22,3 +22,5 @@ if not data.raw['transport-belt']['turbo-transport-belt'] then
     data.raw['furnace']['express-transport-belt-beltbox'].crafting_speed = 4
   end
 end
+
+data.raw.item['solid-fuel'].fuel_value = redmew.string.msv(data.raw.item['solid-fuel'].fuel_value, 5)
