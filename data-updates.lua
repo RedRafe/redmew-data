@@ -16,5 +16,6 @@ require 'maps.danger-ores.vanilla.data-updates'
 require 'maps.diggy.data-updates'
 -- FRONTIER
 require 'maps.frontier.krastorio2.data-updates'
+require 'maps.frontier.vanilla.data-updates'
 require 'maps.frontier.zombies-extended.data-updates'
 -- WARMONGER

@@ -25,6 +25,7 @@ return {
     require 'maps.diggy.vanilla.info',
     -- FRONTIER
     require 'maps.frontier.krastorio2.info',
+    require 'maps.frontier.vanilla.info',
     require 'maps.frontier.zombies-extended.info',
     -- WARMONGER
   },

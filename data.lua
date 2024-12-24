@@ -22,5 +22,6 @@ require 'maps.diggy.data'
 require 'maps.diggy.vanilla.data'
 -- FRONTIER
 require 'maps.frontier.krastorio2.data'
+require 'maps.frontier.vanilla.data'
 require 'maps.frontier.zombies-extended.data'
 -- WARMONGER
