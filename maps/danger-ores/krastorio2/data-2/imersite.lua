@@ -42,7 +42,7 @@ data:extend({
   -- Raw Imersite
   {
     type = 'recipe',
-    name = 'raw-imersite',
+    name = 'kr-imersite',
     always_show_made_in = true,
     category = 'chemistry',
     energy_required = 8,
@@ -53,7 +53,7 @@ data:extend({
     },
     results =
     {
-      { type = 'item', name='raw-imersite', amount = 1 }
+      { type = 'item', name='kr-imersite', amount = 1 }
 
     },
     allow_productivity = true,
@@ -69,4 +69,4 @@ data:extend({
 })
 
 redmew.add_unlock('kr-quarry-minerals-extraction', 'liquid-imersite')
-redmew.add_unlock('kr-quarry-minerals-extraction', 'raw-imersite')
+redmew.add_unlock('kr-quarry-minerals-extraction', 'kr-imersite')

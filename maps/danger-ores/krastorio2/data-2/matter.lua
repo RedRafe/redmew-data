@@ -7,9 +7,9 @@ matter.make_recipes({
   unlocked_by = 'kr-matter-rare-metals-processing',
 })
 
-redmew.remove_recipe_effect('kr-matter-rare-metals-processing', 'raw-rare-metals-to-matter')
-redmew.remove_recipe_effect('kr-matter-rare-metals-processing', 'matter-to-raw-rare-metals')
+redmew.remove_recipe_effect('kr-matter-rare-metals-processing', 'kr-kr-rare-metal-ore-to-matter')
+redmew.remove_recipe_effect('kr-matter-rare-metals-processing', 'kr-matter-to-kr-rare-metal-ore')
 
 -- disable wood conversion into matter
-data.raw.recipe['wood-to-matter'].hidden = true
-redmew.remove_recipe_effect('kr-matter-processing', 'wood-to-matter')
+data.raw.recipe['kr-wood-to-matter'].hidden = true
+redmew.remove_recipe_effect('kr-matter-processing', 'kr-wood-to-matter')

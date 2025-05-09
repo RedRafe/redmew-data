@@ -3,7 +3,7 @@ data:extend({
   {
     type = 'recipe',
     name = 'mineral-water',
-    category = 'fluid-filtration',
+    category = 'kr-fluid-filtration',
     always_show_made_in = true,
     always_show_products = true,
     energy_required = 8,
@@ -15,11 +15,11 @@ data:extend({
     },
     results=
     {
-      { type = 'fluid', name = 'mineral-water', amount = 10 },
+      { type = 'fluid', name = 'kr-mineral-water', amount = 10 },
       { type = 'fluid', name = 'water', amount = 90 },
       
     },
-    main_product = 'mineral-water',
+    main_product = 'kr-mineral-water',
     allow_productivity = false,
     crafting_machine_tint = {
       primary = data.raw.fluid['heavy-oil'].base_color, --dirty

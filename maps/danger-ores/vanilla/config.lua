@@ -88,7 +88,7 @@ return {
     type = 'mining-drill',
     fast_replaceable_group = 'electric-mining-drill',
     next_upgrade = 'electric-mining-drill-2',
-    _technology = 'kr-electric-mining-drill'
+    _technology = 'electric-mining-drill'
   },
   ['electric-mining-drill-2'] = {
     name = 'electric-mining-drill-2',

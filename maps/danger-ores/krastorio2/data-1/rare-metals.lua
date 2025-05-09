@@ -19,7 +19,7 @@ data:extend({
   -- Recipe Raw rare metals
   {
     type = 'recipe',
-    name = 'raw-rare-metals',
+    name = 'kr-rare-metal-ore',
     always_show_made_in = true,
     category = 'chemistry',
     energy_required = 3.2,
@@ -27,11 +27,11 @@ data:extend({
     ingredients =
     {
       { type = 'item', name = 'compact-raw-rare-metals', amount = 10 },
-      { type = 'fluid', name = 'chlorine', amount = 8 },
+      { type = 'fluid', name = 'kr-chlorine', amount = 8 },
     },
     results =
     {
-      { type = 'item', name = 'raw-rare-metals', amount = 3 }
+      { type = 'item', name = 'kr-rare-metal-ore', amount = 3 }
 
     },
     allow_productivity = true,
@@ -46,7 +46,7 @@ data:extend({
   },
 })
 
-data.raw.resource['rare-metals'].minable =
+data.raw.resource['kr-rare-metal-ore'].minable =
 {
   mining_particle = 'stone-particle',
   mining_time = 1,

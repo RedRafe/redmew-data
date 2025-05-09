@@ -54,7 +54,7 @@ data:extend({
       icon_mipmaps = 4,
     }},
     effects = {{type = 'unlock-recipe', recipe = emd2.name}},
-    prerequisites = {'kr-electric-mining-drill', 'chemical-science-pack'},
+    prerequisites = {'electric-mining-drill', 'chemical-science-pack'},
     unit = {
       count = 250,
       ingredients = {
@@ -88,7 +88,7 @@ data:extend({
       tint = emd4._tint,
       icon_size = 64,
     }},
-    order = 'a[items]-c[electric-mining-drill]',
+    order = 'a[items]-c[electric-mining-drill-mk2]-2',
     place_result = emd4.name,
     stack_size = 50,
     subgroup = 'extraction-machine',

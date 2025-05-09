@@ -89,15 +89,15 @@ data:extend({{
   type = 'technology',
   name = 'steam-power-2',
   icons = {{
-    icon = '__Krastorio2Assets__/technologies/steam-power.png',
+    icon = '__base__/graphics/technology/steam-power.png',
     tint = se2._tint,
     icon_size = 256,
     icon_mipmaps = 4,
   }},
   prerequisites = {'chemical-science-pack'},
   effects = {
-    {type = 'unlock-recipe', recipe = bo2.name},
-    {type = 'unlock-recipe', recipe = se2.name},
+    { type = 'unlock-recipe', recipe = bo2.name },
+    { type = 'unlock-recipe', recipe = se2.name },
   },
   unit = {
     count = 350,
