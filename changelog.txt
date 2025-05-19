@@ -1,4 +1,11 @@
 ---------------------------------------------------------------------------------------------------
+Version: 2.2.2
+Date: 2025-05-15
+  Changes:
+    - Added Seismothermic generator to Diggy
+    - Added FLuid electric mining drill to Diggy
+    - Added Pickaxe upgrades to Diggy
+---------------------------------------------------------------------------------------------------
 Version: 2.2.1
 Date: 2025-05-09
   Changes:
