@@ -9,6 +9,7 @@ require 'maps.april-fools.2024.control'
 -- DANGER ORES
 require 'maps.danger-ores.krastorio2.control'
 -- DIGGY
+require 'maps.diggy.vanilla.control'
 -- FRONTIER
 require 'maps.frontier.krastorio2.control'
 -- WARMONGER

@@ -34,7 +34,7 @@ data:extend({
     {
         name = 'thermal',
         type = 'surface-property',
-        is_time = true,
+        is_time = false,
         default_value = 100,
     },
     -- Entity
@@ -66,6 +66,8 @@ data:extend({
             usage_priority = 'solar',
         },
         solar_coefficient_property = 'thermal',
+        performance_at_day = 1,
+        performance_at_night = 1,
         picture = {
             layers = {
                 {
