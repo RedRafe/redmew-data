@@ -1,3 +1,5 @@
+-- [[ DEPRECATED TO prototypes.belt-stacking ]]
+
 local inserter_capacity_bonus_8 = table.deepcopy(data.raw['technology']['inserter-capacity-bonus-7'])
 inserter_capacity_bonus_8.name = 'inserter-capacity-bonus-8'
 inserter_capacity_bonus_8.unit = {

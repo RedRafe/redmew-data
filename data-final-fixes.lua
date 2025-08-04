@@ -12,6 +12,7 @@ require 'maps.danger-ores.krastorio2.data-final-fixes'
 require 'maps.danger-ores.omnimatter.data-final-fixes'
 require 'maps.danger-ores.pyanodon.data-final-fixes'
 require 'maps.danger-ores.scrap.data-final-fixes'
+require 'maps.danger-ores.space-age.data-final-fixes'
 require 'maps.danger-ores.vanilla.data-final-fixes'
 -- DIGGY
 -- FRONTIER

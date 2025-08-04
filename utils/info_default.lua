@@ -16,6 +16,7 @@ return function()
       ['omnilib'] = true,
       ['pypostprocessing'] = true,
       ['scrap-resource'] = true,
+      ['space-age'] = true,
       ['zombiesextended-core'] = true,
     }
   }

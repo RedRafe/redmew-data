@@ -11,6 +11,7 @@ require 'maps.danger-ores.krastorio2.data-updates'
 require 'maps.danger-ores.omnimatter.data-updates'
 require 'maps.danger-ores.pyanodon.data-updates'
 require 'maps.danger-ores.scrap.data-updates'
+require 'maps.danger-ores.space-age.data-updates'
 require 'maps.danger-ores.vanilla.data-updates'
 -- DIGGY
 require 'maps.diggy.data-updates'

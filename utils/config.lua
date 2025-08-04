@@ -20,6 +20,7 @@ return {
     require 'maps.danger-ores.omnimatter.info',
     require 'maps.danger-ores.pyanodon.info',
     require 'maps.danger-ores.scrap.info',
+    require 'maps.danger-ores.space-age.info',
     require 'maps.danger-ores.vanilla.info',
     -- DIGGY
     require 'maps.diggy.vanilla.info',

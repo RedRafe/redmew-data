@@ -1,6 +1,6 @@
 {
   "name": "redmew-data",
-  "version": "2.2.3",
+  "version": "2.3.0",
   "title": "RedMew Data",
   "author": "RedRafe",
   "source": "https://github.com/RedRafe/redmew-data",
@@ -20,6 +20,7 @@
     "? omnimatter",
     "? pypostprocessing",
     "? reverse-factory",
+    "? space-age",
     "? zombiesextended-core"
   ],
   "description": "Handles data stage for mod compatibility with RedMew's scenarios"
