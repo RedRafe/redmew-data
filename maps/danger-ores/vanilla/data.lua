@@ -11,3 +11,5 @@ require 'data-1.nuclear'
 require 'data-1.steam'
 require 'data-1.stone-to-uranium'
 require 'data-1.worker-robot-storage'
+
+require 'prototypes.advanced-coal-liquefaction'

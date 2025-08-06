@@ -1,8 +1,13 @@
 ---------------------------------------------------------------------------------------------------
+Version: 2.3.2
+Date: 2025-08-05
+  Changes:
+    - [DO]: Added Advanced coal liquefaction recipe
+---------------------------------------------------------------------------------------------------
 Version: 2.3.1
 Date: 2025-08-05
   Changes:
-    - AFixed tile collision masks
+    - [DO:SA]: Fixed tile collision masks
 ---------------------------------------------------------------------------------------------------
 Version: 2.3.0
 Date: 2025-08-04
@@ -12,15 +17,15 @@ Date: 2025-08-04
 Version: 2.2.3
 Date: 2025-05-19
   Changes:
-    - Diggy: fixed Seismothermic generator power cycle
-    - Diggy: removed wall connections 
+    - [Diggy]: fixed Seismothermic generator power cycle
+    - [Diggy]: removed wall connections 
 ---------------------------------------------------------------------------------------------------
 Version: 2.2.2
 Date: 2025-05-15
   Changes:
-    - Added Seismothermic generator to Diggy
-    - Added FLuid electric mining drill to Diggy
-    - Added Pickaxe upgrades to Diggy
+    - [Diggy]: Added Seismothermic generator
+    - [Diggy]: Added FLuid electric mining drill
+    - [Diggy]: Added Pickaxe upgrades
 ---------------------------------------------------------------------------------------------------
 Version: 2.2.1
 Date: 2025-05-09
@@ -110,7 +115,7 @@ Date: 2024-11-03
 Version: 0.5.1
 Date: 2024-08-20
   Changes:
-    - [FR:ZE] Fix incorrect file requirement
+    - [FR:ZombieExtended] Fix incorrect file requirement
 ---------------------------------------------------------------------------------------------------
 Version: 0.5.0
 Date: 2024-08-19
@@ -148,7 +153,7 @@ Date: 2024-07-21
 Version: 0.3.1
 Date: 2024-06-07
   Changes:
-    - Added Barreling machine to AF2024
+    - [AF2024]: Added Barreling machine
 ---------------------------------------------------------------------------------------------------
 Version: 0.3.0
 Date: 2024-03-29
@@ -170,7 +175,7 @@ Date: 2024-03-02
 Version: 0.2.1
 Date: 2024-02-24
   Changes:
-    - Added DangerOres+Scrap module
+    - Added DangerOres+Scrap
 ---------------------------------------------------------------------------------------------------
 Version: 0.2.0
 Date: 2024-02-24
@@ -180,14 +185,14 @@ Date: 2024-02-24
 Version: 0.1.6
 Date: 2023-12-16
   Bugfixes:
-    - EI: fix recipes
+    - [DO:EI]: Fixed recipes
 ---------------------------------------------------------------------------------------------------
 Version: 0.1.5
 Date: 2023-12-12
   Changes:
-    - Added new EI fallback recipes
-    - Added inserter stack bonuses to BZ
-    - Doubled BZ's pollution emissions
+    - [DO:EI]: Added new EI fallback recipes
+    - [DO:BZ]: Added inserter stack bonuses
+    - [DO:BZ]: Doubled BZ's pollution emissions
 ---------------------------------------------------------------------------------------------------
 Version: 0.1.4
 Date: 2023-11-29
@@ -203,10 +208,10 @@ Date: 2023-11-18
 Version: 0.1.2
 Date: 2023-11-18
   Changes:
-    - IR3: added diamond and ruby recipes
-    - IR3: doubled pollution emission for all machines
+    - [DO:IR3]: added diamond and ruby recipes
+    - [DO:IR3]: doubled pollution emission for all machines
   Bugfixes:
-    - IR3: fixed wood & rubber wood recipes
+    - [DO:IR3]: fixed wood & rubber wood recipes
 ---------------------------------------------------------------------------------------------------
 Version: 0.1.1
 Date: 2023-10-30
