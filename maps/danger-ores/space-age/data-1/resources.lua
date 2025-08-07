@@ -138,7 +138,11 @@ data.raw['simple-entity']['big-fulgora-rock'].autoplace = {
 for _, entity in pairs(data.raw['simple-entity']) do
     if not redmew.string.starts_with(entity.name, 'parameter') then
         entity.collision_mask = nil
-        log('Removing mask for ...' .. entity.name)
     end
 end
 
+for _, plant in pairs(data.raw.plant) do
+    if plant.autoplace and plant.autoplace.tile_restriction then
+        plant.autoplace.tile_restriction = nil
+    end
+end
