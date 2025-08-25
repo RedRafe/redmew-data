@@ -1,4 +1,10 @@
 ---------------------------------------------------------------------------------------------------
+Version: 2.3.4
+Date: 2025-08-25
+  Changes:
+    - [DO]: Uniformed stone to uranium recipes
+    - [DO:SA] Added coal gasification for ammoniacal solution
+---------------------------------------------------------------------------------------------------
 Version: 2.3.3
 Date: 2025-08-25
   Changes:
