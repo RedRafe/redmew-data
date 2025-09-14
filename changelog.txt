@@ -1,9 +1,10 @@
 ---------------------------------------------------------------------------------------------------
-Version: 2.3.5
+Version: 2.3.6
 Date: 2025-09-14
   Changes:
     - [DO:K2] Rescaled rare metals and yellowcake icons
-    - [DO:K2] Removed crusher ore voiding recipes
+    - [DO:K2] Removed ore-voiding recipes from crushers
+    - [DO:SA] Removed ore-voiding recipes from recyclers
 ---------------------------------------------------------------------------------------------------
 Version: 2.3.4
 Date: 2025-08-25
