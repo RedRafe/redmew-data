@@ -13,7 +13,7 @@ data:extend({
 					{
 						size = 64,
 						filename = '__redmew-data__/graphics/icons/uranium-powder.png',
-						scale = 0.25,
+						scale = 0.50,
 						mipmap_count = 4
 					},
 					{
@@ -23,7 +23,7 @@ data:extend({
 						tint = {r = 0.3, g = 0.3, b = 0.3, a = 0.3},
 						size = 64,
 						filename = '__redmew-data__/graphics/icons/uranium-powder-light.png',
-						scale = 0.25,
+						scale = 0.50,
 						mipmap_count = 4
 					}
 				}
@@ -34,7 +34,7 @@ data:extend({
 					{
 						size = 64,
 						filename = '__redmew-data__/graphics/icons/uranium-powder-1.png',
-						scale = 0.25,
+						scale = 0.50,
 						mipmap_count = 4
 					},
 					{
@@ -44,7 +44,7 @@ data:extend({
 						tint = {r = 0.3, g = 0.3, b = 0.3, a = 0.3},
 						size = 64,
 						filename = '__redmew-data__/graphics/icons/uranium-powder-1-light.png',
-						scale = 0.25,
+						scale = 0.50,
 						mipmap_count = 4
 					}
 				}
@@ -55,7 +55,7 @@ data:extend({
 					{
 						size = 64,
 						filename = '__redmew-data__/graphics/icons/uranium-powder-2.png',
-						scale = 0.25,
+						scale = 0.50,
 						mipmap_count = 4
 					},
 					{
@@ -65,7 +65,7 @@ data:extend({
 						tint = {r = 0.3, g = 0.3, b = 0.3, a = 0.3},
 						size = 64,
 						filename = '__redmew-data__/graphics/icons/uranium-powder-2-light.png',
-						scale = 0.25,
+						scale = 0.50,
 						mipmap_count = 4
 					}
 				}
