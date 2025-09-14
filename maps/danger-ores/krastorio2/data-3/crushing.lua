@@ -4,7 +4,7 @@ for _, name in pairs({
     'kr-crush-iron-ore',
     'kr-crush-kr-imersite',
     'kr-crush-kr-rare-metal-ore',
-    'kr-crush-scoal',
+    'kr-crush-coal',
     'kr-crush-stone',
     'kr-crush-uranium-ore',
 }) do
