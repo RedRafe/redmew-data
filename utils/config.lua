@@ -13,6 +13,9 @@ return {
     require 'maps.april-fools.2024.info',
     -- CRASH SITE
     -- DANGER ORES
+    require 'maps.danger-ores.angel.info',
+    require 'maps.danger-ores.angel-bob.info',
+    require 'maps.danger-ores.bob.info',
     require 'maps.danger-ores.bz.info',
     require 'maps.danger-ores.exotic-industries.info',
     require 'maps.danger-ores.industrial-revolution-3.info',
