@@ -5,6 +5,8 @@ require 'prototypes.simple-technology-multiplier'
 require 'maps.april-fools.2024.data-final-fixes'
 -- CRASH SITE
 -- DANGER ORES
+require 'maps.danger-ores.angel-bob.data-final-fixes'
+require 'maps.danger-ores.bob.data-final-fixes'
 require 'maps.danger-ores.bz.data-final-fixes'
 require 'maps.danger-ores.exotic-industries.data-final-fixes'
 require 'maps.danger-ores.industrial-revolution-3.data-final-fixes'
