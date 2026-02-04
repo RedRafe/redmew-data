@@ -6,6 +6,7 @@ Date: 2025-09-14
     - Removed 'redmew_robot_energy_multiplier_include_construction_robots' setting
     - Changed 'redmew_robot_energy_multiplier' to True/False, default value: False (10x)
     - Added RedMew's 1x1 loaders
+    - Added RedMew's Deep-house
 
 ---------------------------------------------------------------------------------------------------
 Version: 2.3.6

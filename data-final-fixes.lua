@@ -9,6 +9,7 @@ require 'prototypes.expensive-robots'
 require 'maps.april-fools.2024.data-final-fixes'
 -- CRASH SITE
 -- DANGER ORES
+require 'maps.danger-ores.data-final-fixes'
 require 'maps.danger-ores.angel-bob.data-final-fixes'
 require 'maps.danger-ores.bob.data-final-fixes'
 require 'maps.danger-ores.bz.data-final-fixes'
