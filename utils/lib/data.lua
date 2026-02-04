@@ -677,6 +677,71 @@ reskin_library.make_assembling_machine_tint_layers = function(entity, tint)
     table.insert(entity.graphics_set.animation.layers, 1, animation)
 end
 
+reskin_library.make_1x1_loader_tint_layers = function(entity, tint)
+    entity.structure = {}
+    entity.structure.direction_in = {
+        sheets = {
+            {
+                filename = '__redmew-data__/graphics/entity/loader/loader.png',
+                priority = 'extra-high',
+                shift = { 0.15625, 0.0703125 },
+                width = 106,
+                height = 85,
+                y = 85,
+                scale = 0.5,
+            },
+            {
+                filename = '__redmew-data__/graphics/entity/loader/loader-mask.png',
+                priority = 'extra-high',
+                shift = { 0.15625, 0.0703125 },
+                width = 106,
+                height = 85,
+                y = 85,
+                scale = 0.5,
+                tint = tint,
+            },
+            {
+                filename = '__redmew-data__/graphics/entity/loader/loader-rust.png',
+                priority = 'extra-high',
+                shift = { 0.15625, 0.0703125 },
+                width = 106,
+                height = 85,
+                y = 85,
+                scale = 0.5,
+            },
+        },
+    }
+    entity.structure.direction_out = {
+        sheets = {
+            {
+                filename = '__redmew-data__/graphics/entity/loader/loader.png',
+                priority = 'extra-high',
+                shift = { 0.15625, 0.0703125 },
+                width = 106,
+                height = 85,
+                scale = 0.5,
+            },
+            {
+                filename = '__redmew-data__/graphics/entity/loader/loader-mask.png',
+                priority = 'extra-high',
+                shift = { 0.15625, 0.0703125 },
+                width = 106,
+                height = 85,
+                scale = 0.5,
+                tint = tint,
+            },
+            {
+                filename = '__redmew-data__/graphics/entity/loader/loader-rust.png',
+                priority = 'extra-high',
+                shift = { 0.15625, 0.0703125 },
+                width = 106,
+                height = 85,
+                scale = 0.5,
+            },
+        },
+    }
+end
+
 reskin_library.switch_prototype = function(prototype, obj)
     local tint = obj._tint
     local reskin_type = obj._reskin
@@ -712,6 +777,8 @@ reskin_library.switch_prototype = function(prototype, obj)
         reskin_library.make_boiler_tint_layers{ layers = prototype.pictures, filepath = filepath, tint = tint }
     elseif reskin_type == 'steam-engine' then
         reskin_library.make_steam_engine_tint_layers(prototype, tint)
+    elseif reskin_type == 'loader-1x1' then
+        reskin_library.make_1x1_loader_tint_layers(prototype, tint)
     end
 end
 

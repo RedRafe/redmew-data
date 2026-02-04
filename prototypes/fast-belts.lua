@@ -5,6 +5,9 @@ if data.raw['transport-belt']['express-transport-belt'] then
     data.raw['splitter']['express-splitter'].speed = express_speed
     data.raw['loader']['express-loader'].speed = express_speed
 
+    if data.raw['loader-1x1']['redmew-express-loader'] then
+        data.raw['loader-1x1']['redmew-express-loader'].speed = express_speed
+    end
     if data.raw['loader-1x1']['aai-express-loader'] then
         data.raw['loader-1x1']['aai-express-loader'].speed = express_speed
     end

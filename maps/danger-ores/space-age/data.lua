@@ -1,6 +1,7 @@
 if not redmew.loader.enabled('do:sa') then return end
 
 require 'prototypes.fast-belts'
+require 'prototypes.entities.loader'
 require 'prototypes.recipes.advanced-coal-liquefaction'
 require 'prototypes.recipes.stone-to-uranium'
 require 'prototypes.technologies.braking-force-8'

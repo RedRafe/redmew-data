@@ -1,6 +1,8 @@
 require '__redmew-data__.utils.lib.lib'
 redmew.loader.init()
 
+require 'scripts.loader'
+
 -- APRIL FOOLS
 require 'maps.april-fools.2024.control'
 -- CRASH SITE
