@@ -14,23 +14,23 @@ default.incompatibles['bztungsten'] = nil
 default.incompatibles['bzzirconium'] = nil
 
 return {
-  name = 'DangerOres/BZ',
-  ID = 'do:bz',
-  dependencies = {
-    ['bzcarbon'] = true,
-    ['bzgas'] = true,
-    ['bzgold'] = true,
-    ['bztitanium'] = true,
-    ['bztungsten'] = true,
-  },
-  compatibles = {
-    ['bzaluminum'] = true,
-    ['bzchlorine'] = true,
-    ['bzfoundry'] = true,
-    ['bzlead'] = true,
-    ['bzsilicon'] = true,
-    ['bztin'] = true,
-    ['bzzirconium'] = true,
-  },
-  incompatibles = default.incompatibles
+    name = 'DangerOres/BZ',
+    ID = 'do:bz',
+    dependencies = {
+        ['bzcarbon'] = true,
+        ['bzgas'] = true,
+        ['bzgold'] = true,
+        ['bztitanium'] = true,
+        ['bztungsten'] = true,
+    },
+    compatibles = {
+        ['bzaluminum'] = true,
+        ['bzchlorine'] = true,
+        ['bzfoundry'] = true,
+        ['bzlead'] = true,
+        ['bzsilicon'] = true,
+        ['bztin'] = true,
+        ['bzzirconium'] = true,
+    },
+    incompatibles = default.incompatibles,
 }

@@ -1,0 +1,1 @@
+Credits to [Kirazy/Artisanal Reskins](https://mods.factorio.com/user/Kirazy) for the graphics

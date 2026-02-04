@@ -79,7 +79,7 @@ data:extend({
 
 data.raw.resource['uranium-ore'].minable =
 {
-  mining_particle = 'stone-particle',
-  mining_time = 1,
-  result = 'uranium-ore'
+	mining_particle = 'stone-particle',
+	mining_time = 1,
+	result = 'uranium-ore'
 }

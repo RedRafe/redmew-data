@@ -1,5 +1,5 @@
 if not redmew.loader.enabled('do:bz') then return end
 
-require 'data-2.buffs'
-require 'data-2.expensive-robots'
-require 'data-2.resources'
+require 'prototypes.fast-belts'
+
+require 'maps.danger-ores.bz.data-2.resources'

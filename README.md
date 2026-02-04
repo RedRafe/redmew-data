@@ -26,6 +26,7 @@ To join a RedMew Factorio server, follow the following steps in Factorio:
 ## Credits
 
 - [Krastorio2](https://mods.factorio.com/mod/Krastorio2) assets
-- [Hurricane](https://mods.factorio.com/user/Hurricane046)
+- [Hurricane](https://mods.factorio.com/user/Hurricane046) assets
+- [Kirazy](https://mods.factorio.com/user/Kirazy) assets
 
-Please refer to each file's license
+Please refer to each directory/file's license

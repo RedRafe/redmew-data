@@ -2,15 +2,15 @@ local blooms = table.deepcopy(data.raw.recipe['ei_alien-seed:growing'])
 
 blooms.name = 'ei_alien-seed:growing-2'
 blooms.ingredients = {
-  { name = 'ei_oxygen-gas', type = 'fluid', amount = 2000 },
-  { name = 'ei_crystal-solution', type = 'fluid', amount = 50},
-  { name = 'advanced-circuit', type = 'item', amount = 60 }
+    { name = 'ei_oxygen-gas', type = 'fluid', amount = 2000 },
+    { name = 'ei_crystal-solution', type = 'fluid', amount = 50 },
+    { name = 'advanced-circuit', type = 'item', amount = 60 },
 }
 
 local stabilizer = table.deepcopy(data.raw.recipe['ei_fusion-reactor'])
 stabilizer.name = 'ei_alien-stabilizer'
 stabilizer.main_product = 'ei_alien-stabilizer'
-stabilizer.results = {{ type = 'item', name = 'ei_alien-stabilizer', amount = 1 }}
+stabilizer.results = { { type = 'item', name = 'ei_alien-stabilizer', amount = 1 } }
 
 data:extend({ blooms, stabilizer })
 

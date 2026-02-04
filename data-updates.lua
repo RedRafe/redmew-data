@@ -1,7 +1,6 @@
 -- APRIL FOOLS
 require 'maps.april-fools.2024.data-updates'
 -- CRASH SITE
-require 'maps.crash-site.data-updates'
 -- DANGER ORES
 require 'maps.danger-ores.data-updates'
 require 'maps.danger-ores.bz.data-updates'
@@ -14,9 +13,7 @@ require 'maps.danger-ores.scrap.data-updates'
 require 'maps.danger-ores.space-age.data-updates'
 require 'maps.danger-ores.vanilla.data-updates'
 -- DIGGY
-require 'maps.diggy.data-updates'
 -- FRONTIER
-require 'maps.frontier.krastorio2.data-updates'
 require 'maps.frontier.vanilla.data-updates'
 require 'maps.frontier.zombies-extended.data-updates'
 -- WARMONGER

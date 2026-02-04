@@ -1,0 +1,56 @@
+local ef1 = redmew.config['electric-furnace']
+local ef2 = redmew.config['electric-furnace-2']
+
+--=================================================================================================
+
+redmew.update_prototype(ef1)
+
+--=================================================================================================
+
+data:extend({
+    -- Item
+    {
+        name = ef2.name,
+        type = 'item',
+        icons = redmew.reskin_library.make_item_icons('electric-furnace', ef2._tint),
+        order = 'c[electric-furnace]',
+        place_result = ef2.name,
+        stack_size = 50,
+        subgroup = 'smelting-machine',
+    },
+    -- Recipe
+    {
+        name = ef2.name,
+        type = 'recipe',
+        enabled = false,
+        energy_required = 5,
+        ingredients = {
+            { type = 'item', name = 'electric-furnace', amount = 2 },
+            { type = 'item', name = 'engine-unit', amount = 10 },
+            { type = 'item', name = 'refined-concrete', amount = 100 },
+        },
+        results = { { type = 'item', name = ef2.name, amount = 1 } },
+    },
+    -- Entity
+    redmew.make_tier(ef2),
+    -- Technology
+    {
+        type = 'technology',
+        name = ef2._technology,
+        icons = redmew.reskin_library.make_technology_icons('electric-furnace', ef2._tint),
+        effects = { { type = 'unlock-recipe', recipe = ef2.name } },
+        prerequisites = { 'advanced-material-processing-2', 'production-science-pack', 'utility-science-pack' },
+        unit = {
+            count = 300,
+            ingredients = {
+                { 'automation-science-pack', 1 },
+                { 'logistic-science-pack', 1 },
+                { 'chemical-science-pack', 1 },
+                { 'production-science-pack', 1 },
+                { 'utility-science-pack', 1 },
+            },
+            time = 60,
+        },
+        order = 'c-c-b',
+    },
+})

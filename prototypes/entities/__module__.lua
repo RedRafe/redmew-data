@@ -1,0 +1,6 @@
+require 'assembling-machine'
+require 'chemical'
+require 'electric-furnace'
+require 'mining-drills'
+require 'nuclear'
+require 'steam'

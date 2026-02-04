@@ -4,9 +4,9 @@ local fr3 = redmew.config['do:chrome-forestry']
 
 -- Make new entities
 data:extend{
-  redmew.make_tier(fr1),
-  redmew.make_tier(fr2),
-  redmew.make_tier(fr3),
+    redmew.make_tier(fr1),
+    redmew.make_tier(fr2),
+    redmew.make_tier(fr3),
 }
 
 

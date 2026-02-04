@@ -1,4 +1,12 @@
 ---------------------------------------------------------------------------------------------------
+Version: 3.0.0
+Date: 2025-09-14
+  Changes:
+    - Removed 'do_ore_stack_size' setting
+    - Removed 'redmew_robot_energy_multiplier_include_construction_robots' setting
+    - Changed 'redmew_robot_energy_multiplier' to True/False, default value: False (10x)
+
+---------------------------------------------------------------------------------------------------
 Version: 2.3.6
 Date: 2025-09-14
   Changes:

@@ -325,6 +325,398 @@ end
 
 --=================================================================================================
 
+local reskin_library = {}
+redmew.reskin_library = reskin_library
+
+---@param name string 'solar-panel'
+---@param tint_mask? Color
+---@param tint_highlights? Color
+reskin_library.make_item_icons = function(name, tint_mask, tint_highlights)
+    local path = '__redmew-data__/graphics/icons/' .. name .. '/' .. name
+    local path_base = path .. '-icon-base.png'
+    local path_mask = path .. '-icon-mask.png'
+    local path_highlights = path .. '-icon-highlights.png'
+
+    return {
+        { icon = path_base, icon_size = 64, scale = 0.5 },
+        { icon = path_mask, icon_size = 64, scale = 0.5, tint = tint_mask },
+        { icon = path_highlights, icon_size = 64, scale = 0.5, tint = tint_highlights or { 1, 1, 1 } },
+    }
+end
+
+---@param name string 'solar-energy'
+---@param tint_mask Color
+---@param tint_highlights? Color
+reskin_library.make_technology_icons = function(name, tint_mask, tint_highlights)
+    local path = '__redmew-data__/graphics/technology/' .. name .. '/' .. name
+    local path_base = path .. '-technology-base.png'
+    local path_mask = path .. '-technology-mask.png'
+    local path_highlights = path .. '-technology-highlights.png'
+
+    return {
+        { icon = path_base, icon_size = 256, scale = 1 },
+        { icon = path_mask, icon_size = 256, scale = 1, tint = tint_mask },
+        { icon = path_highlights, icon_size = 256, scale = 1, tint = tint_highlights or { 1, 1, 1 } },
+    }
+end
+
+reskin_library.make_tint_layers = function(obj)
+    local layers = obj.layers
+    local filepath = obj.filepath
+
+    local layer = table.deepcopy(layers[1])
+    if obj.repeat_count then
+        layer.frame_count = nil
+        layer.line_length = nil
+        layer.repeat_count = obj.repeat_count
+    end
+
+    local base = table.deepcopy(layer)
+    base.filename = filepath .. '-base.png'
+
+    local mask = table.deepcopy(layer)
+    mask.filename = filepath .. '-mask.png'
+    mask.tint = obj.tint
+
+    local highlight = table.deepcopy(layer)
+    highlight.filename = filepath .. '-highlights.png'
+    highlight.blend_mode = 'additive'
+
+    table.insert(layers, 2, base)
+    table.insert(layers, 3, mask)
+    table.insert(layers, 4, highlight)
+end
+
+reskin_library.make_tint_layers_4_ways = function(obj)
+    for _, dir in pairs({ 'north', 'south', 'east', 'west' }) do
+        local o = table.deepcopy(obj)
+        o.layers = obj.layers[dir].layers
+        reskin_library.make_tint_layers(o)
+    end
+end
+
+reskin_library.make_tint_layers_2_ways = function(obj)
+    for _, dir in pairs({ 'horizontal', 'vertical' }) do
+        local o = table.deepcopy(obj)
+        o.layers = obj.layers[dir .. '_animation'].layers
+        o.filepath = o.filepath .. '-' .. dir
+        reskin_library.make_tint_layers(o)
+    end
+end
+
+reskin_library.make_assembling_machine_pipe_picture = function(fluid_boxes, tint)
+    for _, fb in pairs(fluid_boxes or {}) do
+        for direction in pairs(fb.pipe_picture) do
+            if not fb.pipe_picture[direction].layers then
+                fb.pipe_picture[direction] = { layers = { fb.pipe_picture[direction] } }
+            end
+            reskin_library.make_tint_layers {
+                layers = fb.pipe_picture[direction].layers,
+                filepath = '__redmew-data__/graphics/entity/assembling-machine/pipes/assembling-machine-pipe-' .. direction,
+                tint = tint,
+            }
+        end
+    end
+end
+
+reskin_library.make_boiler_tint_layers = function(obj)
+    for _, dir in pairs({ 'north', 'south', 'east', 'west' }) do
+        local o = table.deepcopy(obj)
+        o.layers = obj.layers[dir].structure.layers
+        o.filepath = o.filepath .. '-' .. dir .. '-idle'
+        reskin_library.make_tint_layers(o)
+    end
+end
+
+reskin_library.make_steam_turbine_tint_layers = function(entity, tint)
+    entity.horizontal_animation = {
+        layers = {
+            -- Base
+            {
+                filename = '__base__/graphics/entity/steam-turbine/steam-turbine-H.png',
+                width = 320,
+                height = 245,
+                frame_count = 8,
+                line_length = 4,
+                shift = util.by_pixel(0, -2.75),
+                run_mode = 'backward',
+                scale = 0.5,
+            },
+            -- Mask
+            {
+                filename = '__redmew-data__/graphics/entity/steam-turbine/steam-turbine-horizontal-mask.png',
+                width = 320,
+                height = 245,
+                repeat_count = 8,
+                shift = util.by_pixel(0, -2.75),
+                tint = tint,
+                scale = 0.5,
+            },
+            -- Highlights
+            {
+                filename = '__redmew-data__/graphics/entity/steam-turbine/steam-turbine-horizontal-highlights.png',
+                width = 320,
+                height = 245,
+                repeat_count = 8,
+                shift = util.by_pixel(0, -2.75),
+                blend_mode = 'additive',
+                scale = 0.5,
+            },
+            -- Shadow
+            {
+                filename = '__base__/graphics/entity/steam-turbine/steam-turbine-H-shadow.png',
+                width = 435,
+                height = 150,
+                repeat_count = 8,
+                draw_as_shadow = true,
+                shift = util.by_pixel(28.5, 18),
+                run_mode = 'backward',
+                scale = 0.5,
+            },
+        },
+    }
+    entity.vertical_animation = {
+        layers = {
+            -- Base
+            {
+                filename = '__base__/graphics/entity/steam-turbine/steam-turbine-V.png',
+                width = 217,
+                height = 374,
+                frame_count = 8,
+                line_length = 4,
+                shift = util.by_pixel(4.75, 0.0),
+                run_mode = 'backward',
+                scale = 0.5,
+            },
+            -- Mask
+            {
+                filename = '__redmew-data__/graphics/entity/steam-turbine/steam-turbine-vertical-mask.png',
+                width = 217,
+                height = 347,
+                repeat_count = 8,
+                shift = util.by_pixel(4.75, 6.75),
+                tint = tint,
+                scale = 0.5,
+            },
+            -- Highlights
+            {
+                filename = '__redmew-data__/graphics/entity/steam-turbine/steam-turbine-vertical-highlights.png',
+                width = 217,
+                height = 347,
+                repeat_count = 8,
+                shift = util.by_pixel(4.75, 6.75),
+                blend_mode = 'additive',
+                scale = 0.5,
+            },
+            -- Shadow
+            {
+                filename = '__base__/graphics/entity/steam-turbine/steam-turbine-V-shadow.png',
+                width = 302,
+                height = 260,
+                repeat_count = 8,
+                draw_as_shadow = true,
+                shift = util.by_pixel(39.5, 24.5),
+                run_mode = 'backward',
+                scale = 0.5,
+            },
+        },
+    }
+end
+
+reskin_library.make_steam_engine_tint_layers = function(entity, tint)
+    entity.horizontal_animation = {
+        layers = {
+            -- Base
+            {
+                filename = '__base__/graphics/entity/steam-engine/steam-engine-H.png',
+                width = 352,
+                height = 257,
+                frame_count = 32,
+                line_length = 8,
+                shift = util.by_pixel(1, -4.75),
+                scale = 0.5,
+            },
+            -- Color Mask
+            {
+                filename = '__redmew-data__/graphics/entity/steam-engine/steam-engine-horizontal-mask.png',
+                width = 352,
+                height = 257,
+                frame_count = 32,
+                line_length = 8,
+                shift = util.by_pixel(1, -4.75),
+                tint = tint,
+                scale = 0.5,
+            },
+            -- Highlights
+            {
+                filename = '__redmew-data__/graphics/entity/steam-engine/steam-engine-horizontal-highlights.png',
+                width = 352,
+                height = 257,
+                frame_count = 32,
+                line_length = 8,
+                shift = util.by_pixel(1, -4.75),
+                blend_mode = 'additive',
+                scale = 0.5,
+            },
+            -- Shadow
+            {
+                filename = '__base__/graphics/entity/steam-engine/steam-engine-H-shadow.png',
+                width = 508,
+                height = 160,
+                frame_count = 32,
+                line_length = 8,
+                draw_as_shadow = true,
+                shift = util.by_pixel(48, 24),
+                scale = 0.5,
+            },
+        },
+    }
+
+    entity.vertical_animation = {
+        layers = {
+            -- Base
+            {
+                filename = '__base__/graphics/entity/steam-engine/steam-engine-V.png',
+                width = 225,
+                height = 391,
+                frame_count = 32,
+                line_length = 8,
+                shift = util.by_pixel(4.75, -6.25),
+                scale = 0.5,
+            },
+            -- Color mask
+            {
+                filename = '__redmew-data__/graphics/entity/steam-engine/steam-engine-vertical-mask.png',
+                width = 225,
+                height = 391,
+                frame_count = 32,
+                line_length = 8,
+                shift = util.by_pixel(4.75, -6.25),
+                tint = tint,
+                scale = 0.5,
+            },
+            -- Highlights
+            {
+                filename = '__redmew-data__/graphics/entity/steam-engine/steam-engine-vertical-highlights.png',
+                width = 225,
+                height = 391,
+                frame_count = 32,
+                line_length = 8,
+                shift = util.by_pixel(4.75, -6.25),
+                blend_mode = 'additive',
+                scale = 0.5,
+            },
+            -- Shadow
+            {
+                filename = '__base__/graphics/entity/steam-engine/steam-engine-V-shadow.png',
+                width = 330,
+                height = 307,
+                frame_count = 32,
+                line_length = 8,
+                draw_as_shadow = true,
+                shift = util.by_pixel(40.5, 9.25),
+                scale = 0.5,
+            },
+        },
+    }
+end
+
+reskin_library.make_electric_mining_drill_tint_layers = function(entity, tint)
+    local source = data.raw['mining-drill']['electric-mining-drill']
+    entity.graphics_set = table.deepcopy(source.graphics_set)
+    entity.wet_mining_graphics_set = table.deepcopy(source.wet_mining_graphics_set)
+
+    local function make_tint_layers(parent, key)
+        local layers = parent[key].layers or { parent[key] }
+        local layer = table.deepcopy(layers[1])
+
+        local mask = table.deepcopy(layer)
+        mask.tint = tint
+        mask.filename = mask.filename:gsub('.png', '-mask.png')
+        mask.filename = mask.filename:gsub('__base__', '__redmew-data__')
+        table.insert(layers, mask)
+
+        local highlights = table.deepcopy(layer)
+        highlights.tint = tint
+        highlights.filename = highlights.filename:gsub('.png', '-highlights.png')
+        highlights.filename = highlights.filename:gsub('__base__', '__redmew-data__')
+        highlights.blend_mode = 'additive'
+        table.insert(layers, highlights)
+
+        parent[key] = { layers = layers }
+    end
+
+    -- electric-mining-drill-horizontal-front.png
+    make_tint_layers(entity.graphics_set.working_visualisations[6], 'east_animation')
+    make_tint_layers(entity.graphics_set.working_visualisations[6], 'west_animation')
+    make_tint_layers(entity.wet_mining_graphics_set.working_visualisations[9], 'east_animation')
+    make_tint_layers(entity.wet_mining_graphics_set.working_visualisations[9], 'west_animation')
+
+    -- electric-mining-drill.png
+    make_tint_layers(entity.graphics_set.working_visualisations[3], 'north_animation')
+    make_tint_layers(entity.graphics_set.working_visualisations[3], 'south_animation')
+    make_tint_layers(entity.wet_mining_graphics_set.working_visualisations[3], 'north_animation')
+    make_tint_layers(entity.wet_mining_graphics_set.working_visualisations[3], 'south_animation')
+
+    -- electric-mining-drill-horizontal.png
+    make_tint_layers(entity.graphics_set.working_visualisations[3], 'east_animation')
+    make_tint_layers(entity.graphics_set.working_visualisations[3], 'west_animation')
+    make_tint_layers(entity.wet_mining_graphics_set.working_visualisations[3], 'east_animation')
+    make_tint_layers(entity.wet_mining_graphics_set.working_visualisations[3], 'west_animation')
+end
+
+reskin_library.make_assembling_machine_tint_layers = function(entity, tint)
+    reskin_library.make_assembling_machine_pipe_picture(entity.fluid_boxes, tint)
+    local animation = table.deepcopy(entity.graphics_set.animation.layers[1])
+    reskin_library.make_tint_layers{
+        layers = entity.graphics_set.animation.layers,
+        filepath = '__redmew-data__/graphics/entity/assembling-machine/assembling-machine',
+        tint = tint,
+        repeat_count = 32
+    }
+    table.insert(entity.graphics_set.animation.layers, 1, animation)
+end
+
+reskin_library.switch_prototype = function(prototype, obj)
+    local tint = obj._tint
+    local reskin_type = obj._reskin
+    
+    if prototype.type == 'technology' then
+        prototype.icon = nil
+        prototype.icons = reskin_library.make_technology_icons(reskin_type, tint)
+        return
+    end
+
+    prototype.icon = nil
+    prototype.icons = reskin_library.make_item_icons(reskin_type, tint)
+
+    local filepath = '__redmew-data__/graphics/entity/'..reskin_type..'/'..reskin_type
+
+    if reskin_type == 'assembling-machine' then
+        reskin_library.make_assembling_machine_tint_layers(prototype, tint)
+    elseif reskin_type == 'chemical-plant' then
+        reskin_library.make_tint_layers_4_ways{ layers = prototype.graphics_set.animation, filepath = filepath, tint = tint }
+    elseif reskin_type == 'oil-refinery' then
+        reskin_library.make_tint_layers_4_ways{ layers = prototype.graphics_set.animation, filepath = filepath, tint = tint }
+    elseif reskin_type == 'electric-furnace' then
+        reskin_library.make_tint_layers{ layers = prototype.graphics_set.animation.layers, filepath = filepath, tint = tint }
+    elseif reskin_type == 'electric-mining-drill' then
+        reskin_library.make_electric_mining_drill_tint_layers(prototype, tint)
+    elseif reskin_type == 'nuclear-reactor' then
+        reskin_library.make_tint_layers{ layers = prototype.picture.layers, filepath = filepath, tint = tint }
+    elseif reskin_type == 'heat-exchanger' then
+        reskin_library.make_boiler_tint_layers{ layers = prototype.pictures, filepath = filepath, tint = tint }
+    elseif reskin_type == 'steam-turbine' then
+        reskin_library.make_steam_turbine_tint_layers(prototype, tint)
+    elseif reskin_type == 'boiler' then
+        reskin_library.make_boiler_tint_layers{ layers = prototype.pictures, filepath = filepath, tint = tint }
+    elseif reskin_type == 'steam-engine' then
+        reskin_library.make_steam_engine_tint_layers(prototype, tint)
+    end
+end
+
+--=================================================================================================
+
 local function lr_hr_tint(obj, tint)
     if not obj then
         return
@@ -422,9 +814,13 @@ redmew.make_tier = function(obj)
     if base.minable and base.minable.result then
         base.minable.result = base.name
     end
-    if obj._tint and obj._tint ~= false then
+
+    if obj._reskin then
+        reskin_library.switch_prototype(base, obj)
+    elseif obj._tint and obj._tint ~= false then
         apply_tint(base, obj._tint)
     end
+
     return base
 end
 

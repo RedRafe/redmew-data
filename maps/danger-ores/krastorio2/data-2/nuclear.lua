@@ -16,12 +16,7 @@ data:extend({
   {
     name = nr2.name,
     type = 'item',
-    icons = {{
-      icon = '__base__/graphics/icons/nuclear-reactor.png',
-      tint = nr2._tint,
-      icon_mipmaps = 4,
-      icon_size = 64,
-    }},
+    icons = redmew.reskin_library.make_item_icons('nuclear-reactor', nr2._tint),
     order = 'f[nuclear-energy]-a[reactor]',
     place_result = nr2.name,
     stack_size = 1,
@@ -57,12 +52,7 @@ data:extend({
   {
     name = he2.name,
     type = 'item',
-    icons = {{
-      icon = '__base__/graphics/icons/heat-boiler.png',
-      tint = he2._tint,
-      icon_mipmaps = 4,
-      icon_size = 64,
-    }},
+    icons = redmew.reskin_library.make_item_icons('heat-exchanger', he2._tint),
     order = 'f[nuclear-energy]-c[heat-exchanger]',
     place_result = he2.name,
     stack_size = 50,
@@ -96,12 +86,7 @@ data:extend({
   {
     name = st2.name,
     type = 'item',
-    icons = {{
-      icon = '__base__/graphics/icons/steam-turbine.png',
-      tint = st2._tint,
-      icon_mipmaps = 4,
-      icon_size = 64,
-    }},
+    icons = redmew.reskin_library.make_item_icons('steam-turbine', st2._tint),
     order = 'f[nuclear-energy]-d[steam-turbine]',
     place_result = st2.name,
     stack_size = 10,
@@ -132,12 +117,7 @@ data.raw['heat-pipe']['heat-pipe'].heat_buffer.max_temperature = nr2.heat_buffer
 data:extend({{
   type = 'technology',
   name = 'nuclear-power-2',
-  icons = {{
-    icon = '__base__/graphics/technology/nuclear-power.png',
-    tint = nr2._tint,
-    icon_size = 256,
-    icon_mipmaps = 4,
-  }},
+  icons = redmew.reskin_library.make_technology_icons('nuclear-power', nr2._tint),
   prerequisites = {'nuclear-power', 'production-science-pack'},
   effects = {
     { type = 'unlock-recipe', recipe = st2.name },

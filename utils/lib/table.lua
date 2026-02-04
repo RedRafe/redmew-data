@@ -2,10 +2,10 @@
 -- ============================================================================
 
 redmew.table_contains = function(tbl, x)
-  for _, v in pairs(tbl) do
-    if v == x then 
-    return true 
+    for _, v in pairs(tbl) do
+        if v == x then
+            return true
+        end
     end
-  end
-  return false
+    return false
 end

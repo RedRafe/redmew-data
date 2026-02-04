@@ -1,5 +1,9 @@
+--- Always on
 require 'prototypes.friendly-colors'
-require 'prototypes.simple-technology-multiplier'
+
+--- From Settings
+require 'prototypes.technologies.simple-technology-multiplier'
+require 'prototypes.expensive-robots'
 
 -- APRIL FOOLS
 require 'maps.april-fools.2024.data-final-fixes'
@@ -15,7 +19,6 @@ require 'maps.danger-ores.omnimatter.data-final-fixes'
 require 'maps.danger-ores.pyanodon.data-final-fixes'
 require 'maps.danger-ores.scrap.data-final-fixes'
 require 'maps.danger-ores.space-age.data-final-fixes'
-require 'maps.danger-ores.vanilla.data-final-fixes'
 -- DIGGY
 -- FRONTIER
 require 'maps.frontier.krastorio2.data-final-fixes'
