@@ -8,6 +8,7 @@ Date: 2026-02-07
     - [DO] Removed 'do_ore_stack_size' setting
     - [DO] Removed 'do_robot_energy_multiplier_include_construction_robots' setting
     - [DO] Added RedMew's Deep-house
+    - [DO] Added Milestones
     - [DO] Changed some recipes to skew resource consumption
 
 ---------------------------------------------------------------------------------------------------
