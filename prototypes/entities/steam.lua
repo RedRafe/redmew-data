@@ -61,8 +61,7 @@ data:extend({
         energy_required = 0.5,
         ingredients = {
             { type = 'item', name = 'steam-engine', amount = 2 },
-            { type = 'item', name = 'engine-unit', amount = 5 },
-            { type = 'item', name = 'steel-plate', amount = 10 },
+            { type = 'item', name = 'copper-plate', amount = 50 },
             { type = 'item', name = 'pipe', amount = 25 },
         },
         results = { { type = 'item', name = se2.name, amount = 1 } },

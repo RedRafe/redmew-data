@@ -1,12 +1,14 @@
 ---------------------------------------------------------------------------------------------------
 Version: 3.0.0
-Date: 2025-09-14
+Date: 2026-02-07
   Changes:
-    - Removed 'do_ore_stack_size' setting
-    - Removed 'redmew_robot_energy_multiplier_include_construction_robots' setting
-    - Changed 'redmew_robot_energy_multiplier' to True/False, default value: False (10x)
     - Added RedMew's 1x1 loaders
-    - Added RedMew's Deep-house
+    - Added reskins for advanced factory (thanks Kirazy)
+    - Changed 'redmew_robot_energy_multiplier' from int-setting to boo-setting, default value: False (10x)
+    - [DO] Removed 'do_ore_stack_size' setting
+    - [DO] Removed 'do_robot_energy_multiplier_include_construction_robots' setting
+    - [DO] Added RedMew's Deep-house
+    - [DO] Changed some recipes to skew resource consumption
 
 ---------------------------------------------------------------------------------------------------
 Version: 2.3.6

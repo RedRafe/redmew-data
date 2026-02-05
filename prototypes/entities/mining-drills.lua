@@ -27,8 +27,8 @@ data:extend({
         energy_required = 2,
         ingredients = emd2._ingredients or {
             { type = 'item', name = 'electric-mining-drill', amount = 2 },
-            { type = 'item', name = 'steel-plate', amount = 5 },
-            { type = 'item', name = 'advanced-circuit', amount = 3 },
+            { type = 'item', name = 'engine-unit', amount = 3 },
+            { type = 'item', name = 'advanced-circuit', amount = 5 },
         },
         results = { { type = 'item', name = emd2.name, amount = 1 } },
     },
@@ -78,7 +78,7 @@ data:extend({
         energy_required = 2,
         ingredients = emd3._ingredients or {
             { type = 'item', name = 'electric-mining-drill-2', amount = 2 },
-            { type = 'item', name = 'engine-unit', amount = 10 },
+            { type = 'item', name = 'electric-engine-unit', amount = 10 },
             { type = 'item', name = 'processing-unit', amount = 5 },
         },
         results = { { type = 'item', name = emd3.name, amount = 1 } },
