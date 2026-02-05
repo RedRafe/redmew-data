@@ -1,6 +1,7 @@
 require '__redmew-data__.utils.lib.lib'
 redmew.loader.init()
 
+require 'scripts.inserter'
 require 'scripts.loader'
 
 -- APRIL FOOLS

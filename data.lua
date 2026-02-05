@@ -1,6 +1,12 @@
 require '__redmew-data__.utils.lib.lib'
 redmew.loader.startup()
 
+data:extend{{
+    type = 'mod-data',
+    name = 'redmew-data',
+    data = {}
+}}
+
 require 'prototypes.utility-sprites'
 
 -- APRIL FOOLS

@@ -65,15 +65,6 @@ data:extend({
     },
 })
 
--- Adjust inserters
-for _, inserter in pairs(data.raw.inserter) do
-    --inserter.bulk = true
-    inserter.grab_less_to_match_belt_stack = true
-    inserter.wait_for_full_hand = true
-    inserter.enter_drop_mode_if_held_stack_spoiled = true
-    inserter.max_belt_stack_size = max_bonus
-end
-
 -- Adjust loaders
 for _, l_type in pairs({ 'loader', 'loader-1x1' }) do
     for _, loader in pairs(data.raw[l_type]) do
@@ -85,3 +76,47 @@ end
 for _, drill in pairs(data.raw['mining-drill']) do
     drill.drops_full_belt_stacks = true
 end
+
+-- Adjust inserters
+for _, inserter in pairs(data.raw.inserter) do
+    if inserter.hidden then goto continue end
+
+    inserter.grab_less_to_match_belt_stack = true
+    inserter.wait_for_full_hand = true
+    inserter.enter_drop_mode_if_held_stack_spoiled = true
+    inserter.max_belt_stack_size = max_bonus
+
+    ::continue::
+end
+
+-- Create inserter versions for bulk/non-bulk behaviors
+local new_inserters = {}
+local inserters = {}
+
+for name, inserter in pairs(data.raw.inserter) do
+    if inserter.bulk then goto continue end
+    if inserter.hidden then goto continue end
+    if not inserter.wait_for_full_hand then goto continue end
+
+    if not inserter.placeable_by then
+        inserter.placeable_by = { item = name, count = 1 }
+    end
+
+    local new_name = 'redmew-'..name
+    local new_inserter = table.deepcopy(inserter)
+
+    new_inserter.name = new_name
+    new_inserter.wait_for_full_hand = false
+    new_inserter.localised_name = inserter.localised_name or  {'entity-name.'..name}
+    new_inserter.localised_description = inserter.localised_description or  {'entity-description.'..name}
+    new_inserter.factoriopedia_alternative = name
+
+    inserters[new_name] = name
+    inserters[name] = new_name
+    new_inserters[#new_inserters + 1] = new_inserter
+
+    ::continue::
+end
+
+data:extend(new_inserters)
+data.raw['mod-data']['redmew-data'].data.inserters = inserters

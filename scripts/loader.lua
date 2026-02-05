@@ -2,6 +2,10 @@
 --- source: https://codeberg.org/raiguard/Krastorio2/src/branch/trunk/scripts/loader-snapping.lua#
 -- ============================================================================
 
+if not prototypes.entity['redmew-loader'] then
+    return
+end
+
 --- @type table<defines.direction, Vector>
 local offsets = {
     [defines.direction.north] = {  0, -1 },
@@ -176,15 +180,13 @@ local function on_entity_built(event)
     snap_to_belt(entity)
 end
 
-if prototypes.entity['redmew-loader'] then
-    redmew.add_library {
-        events = {
-            [defines.events.on_built_entity] = on_entity_built,
-            [defines.events.on_entity_cloned] = on_entity_built,
-            [defines.events.on_robot_built_entity] = on_entity_built,
-            [defines.events.script_raised_built] = on_entity_built,
-            [defines.events.script_raised_revive] = on_entity_built,
-            [defines.events.on_space_platform_built_entity] = on_entity_built,
-        }
+redmew.add_library {
+    events = {
+        [defines.events.on_built_entity] = on_entity_built,
+        [defines.events.on_entity_cloned] = on_entity_built,
+        [defines.events.on_robot_built_entity] = on_entity_built,
+        [defines.events.script_raised_built] = on_entity_built,
+        [defines.events.script_raised_revive] = on_entity_built,
+        [defines.events.on_space_platform_built_entity] = on_entity_built,
     }
-end
+}
