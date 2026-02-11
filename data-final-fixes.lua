@@ -2,8 +2,9 @@
 require 'prototypes.friendly-colors'
 
 --- From Settings
-require 'prototypes.technologies.simple-technology-multiplier'
 require 'prototypes.expensive-robots'
+require 'prototypes.technologies.simple-technology-multiplier'
+require 'prototypes.vibrant-colors'
 
 -- APRIL FOOLS
 require 'maps.april-fools.2024.data-final-fixes'

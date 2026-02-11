@@ -26,12 +26,19 @@ data:extend({
 		hidden = false,
 		order = 'a',
 	},
-		{
+	{
 		name = 'redmew_robot_energy_multiplier',
 		type = 'bool-setting',
 		setting_type = 'startup',
 		default_value = false,
 		order = 'c'
+	},
+	{
+		name = 'redmew_vibrant_colors',
+		type = 'bool-setting',
+		setting_type = 'startup',
+		default_value = true,
+		order = 'd'
 	},
 })
 
