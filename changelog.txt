@@ -4,11 +4,13 @@ Date: 2026-02-07
   Changes:
     - Added RedMew's 1x1 loaders
     - Added reskins for advanced factory (thanks Kirazy)
+    - Added vibrant colors to entities with player color masks
     - Changed 'redmew_robot_energy_multiplier' from int-setting to boo-setting, default value: False (10x)
     - [DO] Removed 'do_ore_stack_size' setting
     - [DO] Removed 'do_robot_energy_multiplier_include_construction_robots' setting
     - [DO] Added RedMew's Deep-house
     - [DO] Added Milestones
+    - [DO] Added Biters drops
     - [DO] Changed some recipes to skew resource consumption
 
 ---------------------------------------------------------------------------------------------------
