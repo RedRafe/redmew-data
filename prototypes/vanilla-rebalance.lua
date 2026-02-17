@@ -1,10 +1,10 @@
 --- Science rebalance
 -- Red/Green
-redmew.replace_ingredient('automation-science-pack', 'copper-plate', 'copper-plate', 6)
+redmew.replace_ingredient('automation-science-pack', 'copper-plate', 'copper-plate', 4)
 
 -- Military/Blue
 redmew.replace_ingredient('firearm-magazine', 'iron-plate', 'iron-plate', 2)
-redmew.replace_ingredient('piercing-rounds-magazine', 'copper-plate', 'copper-plate', 8)
+redmew.replace_ingredient('piercing-rounds-magazine', 'copper-plate', 'copper-plate', 6)
 redmew.replace_ingredient('chemical-science-pack', 'engine-unit', 'engine-unit', 1)
 redmew.replace_ingredient('chemical-science-pack', 'sulfur', 'sulfur', 2)
 redmew.replace_ingredient('chemical-science-pack', 'advanced-circuit', 'advanced-circuit', 4)

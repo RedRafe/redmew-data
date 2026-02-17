@@ -1,4 +1,11 @@
 ---------------------------------------------------------------------------------------------------
+Version: 3.0.1
+Date: 2026-02-17
+  Changes:
+    - Reduced copper for automation-science-pack from 6 to 4
+    - Reduced copper for piercing-round.magazine from 8 to 6
+    - Biter drops now drop 5x less ore but give 10% of that in uranium
+---------------------------------------------------------------------------------------------------
 Version: 3.0.0
 Date: 2026-02-07
   Changes:
@@ -12,7 +19,6 @@ Date: 2026-02-07
     - [DO] Added Milestones
     - [DO] Added Biters drops
     - [DO] Changed some recipes to skew resource consumption
-
 ---------------------------------------------------------------------------------------------------
 Version: 2.3.6
 Date: 2025-09-14
