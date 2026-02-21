@@ -68,21 +68,11 @@ data:extend({
         solar_coefficient_property = 'thermal',
         performance_at_day = 1,
         performance_at_night = 1,
-        picture = {
-            layers = {
-                {
-                    filename = '__redmew-data__/graphics/entity/thermal-plant/thermal-plant-hr-shadow.png',
-                    priority = 'high',
-                    size = { 900, 500 },
-                    line_length = 1,
-                    lines_per_file = 1,
-                    frame_count = 1,
-                    shift = util.by_pixel(0, -11),
-                    scale = 0.4,
-                },
+        integration_patch_render_layer = 'higher-object-above',
+        integration_patch = {
+            sheets = {
                 {
                     filename = '__redmew-data__/graphics/entity/thermal-plant/thermal-plant-hr-animation-2.png',
-                    priority = 'high',
                     size = { 330, 410 },
                     line_length = 2,
                     lines_per_file = 8,
@@ -93,7 +83,6 @@ data:extend({
                 },
                 {
                     filename = '__redmew-data__/graphics/entity/thermal-plant/thermal-plant-hr-emission-2.png',
-                    priority = 'high',
                     size = { 330, 410 },
                     line_length = 2,
                     lines_per_file = 8,
@@ -103,6 +92,20 @@ data:extend({
                     scale = 0.4,
                     draw_as_glow = true,
                     blend_mode = 'additive',
+                },
+            }
+        },
+        picture = {
+            layers = {
+                {
+                    filename = '__redmew-data__/graphics/entity/thermal-plant/thermal-plant-hr-shadow.png',
+                    size = { 900, 500 },
+                    line_length = 1,
+                    lines_per_file = 1,
+                    frame_count = 1,
+                    shift = util.by_pixel(0, -11),
+                    scale = 0.4,
+                    draw_as_shadow = true,
                 },
             },
         },

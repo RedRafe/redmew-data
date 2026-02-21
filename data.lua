@@ -1,5 +1,6 @@
 require '__redmew-data__.utils.lib.lib'
 redmew.loader.startup()
+redmew.loader.log_settings()
 
 data:extend{{
     type = 'mod-data',

@@ -91,7 +91,7 @@ end
 
 local function on_gui_opened(event)
     local player, entity = validate_gui(event)
-    if not player then
+    if not (player and entity) then
         return
     end
 

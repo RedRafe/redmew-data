@@ -14,6 +14,8 @@ local stone_driving_sound = {
     fade_ticks = 6,
 }
 
+data.raw.resource.scrap.hidden = true
+
 data:extend({
     -- Holmium
     {

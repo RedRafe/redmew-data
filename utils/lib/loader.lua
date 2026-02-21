@@ -77,3 +77,13 @@ end
 Public.root_enabled = function(root_ID)
     return (get_scenario_ID() == root_ID) or false
 end
+
+Public.log_settings = function()
+    local list = {}
+    for name, setting in pairs(settings.startup) do
+        if redmew.string.starts_with(name, 'redmew') then
+            list[name] = setting.value
+        end
+    end
+    log(serpent.block({ 'Mod settings:', list }))
+end

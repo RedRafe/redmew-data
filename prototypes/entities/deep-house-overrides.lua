@@ -9,6 +9,7 @@ local stack_size_override = container.inventory_properties.stack_size_override o
 for _, resource in pairs(data.raw.resource) do
     local minable = resource.minable
     if not minable then goto continue end
+    if resource.hidden then goto continue end
     
     local result = minable.result
     if result then

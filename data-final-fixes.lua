@@ -1,4 +1,5 @@
 --- Always on
+require 'prototypes.enemy-corpses-expire'
 require 'prototypes.friendly-colors'
 
 --- From Settings

@@ -1,4 +1,13 @@
 ---------------------------------------------------------------------------------------------------
+Version: 3.0.2
+Date: 2026-02-20
+  Changes:
+    - Fixed seismothermic generator shadow and sprite priority
+    - Fixed stack inserter gui drawing on invalid entities
+    - Fixed deep-house restacking outputs of hidden resources
+    - Added quick corpse expiring
+    - [Diggy] Added technology Braking force 8
+---------------------------------------------------------------------------------------------------
 Version: 3.0.1
 Date: 2026-02-17
   Changes:
