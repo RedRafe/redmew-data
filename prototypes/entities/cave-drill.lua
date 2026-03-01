@@ -70,6 +70,7 @@ data:extend({
             },
         },
         mining_speed = 20,
+        filter_count = 5,
         output_priority = 'primary-output',
         vector_to_place_result = { 0, 4.75 },
         module_slots = 4,
