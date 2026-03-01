@@ -25,4 +25,6 @@ for _, base_name in pairs({ 'big-rock', 'huge-rock' }) do
             table.insert(base.pictures, pic)
         end
     end
+
+    base.minable.results = nil
 end
