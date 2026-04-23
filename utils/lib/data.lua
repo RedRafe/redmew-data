@@ -129,16 +129,16 @@ end
 -- ============================================================================
 
 -- HIDE a prototype ffrom the data table
-function redmew.hide_prototype(type, name)
-    if data.raw[type][name] then
-        data.raw[type][name].hidden = true
+redmew.hide_prototype = function(_type, name)
+    if data.raw[_type][name] then
+        data.raw[_type][name].hidden = true
     end
 end
 
 -- REMOVE a prototype from the data table
-function redmew.remove_prototype(type, name)
-    if data.raw[type][name] then
-        data.raw[type][name] = nil
+redmew.remove_prototype = function(_type, name)
+    if data.raw[_type][name] then
+        data.raw[_type][name] = nil
     end
 end
 
@@ -175,6 +175,41 @@ redmew.remove_prerequisite = function(tech_name, prerequisite)
         end
     end
     return false
+end
+
+---@param root_tech_name string --[[i.e. 'mining-productivity']]
+---@param level number
+redmew.interrupt_infinite_tech = function(root_tech_name, level)
+    local current = string.format('%s-%d', root_tech_name, level)
+    if data.raw.technology[current] then
+        return
+    end
+
+    for i = level, -1, -1 do
+        local previous = string.format('%s-%d', root_tech_name, i)
+        
+        if i == 0 then
+            previous = root_tech_name
+        end
+        if data.raw.technology[previous] then
+            local old_tech = data.raw.technology[previous]
+            local new_tech = table.deepcopy(old_tech)
+            new_tech.name = current
+            new_tech.prerequisites = { previous }
+            old_tech.max_level = level - 1
+
+            -- replace prerequisites
+            for _, tech in pairs(data.raw.technology) do
+                if redmew.remove_prerequisite(tech.name, previous) then
+                    redmew.add_prerequisite(tech.name, current)
+                end
+            end
+
+            -- add new
+            data:extend({ new_tech })
+            return
+        end
+    end
 end
 
 -- ADD science pack to a given tech

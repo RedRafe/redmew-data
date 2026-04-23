@@ -178,7 +178,7 @@ for _, info in pairs({
                 ingredients = ingredients(),
                 time = 60,
             },
-            max_level = 'infinite',
+            max_level = 30,
             upgrade = true,
         },
     })

@@ -1,4 +1,12 @@
 ---------------------------------------------------------------------------------------------------
+Version: 3.0.4
+Date: 2026-04-23
+  Changes:
+    - Capped recipe productivity technologies at lvl.30
+    - [Diggy] Enforced technology tree dependencies 
+    - [Diggy] Added Belt capacity research
+    - [Diggy] Added Fusion lab
+---------------------------------------------------------------------------------------------------
 Version: 3.0.3
 Date: 2026-03-01
   Changes:
