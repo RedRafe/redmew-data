@@ -2,6 +2,10 @@ redmew.interrupt_infinite_tech('research-productivity', 11)
 redmew.interrupt_infinite_tech('research-productivity', 21)
 redmew.interrupt_infinite_tech('research-productivity', 31)
 
+redmew.interrupt_infinite_tech('mining-productivity', 11)
+redmew.interrupt_infinite_tech('mining-productivity', 21)
+redmew.add_prerequisite('cave-drill', 'mining-productivity-4')
+
 for _, tech_name in pairs({
     'steel-plate-productivity',
     'low-density-structure-productivity',
@@ -17,11 +21,11 @@ for _, tech_name in pairs({
     redmew.add_prerequisite(tech_name..'-21', 'research-productivity-21')
     redmew.add_prerequisite('belt-stacking-1', tech_name..'-21')
     redmew.add_prerequisite('fusion-lab', tech_name..'-21')
+    redmew.add_prerequisite('mining-productivity-11', tech_name..'-11')
+    redmew.add_prerequisite('mining-productivity-21', tech_name..'-21')
 end
 
-redmew.interrupt_infinite_tech('mining-productivity', 11)
-redmew.interrupt_infinite_tech('mining-productivity', 21)
-redmew.add_prerequisite('cave-drill', 'mining-productivity-4')
+data.raw.technology['fusion-lab'].unit.count = 100e6
 
 local function ingredients()
     return {
@@ -46,4 +50,3 @@ end
 redmew.add_prerequisite('belt-stacking-2', 'belt-stacking-1')
 redmew.add_prerequisite('belt-stacking-3', 'belt-stacking-2')
 
-data.raw.technology['fusion-lab'].unit.count = 100e6
