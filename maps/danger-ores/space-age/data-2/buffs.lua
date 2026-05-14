@@ -8,6 +8,9 @@ if data.raw['transport-belt']['turbo-transport-belt'] then
     if data.raw['loader-1x1']['aai-turbo-loader'] then
         data.raw['loader-1x1']['aai-turbo-loader'].speed = turbo_speed
     end
+    if data.raw['loader-1x1']['redmew-turbo-loader'] then
+        data.raw['loader-1x1']['redmew-turbo-loader'].speed = turbo_speed
+    end
     if data.raw['loader-1x1']['turbo-transport-belt-loader'] then
         data.raw['loader-1x1']['turbo-transport-belt-loader'].speed = turbo_speed
     end
