@@ -14,6 +14,7 @@ require 'maps.danger-ores.space-age.data-updates'
 require 'maps.danger-ores.vanilla.data-updates'
 -- DIGGY
 require 'maps.diggy.vanilla.data-updates'
+require 'maps.diggy.factorio-1-5.data-updates'
 -- FRONTIER
 require 'maps.frontier.vanilla.data-updates'
 require 'maps.frontier.zombies-extended.data-updates'

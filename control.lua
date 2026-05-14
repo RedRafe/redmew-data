@@ -11,6 +11,7 @@ require 'maps.april-fools.2024.control'
 require 'maps.danger-ores.control'
 -- DIGGY
 require 'maps.diggy.vanilla.control'
+require 'maps.diggy.factorio-1-5.control'
 -- FRONTIER
 require 'maps.frontier.krastorio2.control'
 -- WARMONGER

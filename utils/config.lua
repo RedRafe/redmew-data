@@ -27,6 +27,7 @@ return {
         require 'maps.danger-ores.vanilla.info',
         -- DIGGY
         require 'maps.diggy.vanilla.info',
+        require 'maps.diggy.factorio-1-5.info',
         -- FRONTIER
         require 'maps.frontier.krastorio2.info',
         require 'maps.frontier.vanilla.info',

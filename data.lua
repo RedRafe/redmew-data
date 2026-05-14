@@ -25,6 +25,7 @@ require 'maps.danger-ores.vanilla.data'
 -- DIGGY
 require 'maps.diggy.data'
 require 'maps.diggy.vanilla.data'
+require 'maps.diggy.factorio-1-5.data'
 -- FRONTIER
 require 'maps.frontier.data'
 require 'maps.frontier.vanilla.data'

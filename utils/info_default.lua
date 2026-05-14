@@ -12,6 +12,7 @@ return function()
             ['bztitanium'] = true,
             ['bztungsten'] = true,
             ['exotic-industries'] = true,
+            ['factorio-1.5'] = true,
             ['IndustrialRevolution'] = true,
             ['IndustrialRevolution3'] = true,
             ['Krastorio2'] = true,
