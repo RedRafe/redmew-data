@@ -99,7 +99,9 @@ for name, inserter in pairs(data.raw.inserter) do
     if not inserter.wait_for_full_hand then goto continue end
 
     if not inserter.placeable_by then
-        inserter.placeable_by = { item = name, count = 1 }
+        if data.raw.item[name] then
+            inserter.placeable_by = { item = name, count = 1 }
+        end
     end
 
     local new_name = 'redmew-'..name
