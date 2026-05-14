@@ -31,7 +31,7 @@ for _, recipe in pairs(data.raw.recipe) do
     if recipe.ingredients and #recipe.ingredients == 1 then
         local i = recipe.ingredients[1]
         if i.type == 'item' and stack_size_override[i.name] then
-            for _, r in pairs(recipe.results) do
+            for _, r in pairs(recipe.results or {}) do
                 if r.type == 'item' then
                     new_overrides[r.name] = 1
                 end
