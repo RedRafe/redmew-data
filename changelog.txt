@@ -1,4 +1,11 @@
 ---------------------------------------------------------------------------------------------------
+Version: 3.0.6
+Date: 2026-05-14
+  Changes:
+    - Fixed belt stacking feature bug with Bob mods
+    - Fixed deep house overrides bug with void recipes
+    - [DO:SA] Fix turbo loader speed
+---------------------------------------------------------------------------------------------------
 Version: 3.0.5
 Date: 2026-04-24
   Changes:
