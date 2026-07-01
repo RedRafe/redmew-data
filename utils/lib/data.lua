@@ -439,17 +439,57 @@ reskin_library.make_tint_layers_2_ways = function(obj)
     end
 end
 
+reskin_library.make_full_tint_layers = function(obj)
+    local layers = obj.layers
+    local tint = obj.tint
+    for i = #layers, 1, -1 do
+        local layer = layers[i]
+        if not layer.draw_as_shadow then
+            local dup = table.deepcopy(layer)
+            dup.tint = tint
+            table.insert(layers, i + 1, dup)
+        end
+    end
+end
+
+reskin_library.make_full_tint_layers_4_ways = function(obj)
+    for _, dir in pairs({ 'north', 'south', 'east', 'west' }) do
+        local o = table.deepcopy(obj)
+        o.layers = obj.layers[dir].layers
+        reskin_library.make_full_tint_layers(o)
+    end
+end
+
+local assembling_machine_pipe_sprite_dims = {
+    north = { width = 71, height = 38 },
+    east  = { width = 42, height = 76 },
+    south = { width = 88, height = 61 },
+    west  = { width = 39, height = 73 },
+}
+
 reskin_library.make_assembling_machine_pipe_picture = function(fluid_boxes, tint)
     for _, fb in pairs(fluid_boxes or {}) do
         for direction in pairs(fb.pipe_picture) do
             if not fb.pipe_picture[direction].layers then
                 fb.pipe_picture[direction] = { layers = { fb.pipe_picture[direction] } }
             end
+            local layers = fb.pipe_picture[direction].layers
             reskin_library.make_tint_layers {
-                layers = fb.pipe_picture[direction].layers,
+                layers = layers,
                 filepath = '__redmew-data__/graphics/entity/assembling-machine/pipes/assembling-machine-pipe-' .. direction,
                 tint = tint,
             }
+            local dims = assembling_machine_pipe_sprite_dims[direction]
+            if dims then
+                for i = 2, 4 do
+                    local layer = layers[i]
+                    if layer then
+                        layer.width = dims.width
+                        layer.height = dims.height
+                        layer.size = nil
+                    end
+                end
+            end
         end
     end
 end
@@ -460,11 +500,24 @@ reskin_library.make_boiler_tint_layers = function(obj)
         o.layers = obj.layers[dir].structure.layers
         o.filepath = o.filepath .. '-' .. dir .. '-idle'
         reskin_library.make_tint_layers(o)
+        if obj.sprite_dims then
+            local dims = obj.sprite_dims[dir]
+            if dims then
+                for i = 2, 4 do
+                    local layer = o.layers[i]
+                    if layer then
+                        layer.width = dims.width
+                        layer.height = dims.height
+                        layer.size = nil
+                    end
+                end
+            end
+        end
     end
 end
 
 reskin_library.make_steam_turbine_tint_layers = function(entity, tint)
-    entity.horizontal_animation = {
+    entity.pictures.east.animation = {
         layers = {
             -- Base
             {
@@ -510,7 +563,7 @@ reskin_library.make_steam_turbine_tint_layers = function(entity, tint)
             },
         },
     }
-    entity.vertical_animation = {
+    entity.pictures.north.animation = {
         layers = {
             -- Base
             {
@@ -559,7 +612,7 @@ reskin_library.make_steam_turbine_tint_layers = function(entity, tint)
 end
 
 reskin_library.make_steam_engine_tint_layers = function(entity, tint)
-    entity.horizontal_animation = {
+    entity.pictures.east.animation = {
         layers = {
             -- Base
             {
@@ -607,7 +660,7 @@ reskin_library.make_steam_engine_tint_layers = function(entity, tint)
         },
     }
 
-    entity.vertical_animation = {
+    entity.pictures.north.animation = {
         layers = {
             -- Base
             {
@@ -702,14 +755,7 @@ end
 
 reskin_library.make_assembling_machine_tint_layers = function(entity, tint)
     reskin_library.make_assembling_machine_pipe_picture(entity.fluid_boxes, tint)
-    local animation = table.deepcopy(entity.graphics_set.animation.layers[1])
-    reskin_library.make_tint_layers{
-        layers = entity.graphics_set.animation.layers,
-        filepath = '__redmew-data__/graphics/entity/assembling-machine/assembling-machine',
-        tint = tint,
-        repeat_count = 32
-    }
-    table.insert(entity.graphics_set.animation.layers, 1, animation)
+    reskin_library.make_full_tint_layers{ layers = entity.graphics_set.animation.layers, tint = tint }
 end
 
 reskin_library.make_1x1_loader_tint_layers = function(entity, tint)
@@ -795,9 +841,9 @@ reskin_library.switch_prototype = function(prototype, obj)
     if reskin_type == 'assembling-machine' then
         reskin_library.make_assembling_machine_tint_layers(prototype, tint)
     elseif reskin_type == 'chemical-plant' then
-        reskin_library.make_tint_layers_4_ways{ layers = prototype.graphics_set.animation, filepath = filepath, tint = tint }
+        reskin_library.make_full_tint_layers_4_ways{ layers = prototype.graphics_set.animation, tint = tint }
     elseif reskin_type == 'oil-refinery' then
-        reskin_library.make_tint_layers_4_ways{ layers = prototype.graphics_set.animation, filepath = filepath, tint = tint }
+        reskin_library.make_full_tint_layers_4_ways{ layers = prototype.graphics_set.animation, tint = tint }
     elseif reskin_type == 'electric-furnace' then
         reskin_library.make_tint_layers{ layers = prototype.graphics_set.animation.layers, filepath = filepath, tint = tint }
     elseif reskin_type == 'electric-mining-drill' then
@@ -805,7 +851,15 @@ reskin_library.switch_prototype = function(prototype, obj)
     elseif reskin_type == 'nuclear-reactor' then
         reskin_library.make_tint_layers{ layers = prototype.picture.layers, filepath = filepath, tint = tint }
     elseif reskin_type == 'heat-exchanger' then
-        reskin_library.make_boiler_tint_layers{ layers = prototype.pictures, filepath = filepath, tint = tint }
+        reskin_library.make_boiler_tint_layers{
+            layers = prototype.pictures, filepath = filepath, tint = tint,
+            sprite_dims = {
+                north = { width = 269, height = 221 },
+                east  = { width = 211, height = 301 },
+                south = { width = 260, height = 201 },
+                west  = { width = 196, height = 273 },
+            }
+        }
     elseif reskin_type == 'steam-turbine' then
         reskin_library.make_steam_turbine_tint_layers(prototype, tint)
     elseif reskin_type == 'boiler' then

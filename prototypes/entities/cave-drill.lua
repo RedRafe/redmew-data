@@ -1,5 +1,6 @@
 local hit_effects = require '__base__.prototypes.entity.hit-effects'
 local sounds = require '__base__.prototypes.entity.sounds'
+local assembler_pictures = require '__base__.prototypes.entity.assembler-pictures'
 
 circuit_connector_definitions['cave-drill'] = circuit_connector_definitions.create_vector(universal_connector_template, {
     { variation = 7, main_offset = util.by_pixel(-113.5, 80), shadow_offset = util.by_pixel(-113.5, 80), show_shadow = true },
@@ -24,7 +25,7 @@ data:extend({
     {
         type = 'recipe',
         name = 'cave-drill',
-        category = 'crafting-with-fluid',
+        categories = { 'crafting-with-fluid' },
         energy_required = 60,
         results = { { type = 'item', name = 'cave-drill', amount = 1 } },
         enabled = false,
@@ -59,7 +60,7 @@ data:extend({
         resource_categories = mods['space-age'] and { 'basic-solid', 'hard-solid' } or { 'basic-solid' },
         drops_full_belt_stacks = mods['space-age'] and true or nil,
         input_fluid_box = {
-            pipe_picture = assembler2pipepictures(),
+            pipe_picture = assembler_pictures.assembler2pipepictures,
             pipe_covers = pipecoverspictures(),
             volume = 200,
             pipe_connections = {

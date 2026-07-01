@@ -10,7 +10,7 @@ data:extend({
         results = { { type = 'item', name = 'uranium-ore', amount = 1 } },
         enabled = false,
         energy_required = 1,
-        category = 'crafting-with-fluid',
+        categories = {'crafting-with-fluid'},
         subgroup = 'uranium-processing',
         order = 'a[uranium-processing]-a[stone-to-uranium]',
         icon_size = 64,

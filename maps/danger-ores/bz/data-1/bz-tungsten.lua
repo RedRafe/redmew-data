@@ -19,7 +19,7 @@ data:extend({
         always_show_made_in = true,
         energy_required = 8,
         enabled = false,
-        category = 'crafting-with-fluid',
+        categories = {'crafting-with-fluid'},
         ingredients = {
             { type = 'item', name = 'tungsten-ore', amount = 15 },
             { type = 'fluid', name = 'water', amount = 150 },

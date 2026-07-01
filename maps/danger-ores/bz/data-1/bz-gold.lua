@@ -26,7 +26,7 @@ data:extend({
         always_show_made_in = true,
         energy_required = 4,
         enabled = false,
-        category = 'crafting-with-fluid',
+        categories = {'crafting-with-fluid'},
         ingredients = {
             { type = 'item', name = 'rich-copper-ore', amount = 15 },
             { type = 'fluid', name = 'water', amount = 15 },

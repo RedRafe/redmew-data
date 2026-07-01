@@ -39,7 +39,7 @@ if recycler then
 end
 
 local function _item(name, amount)
-    return { type = 'item', name = name, amount = amount or 1, probability = 0.25 }
+    return { type = 'item', name = name, amount = amount or 1, independent_probability = 0.25 }
 end
 
 for name, results in pairs({

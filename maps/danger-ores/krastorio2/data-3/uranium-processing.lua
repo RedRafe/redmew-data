@@ -6,7 +6,7 @@ data:extend({
         always_show_made_in = true,
         energy_required = 8,
         enabled = false,
-        category = 'chemistry',
+        categories = {'chemistry'},
         ingredients = {
             { type = 'item', name = 'uranium-ore', amount = 10 },
             { type = 'fluid', name = 'sulfuric-acid', amount = 5 },
@@ -36,7 +36,7 @@ data:extend({
         always_show_made_in = true,
         energy_required = 30,
         enabled = false,
-        category = 'centrifuging',
+        categories = {'centrifuging'},
         ingredients = { { type = 'item', name = 'yellowcake', amount = 3 } },
         icon = '__base__/graphics/icons/uranium-processing.png',
         icon_size = 64,
@@ -47,13 +47,13 @@ data:extend({
             {
                 type = 'item',
                 name = 'uranium-235',
-                probability = 0.007,
+                independent_probability =0.007,
                 amount = 1,
             },
             {
                 type = 'item',
                 name = 'uranium-238',
-                probability = 0.993,
+                independent_probability =0.993,
                 amount = 1,
             },
         },

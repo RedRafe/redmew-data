@@ -19,7 +19,7 @@ data:extend({
         always_show_made_in = true,
         energy_required = 4,
         enabled = false,
-        category = 'chemistry',
+        categories = {'chemistry'},
         ingredients = {
             { type = 'item', name = 'flake-graphite', amount = 15 },
             { type = 'fluid', name = 'steam', amount = 15 },

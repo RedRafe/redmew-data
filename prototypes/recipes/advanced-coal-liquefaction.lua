@@ -16,7 +16,7 @@ data:extend({
     {
         type = 'recipe',
         name = 'advanced-coal-liquefaction',
-        category = 'oil-processing',
+        categories = {'oil-processing'},
         enabled = false,
         energy_required = 5,
         ingredients = {

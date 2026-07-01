@@ -5,15 +5,16 @@ local make_loot = function(items)
     end
 
     local results = {}
-    local probablility = 1 / table_size(items)
+    local probability = 1 / table_size(items)
 
     for name, count in pairs(items) do
         for _ = 1, count do
             results[#results+1] = {
-                item = name,
-                probablility = probablility,
-                count_min = 0,
-                count_max = 1,
+                type = 'item',
+                name = name,
+                amount_min = 0,
+                amount_max = 1,
+                independent_probability = probability,
             }
         end
     end

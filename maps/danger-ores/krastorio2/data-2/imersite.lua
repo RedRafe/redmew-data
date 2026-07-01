@@ -16,7 +16,7 @@ data:extend({
     {
         type = 'recipe',
         name = 'liquid-imersite',
-        category = 'oil-processing',
+        categories = {'oil-processing'},
         energy_required = 5,
         enabled = false,
         ingredients = {
@@ -41,7 +41,7 @@ data:extend({
         type = 'recipe',
         name = 'kr-imersite',
         always_show_made_in = true,
-        category = 'chemistry',
+        categories = {'chemistry'},
         energy_required = 8,
         enabled = false,
         ingredients = {

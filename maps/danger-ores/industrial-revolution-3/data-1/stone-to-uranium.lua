@@ -11,7 +11,7 @@ data:extend({
         results = { { type = 'item', name = 'uranium-ore', amount = 1 } },
         enabled = false,
         energy_required = 1,
-        category = 'mixing',
+        categories = {'mixing'},
         icon_size = 64,
         icon = '__redmew-data__/graphics/icons/stone-to-uranium.png',
         group = 'ir-processing',

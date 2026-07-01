@@ -1,5 +1,6 @@
 local hit_effects = require '__base__.prototypes.entity.hit-effects'
 local sounds = require '__base__.prototypes.entity.sounds'
+local assembler_pictures = require '__base__.prototypes.entity.assembler-pictures'
 local graphics = {}
 
 function graphics.smoke()
@@ -284,7 +285,7 @@ data:extend({
         energy_usage = '90kW',
         input_fluid_box = {
             production_type = 'input-output',
-            pipe_picture = assembler2pipepictures(),
+            pipe_picture = assembler_pictures.assembler2pipepictures,
             pipe_covers = pipecoverspictures(),
             volume = 200,
             pipe_connections = {

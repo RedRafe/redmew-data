@@ -55,6 +55,9 @@ local function on_tunnel_built(event)
 
     local src = entity.surface
     local dst = get_opposite_surface(src.name)
+    if not dst then
+        return
+    end
     local position = entity.position
 
     -- check other surface
@@ -147,6 +150,9 @@ local function on_tunnel_mined(event)
 
     local src = entity.surface
     local dst = get_opposite_surface(src)
+    if not dst then
+        return
+    end
     local position = entity.position
 
     destroy_pole(entity)
@@ -177,6 +183,9 @@ local function on_tunnel_destroyed(event)
 
     local src = entity.surface
     local dst = get_opposite_surface(src)
+    if not dst then
+        return
+    end
     local position = entity.position
 
     destroy_pole(entity)

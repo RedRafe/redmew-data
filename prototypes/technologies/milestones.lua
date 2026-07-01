@@ -6,7 +6,7 @@ data:extend({
         icon_size = 128,
         effects = {},
         prerequisites = { },
-        research_trigger = { type = 'mine-entity', entity = 'coal' },
+        research_trigger = { type = 'mine-entity', entities = {'coal'} },
     }
 })
 

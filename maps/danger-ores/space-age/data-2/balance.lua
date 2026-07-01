@@ -18,57 +18,31 @@ data.raw.recipe['lightning-rod'].hidden = true
 data.raw.recipe['lightning-collector'].hidden = true
 
 -- Technologies
--- Add new technology for traveling to solar system edge
-data:extend({
-    {
-        type = 'technology',
-        name = 'solar-system-edge-discovery',
-        icon = '__space-age__/graphics/icons/solar-system-edge.png',
-        icon_size = 64,
-        essential = true,
-        effects = {
-            {
-                type = 'unlock-space-location',
-                space_location = 'solar-system-edge',
-                use_icon_overlay_constant = true,
-            },
-            {
-                type = 'unlock-recipe',
-                recipe = 'ammoniacal-solution-separation',
-            },
-            {
-                type = 'unlock-recipe',
-                recipe = 'solid-fuel-from-ammonia',
-            },
-            {
-                type = 'unlock-recipe',
-                recipe = 'ammonia-rocket-fuel',
-            },
-            {
-                type = 'unlock-recipe',
-                recipe = 'ice-platform',
-            },
-            {
-                type = 'unlock-recipe',
-                recipe = 'lightning-rod',
-            },
+-- Modify vanilla stellar-discovery-solar-system-edge to use cheaper prerequisites and unlock Aquilo recipes
+local edge_tech = data.raw.technology['stellar-discovery-solar-system-edge']
+if edge_tech then
+    edge_tech.prerequisites = { 'space-platform-thruster' }
+    edge_tech.unit = {
+        count = 500,
+        ingredients = {
+            { 'automation-science-pack', 1 },
+            { 'logistic-science-pack', 1 },
+            { 'chemical-science-pack', 1 },
+            { 'space-science-pack', 1 },
         },
-        prerequisites = { 'space-platform-thruster' },
-        unit = {
-            count = 500,
-            ingredients = {
-                { 'automation-science-pack', 1 },
-                { 'logistic-science-pack', 1 },
-                { 'chemical-science-pack', 1 },
-                { 'space-science-pack', 1 },
-            },
-            time = 60,
-        },
-    },
-})
-
--- Add prerequisite to promethium-science-pack
-table.insert(data.raw.technology['promethium-science-pack'].prerequisites, 'solar-system-edge-discovery')
+        time = 60,
+    }
+    for _, recipe_name in ipairs({
+        'ammoniacal-solution-separation',
+        'solid-fuel-from-ammonia',
+        'ammonia-rocket-fuel',
+        'ice-platform',
+        'lightning-rod',
+    }) do
+        table.insert(edge_tech.effects, { type = 'unlock-recipe', recipe = recipe_name })
+    end
+end
+-- promethium-science-pack already requires stellar-discovery-solar-system-edge in vanilla 2.1
 
 -- Aquilo
 data.raw.technology['lithium-processing'].prerequisites = { 'rocket-turret', 'advanced-asteroid-processing', 'heating-tower', 'asteroid-reprocessing', 'electromagnetic-science-pack' }
@@ -79,7 +53,7 @@ data.raw.technology['heating-tower'].prerequisites = { 'concrete' }
 
 -- Fulgora
 data.raw.technology['lightning-collector'].hidden = true
-data.raw.technology['holmium-processing'].research_trigger = { type = 'mine-entity', entity = 'holmium-ore' }
+data.raw.technology['holmium-processing'].research_trigger = { type = 'mine-entity', entities = {'holmium-ore'} }
 data.raw.technology['recycling'].prerequisites = { 'processing-unit', 'production-science-pack' }
 data.raw.technology['recycling'].research_trigger = nil
 data.raw.technology['recycling'].unit = {

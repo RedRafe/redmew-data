@@ -19,7 +19,7 @@ data:extend({
         always_show_made_in = true,
         energy_required = 12,
         enabled = false,
-        category = 'crafting-with-fluid',
+        categories = {'crafting-with-fluid'},
         ingredients = {
             { type = 'item', name = 'titanium-ore', amount = 15 },
             { type = 'fluid', name = 'lubricant', amount = 45 },

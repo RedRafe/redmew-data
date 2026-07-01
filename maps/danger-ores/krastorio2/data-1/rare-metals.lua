@@ -20,7 +20,7 @@ data:extend({
         type = 'recipe',
         name = 'kr-rare-metal-ore',
         always_show_made_in = true,
-        category = 'chemistry',
+        categories = {'chemistry'},
         energy_required = 3.2,
         enabled = true,
         ingredients = {

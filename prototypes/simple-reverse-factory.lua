@@ -407,7 +407,7 @@ local function process_recipe(recipe, priority)
     result.name = result.name or result[1]
     result.amount = result.amount or result[2]
     result.type = result.type or 'item'
-    result.probability = result.probability or 1
+    result.independent_probability = result.independent_probability or result.probability or 1
     if result.amount_max or result.amount_min then
         result.amount = math.ceil(((result.amount_max or 1) + (result.amount_min or 1)) / 2)
     end
@@ -424,7 +424,7 @@ local function process_recipe(recipe, priority)
             name = i.name or i[1],
             amount = i.amount or i[2],
             type = i.type or 'item',
-            probability = efficiency * result.probability,
+            independent_probability = efficiency * result.independent_probability,
         }
     end
 
@@ -443,7 +443,7 @@ local function process_recipe(recipe, priority)
     local base_recipe = {
         name = 'srf-' .. result.name,
         type = 'recipe',
-        category = 'recycling-base',
+        categories = {'recycling-base'},
         subgroup = 'recycling-base',
         localised_name = { '', 'Recycle ', { 'item-name.' .. result.name } },
 
@@ -451,7 +451,6 @@ local function process_recipe(recipe, priority)
         allow_decomposition = false,
         allow_intermediates = false,
         always_show_made_in = false,
-        always_show_products = false,
         enabled = true,
         hidden = false,
         hide_from_player_crafting = true,
@@ -469,7 +468,7 @@ local function process_recipe(recipe, priority)
 
     local adv_recipe = table.deepcopy(base_recipe)
     adv_recipe.name = redmew.string.replace(adv_recipe.name, 'srf-', 'srf-adv-')
-    adv_recipe.category = 'recycling-advanced'
+    adv_recipe.categories = {'recycling-advanced'}
     adv_recipe.subgroup = 'recycling-advanced'
     data:extend { adv_recipe }
 

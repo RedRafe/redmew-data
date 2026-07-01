@@ -3,9 +3,8 @@ data:extend({
     {
         type = 'recipe',
         name = 'mineral-water',
-        category = 'kr-fluid-filtration',
+        categories = {'kr-fluid-filtration'},
         always_show_made_in = true,
-        always_show_products = true,
         energy_required = 8,
         enabled = false,
         ingredients = {

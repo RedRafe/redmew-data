@@ -15,7 +15,7 @@ data:extend({
         type = 'recipe',
         name = 'fluoride',
         always_show_made_in = true,
-        category = 'chemistry',
+        categories = {'chemistry'},
         energy_required = 8,
         enabled = false,
         ingredients = {

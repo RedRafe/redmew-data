@@ -7,7 +7,7 @@ for f, _ in pairs(data.raw.fluid) do
     }) do
         local recipe = data.raw.recipe[recipe_name]
         if recipe ~= nil then
-            redmew.update_prototype { type = 'recipe', name = recipe_name, category = 'redmew-barreling' }
+            redmew.update_prototype { type = 'recipe', name = recipe_name, categories = {'redmew-barreling'} }
         end
     end
 end
