@@ -1,24 +1,27 @@
 ---------------------------------------------------------------------------------------------------
 Version: 4.0.0
-Date: 2026-06-04
+Date: 2026-07-01
   Changes:
     - Updated for Factorio 2.1 compatibility
     - Replaced RecipePrototype::category (string) with categories (array) across all recipe definitions
-    - Replaced removed recipe category "chemistry-or-cryogenics" with categories = {"chemistry", "cryogenics"} in coal-gasification
     - Removed RecipePrototype::always_show_products and show_amount_in_title fields (removed in 2.1)
-    - Rewrote make_loot() in biters-drop-resources to use new ItemProductPrototype format (type/name/amount_min/amount_max)
     - Replaced probability with independent_probability in all ItemProductPrototype definitions (recipes, mining results, recycler results)
-    - Fixed do:scrap danger-ores package dependency: replaced obsolete 'quality' mod dependency with 'recycler' (recycling content moved to the recycler mod in 2.1)
-    - Replaced custom solar-system-edge-discovery technology with a modification of vanilla stellar-discovery-solar-system-edge, preserving cheaper prerequisites and recipe unlocks
-    - Updated coal-gasification recipe unlock to reference stellar-discovery-solar-system-edge
-    - Fixed MineEntityTechnologyTrigger::entity renamed to entities (array) in milestones and holmium-processing triggers
     - Fixed reskin_library tint layering for chemical plants, oil refineries and assembling machines by adding make_full_tint_layers/make_full_tint_layers_4_ways helpers
     - Fixed reskinned assembling machine pipe pictures and heat exchanger sprites being drawn at the wrong size by adding per-direction sprite dimension overrides
     - Updated reskin_library steam turbine/engine reskinning to assign animations to entity.pictures.east/north.animation instead of removed horizontal_animation/vertical_animation fields
-    - Replaced removed assembler2pipepictures() function call with base game's assembler_pictures.assembler2pipepictures table in cave-drill and fluid-electric-mining-drill
-    - [April Fools] Moved barrel-machine animation, working_visualisations and water_reflection under graphics_set to match new assembling-machine prototype layout
-    - [April Fools] Removed hr_version sprite variants from tunnel (rocket-silo based) graphics, now using single merged hi-res sprites
-    - [April Fools] Fixed potential crash in tunnel build/mine/destroy handlers when the opposite surface does not exist
+    - [DO] Rewrote make_loot() in biters-drop-resources to use new ItemProductPrototype format (type/name/amount_min/amount_max)
+    - [DO] Fixed MineEntityTechnologyTrigger::entity renamed to entities (array) in milestones triggers
+    - [DO:SA] Replaced removed recipe category "chemistry-or-cryogenics" with categories = {"chemistry", "cryogenics"} in coal-gasification
+    - [DO:SA] Replaced custom solar-system-edge-discovery technology with a modification of vanilla stellar-discovery-solar-system-edge, preserving cheaper prerequisites and recipe unlocks
+    - [DO:SA] Updated coal-gasification recipe unlock to reference stellar-discovery-solar-system-edge
+    - [DO:SA] Fixed MineEntityTechnologyTrigger::entity renamed to entities (array) in holmium-processing triggers
+    - [DO:SA] Fixed startup crash: replaced invalid decorative name 'fulgoran-gravewort' with the real 'small-fulgoran-gravewort'/'medium-fulgoran-gravewort' prototype names
+    - [DO:SA] Fixed startup crash: removing the ore-recycling recipes (uranium-ore-recycling, etc.) left dangling unlock-recipe effects on the recycling technology, since the recycler mod's data-updates.lua adds those effects before redmew-data removes the recipes; now strips the matching effects alongside the recipes
+    - [DO:Scrap] Fixed danger-ores package dependency: replaced obsolete 'quality' mod dependency with 'recycler' (recycling content moved to the recycler mod in 2.1)
+    - [Diggy] Replaced removed assembler2pipepictures() function call with base game's assembler_pictures.assembler2pipepictures table in cave-drill and fluid-electric-mining-drill
+    - [AF:24] Moved barrel-machine animation, working_visualisations and water_reflection under graphics_set to match new assembling-machine prototype layout
+    - [AF:24] Removed hr_version sprite variants from tunnel (rocket-silo based) graphics, now using single merged hi-res sprites
+    - [AF:24] Fixed potential crash in tunnel build/mine/destroy handlers when the opposite surface does not exist
 ---------------------------------------------------------------------------------------------------
 Version: 3.0.6
 Date: 2026-05-14

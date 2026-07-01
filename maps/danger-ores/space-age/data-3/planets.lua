@@ -295,7 +295,8 @@ local autoplace_settings = {
         ['yellow-lettuce-lichen-cups-3x3'] = {},
         ['yellow-lettuce-lichen-cups-6x6'] = {},
         --- Fulgora
-        ['fulgoran-gravewort'] = {},
+        ['small-fulgoran-gravewort'] = {},
+        ['medium-fulgoran-gravewort'] = {},
         ['fulgoran-ruin-tiny'] = {},
         ['medium-fulgora-rock'] = {},
         ['small-fulgora-rock'] = {},
