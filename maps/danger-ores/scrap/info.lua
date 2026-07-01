@@ -6,7 +6,7 @@ return {
     ID = 'do:scrap',
     dependencies = {
         ['scrap-resource'] = true,
-        ['quality'] = true,
+        ['recycler'] = true,
     },
     incompatibles = default.incompatibles,
 }

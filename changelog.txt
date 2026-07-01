@@ -8,6 +8,7 @@ Date: 2026-06-04
     - Removed RecipePrototype::always_show_products and show_amount_in_title fields (removed in 2.1)
     - Rewrote make_loot() in biters-drop-resources to use new ItemProductPrototype format (type/name/amount_min/amount_max)
     - Replaced probability with independent_probability in all ItemProductPrototype definitions (recipes, mining results, recycler results)
+    - Fixed do:scrap danger-ores package dependency: replaced obsolete 'quality' mod dependency with 'recycler' (recycling content moved to the recycler mod in 2.1)
     - Replaced custom solar-system-edge-discovery technology with a modification of vanilla stellar-discovery-solar-system-edge, preserving cheaper prerequisites and recipe unlocks
     - Updated coal-gasification recipe unlock to reference stellar-discovery-solar-system-edge
     - Fixed MineEntityTechnologyTrigger::entity renamed to entities (array) in milestones and holmium-processing triggers
