@@ -207,4 +207,9 @@ return {
         scale_fluid_usage = true,
         maximum_temperature = 315,
     },
+    ['steam'] = {
+        type = 'fluid',
+        name = 'steam',
+        max_temperature = 2000,
+    }
 }

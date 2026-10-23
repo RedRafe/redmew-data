@@ -4,9 +4,11 @@ local he1 = redmew.config['heat-exchanger']
 local he2 = redmew.config['heat-exchanger-2']
 local st1 = redmew.config['steam-turbine']
 local st2 = redmew.config['steam-turbine-2']
+local stm = redmew.config['steam']
 
 --=================================================================================================
 
+redmew.update_prototype(stm)
 redmew.update_prototype(nr1)
 
 --=================================================================================================
