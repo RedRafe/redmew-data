@@ -7,7 +7,7 @@
   "homepage": "https://mods.factorio.com/user/RedRafe",
   "factorio_version": "2.1",
   "dependencies": [
-    "base >= 2.0.0",
+    "base >= 2.1.23",
     "? angelsrefining",
     "? bobplates",
     "? bzcarbon",
