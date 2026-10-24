@@ -1,4 +1,14 @@
 ---------------------------------------------------------------------------------------------------
+Version: 4.1.0
+Date: 2026-10-24
+  Changes:
+    - Added Beacon MK2 (beacon-2): doubled energy draw for stronger module effect distribution (2.5 vs 1.5, +0.3 per quality level) and a third module slot
+    - Added Lab MK2 (lab-2): double research speed, third module slot, 180kW
+    - Added Steel furnace MK2 (steel-furnace-2): double smelting speed and doubled energy draw, no module slots; extends the stone -> steel furnace fast-replace chain
+    - Added unlock technologies and recipes for all three tiers, following the existing MK2 machine patterns
+    - Added make_tinted_item_icons/make_tinted_technology_icons helpers to reskin_library, reusing vanilla icons with a tint layer for tiers without dedicated mask artwork
+    - New tiers load wherever the advanced factory pack loads: Danger Ores vanilla, BZ and scrap
+---------------------------------------------------------------------------------------------------
 Version: 4.0.0
 Date: 2026-07-01
   Changes:
