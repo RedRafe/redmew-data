@@ -3,9 +3,12 @@ if not redmew.config then
 end
 
 require 'prototypes.entities.assembling-machine'
+require 'prototypes.entities.beacon'
 require 'prototypes.entities.chemical'
 require 'prototypes.entities.electric-furnace'
+require 'prototypes.entities.lab'
 require 'prototypes.entities.loader'
 require 'prototypes.entities.mining-drills'
 require 'prototypes.entities.nuclear'
 require 'prototypes.entities.steam'
+require 'prototypes.entities.steel-furnace'

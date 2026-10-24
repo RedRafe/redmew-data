@@ -395,6 +395,41 @@ reskin_library.make_technology_icons = function(name, tint_mask, tint_highlights
     }
 end
 
+local function tint_icon_set(icons, tint)
+    local out = {}
+    for _, layer in pairs(icons) do
+        out[#out + 1] = table.deepcopy(layer)
+        local masked = table.deepcopy(layer)
+        masked.tint = tint
+        out[#out + 1] = masked
+    end
+    return out
+end
+
+--- Reuses another prototype's icons with an extra tinted layer, for tiers without dedicated
+--- mask/highlights artwork. Pass the base prototype's name, e.g. 'beacon'.
+---@param base_name string
+---@param tint Color
+reskin_library.make_tinted_item_icons = function(base_name, tint)
+    local base = data.raw.item[base_name]
+    if not base then
+        error('Could not find item/' .. base_name)
+        return
+    end
+    return tint_icon_set(base.icons or { { icon = base.icon, icon_size = base.icon_size } }, tint)
+end
+
+---@param base_name string
+---@param tint Color
+reskin_library.make_tinted_technology_icons = function(base_name, tint)
+    local base = data.raw.technology[base_name]
+    if not base then
+        error('Could not find technology/' .. base_name)
+        return
+    end
+    return tint_icon_set(base.icons or { { icon = base.icon, icon_size = base.icon_size } }, tint)
+end
+
 reskin_library.make_tint_layers = function(obj)
     local layers = obj.layers
     local filepath = obj.filepath
